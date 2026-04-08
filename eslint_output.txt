@@ -1,0 +1,11 @@
+
+D:\WEBSITE\personal portfolio\src\components\layout\navbar.tsx
+  34:51  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\WEBSITE\personal portfolio\src\components\sections\hero.tsx
+   3:10  warning  'useEffect' is defined but never used                            @typescript-eslint/no-unused-vars
+   3:21  warning  'useRef' is defined but never used                               @typescript-eslint/no-unused-vars
+  25:16  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+Γ£û 4 problems (2 errors, 2 warnings)
+
