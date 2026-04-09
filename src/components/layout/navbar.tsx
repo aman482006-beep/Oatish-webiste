@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,7 +16,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav id="nav" className={scrolled ? "scrolled" : ""}>
+    <nav id="nav" className={`${scrolled ? "scrolled" : ""} ${menuOpen ? "menu-open" : ""}`}>
       <a href="#" className="nav-logo">
         <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Simple geometric brutalist logo to match the aesthetic */}
@@ -24,14 +25,19 @@ export function Navbar() {
           <rect x="70" y="10" width="20" height="70" fill="black" />
         </svg>
       </a>
-      <div className="nav-links-container">
+      <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
+      <div className={`nav-links-container ${menuOpen ? "open" : ""}`}>
         <ul className="nav-links">
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#worlds">WORLDS</a></li>
-          <li><a href="#projects">PROJECTS</a></li>
-          <li><a href="#socials">CONNECT</a></li>
+          <li><a href="#about" onClick={() => setMenuOpen(false)}>ABOUT</a></li>
+          <li><a href="#worlds" onClick={() => setMenuOpen(false)}>WORLDS</a></li>
+          <li><a href="#projects" onClick={() => setMenuOpen(false)}>PROJECTS</a></li>
+          <li><a href="#socials" onClick={() => setMenuOpen(false)}>CONNECT</a></li>
         </ul>
-        <a href="#socials" className="nav-cta">LET&apos;S TALK</a>
+        <a href="#socials" className="nav-cta" onClick={() => setMenuOpen(false)}>LET&apos;S TALK</a>
       </div>
     </nav>
   );
