@@ -1,6 +1,6 @@
 {
-  "name": "aman-malu-portfolio",
-  "version": "1.0.0",
+  "name": "temp-app",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
