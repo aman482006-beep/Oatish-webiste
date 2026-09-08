@@ -22,8 +22,9 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Aman Malu",
-  description: "Building my life in public — so I can't quit without embarrassing myself",
+  title: "Aman Malu — Finance × Building",
+  description:
+    "A finance-minded builder exploring markets, technology, products, and the process of building things from scratch.",
 };
 
 export default function RootLayout({
@@ -33,7 +34,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {/* We use next/font/google, removing the hardcoded links from the prompt */}
       <body className={`${cormorant.variable} ${instrumentSans.variable}`}>
         <CustomCursor />
         <ScrollReveal />
