@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aman Malu — Personal Portfolio
 
-## Getting Started
+> Finance-minded builder exploring the intersection of markets, technology, products, and the process of building things from scratch.
 
-First, run the development server:
+This repository contains my personal portfolio and the source for the site at the centre of my public work.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+The positioning is intentional: **finance is the foundation; building is the second skill.** I use code and product experiments to turn ideas into working interfaces, tools, and small systems rather than treating technology as a separate identity.
+
+## What you'll find here
+
+- **About** — the story, interests, and principles behind the work.
+- **Projects** — selected software and product experiments.
+- **Skills** — the technical and creative tools used across projects.
+- **Credentials** — academic and professional milestones.
+- **Build in public** — the broader philosophy behind documenting the process.
+
+## Selected projects
+
+### AirMath AI
+A multimodal math workspace combining webcam hand tracking, browser OCR, WebSockets, FastAPI, and SymPy. The project explores how computer vision and deterministic computation can create a more natural educational interface.
+
+### Cricket Wordle
+A Flutter game that turns structured IPL player attributes into a deduction problem. The game separates data, domain logic, and presentation so the mechanics can evolve independently of the UI.
+
+### Fokus
+A cross-platform productivity application built with Flutter, Riverpod, dependency injection, local persistence, audio, notifications, analytics, and desktop integrations.
+
+### Trading-agent research
+Exploration of multi-agent financial research systems, with a focus on how specialised agents, structured outputs, memory, evaluation, and risk-oriented workflows can support financial analysis. Where external/open-source work is involved, the repository is treated as an engineering study rather than presented as original research.
+
+## Engineering philosophy
+
+I care less about collecting frameworks and more about understanding the system underneath them:
+
+```text
+Problem
+  ↓
+Product / interaction design
+  ↓
+Data + domain model
+  ↓
+System architecture
+  ↓
+Implementation
+  ↓
+Testing / iteration
+  ↓
+Something a real person can use
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The goal is to become the kind of finance professional who can **understand a technical system, prototype an idea, reason about data, and communicate the result clearly** — without pretending to be a full-time software engineer.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Current stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Languages:** Python, Dart, TypeScript, JavaScript
 
-## Learn More
+**AI / data:** SymPy, OCR, computer vision, agentic workflows, structured data pipelines
 
-To learn more about Next.js, take a look at the following resources:
+**Application:** Flutter, React, Next.js, FastAPI
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Systems:** WebSockets, local persistence, dependency injection, state management, desktop integrations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Workflow:** Git, GitHub, iterative prototyping, product-focused development
 
-## Deploy on Vercel
+## Repository structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```text
+src/
+├── app/          # Next.js application shell
+├── components/   # Reusable UI and layout components
+└── lib/          # Shared utilities and application logic
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Why this portfolio exists
+
+A CV can say someone is interested in finance and technology. A working project gives that claim something concrete behind it.
+
+This site is therefore less of a résumé and more of a **proof-of-work hub**: what I am learning, what I am building, and how I think about problems.
+
+---
+
+Built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and a slightly obsessive amount of iteration.
