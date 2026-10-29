@@ -1,5 +1,7 @@
 "use client";
 
+import { LatestVideos } from "@/components/sections/latest-videos";
+
 export default function CreatorPage() {
   return (
     <div className="min-h-screen bg-[var(--tech-bg)] text-[var(--tech-text)] pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-8 lg:px-20">
@@ -38,6 +40,8 @@ export default function CreatorPage() {
             </a>
           </div>
         </div>
+
+        <LatestVideos />
 
         {/* Section B: Content Categories */}
         <div className="mb-20">
