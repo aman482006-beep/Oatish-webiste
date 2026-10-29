@@ -21,7 +21,7 @@ The site uses the warm, editorial **Modular Universe** design system: cream surf
 - Next.js 16 App Router, React 19 and TypeScript
 - Tailwind CSS v4 with one CSS-first theme for the whole site
 - Manrope, Newsreader and Caveat through \`next/font\`
-- Lenis for restrained desktop wheel scrolling; CSS transitions and a subtle portrait float for motion
+- Lenis for restrained desktop wheel scrolling; IntersectionObserver reveals, short CSS transform/opacity transitions and reduced-motion support
 - Vercel Web Analytics and Speed Insights components (enable both in the Vercel project dashboard to collect/display data)
 
 ## Local development
