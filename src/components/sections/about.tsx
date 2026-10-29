@@ -16,7 +16,7 @@ export function About() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] border border-[rgba(224,27,27,0.1)] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[300px] bg-[var(--spidey-red-deep)] opacity-10 blur-[120px] pointer-events-none" />
 
-      <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-10 sm:gap-10 sm:gap-12 lg:gap-16 z-10 relative">
+      <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-10 sm:gap-12 lg:gap-16 z-10 relative">
         
         {/* Left Side: Interactive Spider-Man -> Face Hover Card */}
         <div className="w-full lg:w-1/2 flex justify-center items-center relative">
@@ -72,9 +72,9 @@ export function About() {
           </div>
 
           {/* Floating badge with Spider-Man Red */}
-          <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:-bottom-6 sm:-right-4 bg-[#000000] text-white px-4 sm:px-7 py-3 sm:py-4 rounded-2xl border-2 border-[var(--spidey-red)] transform sm:rotate-[-3deg] hover:sm:rotate-[0deg] transition-transform z-20 shadow-[0_10px_30px_rgba(224,27,27,0.3)] max-w-[calc(100%-1rem)] whitespace-nowrap">
-            <span className="font-display text-xl sm:text-2xl font-bold block tracking-wider text-center">FINANCE × TECH</span>
-            <span className="text-xs font-mono font-bold tracking-widest text-[var(--spidey-red)] text-center block mt-0.5">
+          <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:-bottom-6 sm:-right-4 bg-[#000000] text-white px-3 sm:px-7 py-3 sm:py-4 rounded-2xl border-2 border-[var(--spidey-red)] transform sm:rotate-[-3deg] transition-transform z-20 shadow-[0_10px_30px_rgba(224,27,27,0.3)] max-w-[calc(100%-1rem)] text-center">
+            <span className="font-display text-lg sm:text-2xl font-bold block tracking-wider text-center">FINANCE × TECH</span>
+            <span className="text-[10px] sm:text-xs font-mono font-bold tracking-widest text-[var(--spidey-red)] text-center block mt-0.5">
               BUILDING IN PUBLIC
             </span>
           </div>
