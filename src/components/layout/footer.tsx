@@ -18,7 +18,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-[rgba(224,27,27,0.28)]/60">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-[rgba(224,27,27,0.18)]">
         <div>
           <div className="text-2xl font-bold font-display tracking-wider text-white mb-2">
             AMAN <span className="text-[var(--tech-accent)]">JAIN</span>
