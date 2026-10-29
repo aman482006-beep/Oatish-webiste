@@ -142,8 +142,8 @@ body.aj-menu-open { overflow: hidden; }
 .aj-note-left { top: 30px; left: 1%; transform: rotate(-8deg); }
 .aj-note-left span { display: block; font-size: 24px; transform: rotate(15deg); }
 .aj-note-right { right: -1%; top: 91px; transform: rotate(6deg); }
-.aj-photo-caption { position: absolute; right: 1%; bottom: 2px; display: flex; flex-direction: column; color: var(--aj-muted); font-size: 12px; line-height: 1.45; }
-.aj-photo-caption strong { margin-bottom: 2px; color: var(--aj-ink); font-size: 12px; }
+.aj-photo-caption { position: absolute; right: 1%; bottom: 2px; display: flex; flex-direction: column; max-width: 165px; color: var(--aj-muted); font-size: 14px; line-height: 1.45; }
+.aj-photo-caption strong { margin-bottom: 2px; color: var(--aj-ink); font-size: 14px; }
 .aj-spark { position: absolute; color: var(--aj-orange); font-size: 28px; }
 .aj-spark-one { top: 24px; right: 13%; transform: rotate(22deg); }
 .aj-spark-two { bottom: 39px; left: 3%; font-size: 20px; }
@@ -222,7 +222,7 @@ body.aj-menu-open { overflow: hidden; }
 .aj-video-duration { position: absolute; right: 7px; bottom: 7px; padding: 3px 5px; border-radius: 4px; color: white; background: rgba(0, 0, 0, .8); font-size: 12px; font-weight: 700; }
 .aj-play-button { position: absolute; inset: 0; display: grid; place-items: center; color: white; font-size: 26px; text-shadow: 0 2px 9px rgba(0, 0, 0, .35); }
 .aj-video-card h3 { display: -webkit-box; overflow: hidden; margin: 10px 4px 5px; color: var(--aj-ink); font-size: 14px; line-height: 1.4; font-weight: 750; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-.aj-video-card p { margin: 0 4px; color: var(--aj-muted); font-size: 12px; }
+.aj-video-card p { margin: 0 4px; color: var(--aj-muted); font-size: 14px; }
 .aj-video-unavailable { display: flex; align-items: center; gap: 18px; padding: 18px 22px; border: 1px solid var(--aj-line); border-radius: 12px; background: rgba(255, 255, 255, .7); }
 .aj-video-unavailable-icon { display: grid; place-items: center; flex: 0 0 42px; height: 42px; border-radius: 50%; color: var(--aj-orange); background: var(--aj-peach); }
 .aj-video-unavailable div { flex: 1; min-width: 0; }
@@ -377,7 +377,7 @@ body.aj-menu-open { overflow: hidden; }
 .aj-resource-card h2 { margin: 0 0 8px; font-family: var(--font-display); font-size: 25px; font-weight: 600; line-height: 1.1; letter-spacing: -.035em; }
 .aj-resource-card > p { margin: 0; color: var(--aj-muted); font-size: 14px; line-height: 1.55; }
 .aj-resource-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-.aj-resource-tags span { padding: 5px 7px; border: 1px solid var(--aj-line); border-radius: 999px; color: #555A63; background: var(--aj-paper-alt); font-size: 12px; }
+.aj-resource-tags span { padding: 5px 9px; border: 1px solid var(--aj-line); border-radius: 999px; color: #555A63; background: var(--aj-paper-alt); font-size: 14px; }
 .aj-resource-footer { display: flex; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 14px; color: #C13B19; font-size: 14px; font-weight: 750; line-height: 1.45; }
 .aj-resource-request { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: start; gap: 24px; margin-top: 24px; padding: 22px; border: 1px solid var(--aj-line); border-radius: 15px; background: #FFF8F1; }
 .aj-resource-request h2 { margin-bottom: 8px; }
@@ -456,15 +456,15 @@ body.aj-menu-open { overflow: hidden; }
   .aj-hero-actions { margin-top: 17px; gap: 8px; }
   .aj-button { min-height: 44px; padding-inline: 15px; font-size: 14px; }
   .aj-socials { gap: 7px 13px; margin-top: 12px; }
-  .aj-socials a { gap: 5px; font-size: 12px; }
+  .aj-socials a { gap: 5px; font-size: 14px; }
   .aj-hero-visual { min-height: 245px; margin-top: 0; }
   .aj-photo-frame { width: 60%; max-width: 275px; height: 230px; }
   .aj-photo-backdrop { left: 19%; width: 61%; height: 77%; top: 8%; }
   .aj-note { max-width: 112px; padding: 9px 10px; font-size: 15px; }
   .aj-note-left { top: 18px; left: 0; }
   .aj-note-right { top: 53px; right: 0; }
-  .aj-photo-caption { right: 0; bottom: 0; max-width: 112px; font-size: 12px; }
-  .aj-photo-caption strong { font-size: 12px; }
+  .aj-photo-caption { right: 0; bottom: 0; max-width: 145px; font-size: 14px; }
+  .aj-photo-caption strong { font-size: 14px; }
   .aj-spark-one { right: 7%; top: 12px; }
   .aj-spark-two { left: 1%; bottom: 27px; }
 
@@ -481,7 +481,7 @@ body.aj-menu-open { overflow: hidden; }
   .aj-section-heading { margin-bottom: 10px; }
   .aj-section-heading-inline { align-items: flex-end; gap: 10px; }
   .aj-section-heading h2 { font-size: 30px; }
-  .aj-text-link { gap: 5px; font-size: 12px; }
+  .aj-text-link { gap: 5px; font-size: 14px; }
   .aj-feature-card { grid-template-columns: 1fr; gap: 8px; padding: 8px; }
   .aj-focus-art { min-height: 218px; }
   .aj-phone { width: 136px; height: 225px; }
@@ -516,12 +516,12 @@ body.aj-menu-open { overflow: hidden; }
   .aj-footer-inner { grid-template-columns: 1fr; gap: 13px; }
   .aj-footer-nav, .aj-footer-socials { justify-content: flex-start; gap: 7px 13px; }
   .aj-footer-copy { text-align: left; }
-  .aj-footer-nav a { font-size: 12px; }
+  .aj-footer-nav a { font-size: 14px; }
 
   .aj-inner-page { padding: 94px 0 35px; }
   .aj-inner-heading h1 { font-size: clamp(38px, 9vw, 48px); }
   .aj-inner-heading p:not(.aj-eyebrow):not(.aj-currently-line) { font-size: 15px; }
-  .aj-work-hero-meta span { font-size: 12px; }
+  .aj-work-hero-meta span { font-size: 14px; }
   .aj-case-section { padding: 17px 0; }
   .aj-case-section-heading h2, .aj-case-next h2, .aj-contact-compose h2, .aj-contact-direct h2, .aj-resource-request h2 { font-size: 29px; }
   .aj-case-copy { font-size: 15px; }
@@ -558,7 +558,7 @@ body.aj-menu-open { overflow: hidden; }
   .aj-hero-actions .aj-button { flex: 1 1 auto; }
   .aj-socials { column-gap: 11px; }
   .aj-note { max-width: 96px; }
-  .aj-photo-caption { max-width: 98px; font-size: 12px; }
+  .aj-photo-caption { max-width: 122px; font-size: 14px; }
   .aj-section-heading-inline { align-items: flex-start; }
   .aj-section-heading-inline > .aj-text-link { margin-top: 16px; }
   .aj-contact-action-home { flex-wrap: wrap; }
