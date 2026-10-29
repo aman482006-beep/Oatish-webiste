@@ -8,7 +8,7 @@ export function Hero() {
   const [hudActive, setHudActive] = useState(true);
 
   return (
-    <section className="relative w-full min-h-[100svh] flex items-center overflow-hidden bg-[var(--tech-bg)] pt-24 pb-12 px-4 sm:pb-16 sm:px-12 lg:px-20 ">
+    <section className="hero-section relative w-full min-h-[100svh] flex items-center overflow-hidden bg-[var(--tech-bg)] pt-24 pb-12 px-4 sm:pb-16 sm:px-12 lg:px-20 ">
       
       {/* Cinematic Red Ambient Spotlights */}
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.2)_0%,rgba(143,13,13,0.06)_50%,transparent_75%)] blur-[100px] pointer-events-none" />
@@ -22,10 +22,10 @@ export function Hero() {
         SPIDEY
       </div>
 
-      <div className="w-full max-w-7xl mx-auto h-full flex flex-col lg:flex-row items-center justify-between relative z-10 gap-10">
+      <div className="hero-layout w-full max-w-7xl mx-auto h-full flex flex-col lg:flex-row items-center justify-between relative z-10 gap-10">
         
         {/* Left Column: Headline, Pitch & Interactive Buttons */}
-        <div className="w-full lg:w-1/2 flex flex-col items-start justify-center py-6 z-20">
+        <div className="hero-copy w-full lg:w-1/2 flex flex-col items-start justify-center py-6 z-20">
           
           {/* Status Chip */}
           <div className="inline-flex items-center gap-2.5 px-3 sm:px-4 py-1.5 rounded-full border border-[var(--spidey-red)]/40 bg-[var(--tech-card)] text-[var(--spidey-red)] font-mono text-[10px] sm:text-xs uppercase tracking-[0.1em] sm:tracking-[0.2em] mb-5 sm:mb-6 shadow-[0_0_15px_rgba(224,27,27,0.2)]">
@@ -109,7 +109,7 @@ export function Hero() {
         </div>
 
         {/* Right Column: Towering, Large Transparent Spider-Man Figure */}
-        <div className="w-full min-w-0 lg:w-1/2 h-[clamp(220px,48vh,340px)] sm:h-[550px] lg:h-[700px] relative flex items-end justify-center lg:justify-end pointer-events-none z-10">
+        <div className="hero-art w-full min-w-0 lg:w-1/2 h-[clamp(220px,48vh,340px)] sm:h-[550px] lg:h-[700px] relative flex items-end justify-center lg:justify-end pointer-events-none z-10">
           <div className="relative w-full max-w-[360px] sm:max-w-[540px] lg:max-w-[620px] h-full animate-spidey-float flex items-end justify-center">
             <Image
               src="/spiderman/hero-spiderman-transparent.png"
