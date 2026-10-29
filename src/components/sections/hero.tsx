@@ -8,11 +8,11 @@ export function Hero() {
   const [hudActive, setHudActive] = useState(true);
 
   return (
-    <section className="relative w-full min-h-screen flex items-center overflow-hidden bg-[var(--tech-bg)] pt-24 pb-16 px-6 sm:px-12 lg:px-20 select-none">
+    <section className="relative w-full min-h-[100svh] flex items-center overflow-hidden bg-[var(--tech-bg)] pt-24 pb-12 px-4 sm:pb-16 sm:px-12 lg:px-20 select-none">
       
       {/* Cinematic Red Ambient Spotlights */}
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.2)_0%,rgba(143,13,13,0.06)_50%,transparent_75%)] blur-[100px] pointer-events-none" />
-      <div className="absolute -bottom-20 left-10 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(255,133,71,0.08)_0%,transparent_70%)] blur-[90px] pointer-events-none" />
+      <div className="absolute -bottom-20 left-10 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.08)_0%,transparent_70%)] blur-[90px] pointer-events-none" />
 
       {/* Massive Background Typography Layer for Depth */}
       <div
@@ -28,19 +28,19 @@ export function Hero() {
         <div className="w-full lg:w-1/2 flex flex-col items-start justify-center py-6 z-20">
           
           {/* Status Chip */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[var(--spidey-red)]/40 bg-[var(--tech-card)] text-[var(--spidey-red)] font-mono text-xs uppercase tracking-[0.2em] mb-6 shadow-[0_0_15px_rgba(224,27,27,0.2)]">
+          <div className="inline-flex items-center gap-2.5 px-3 sm:px-4 py-1.5 rounded-full border border-[var(--spidey-red)]/40 bg-[var(--tech-card)] text-[var(--spidey-red)] font-mono text-[10px] sm:text-xs uppercase tracking-[0.1em] sm:tracking-[0.2em] mb-5 sm:mb-6 shadow-[0_0_15px_rgba(224,27,27,0.2)]">
             <span className="w-2 h-2 rounded-full bg-[var(--spidey-red)] animate-ping" />
             <span>FINANCE / TECHNOLOGY / CREATE</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white tracking-tight leading-[0.92] mb-6">
+          <h1 className="font-display text-[clamp(2.35rem,9.5vw,4.6rem)] sm:text-7xl lg:text-8xl text-white tracking-tight leading-[0.92] mb-6">
             I STUDY FINANCE.<br />
             <span className="text-[var(--spidey-red)]">I BUILD</span> WITH TECH.<br />
             I CREATE TO MAKE IDEAS USEFUL.
           </h1>
 
-          <div className="w-20 h-[3px] bg-[var(--spidey-red)] mb-6 shadow-[0_0_10px_var(--spidey-red)]" />
+          <div className="w-16 sm:w-20 h-[3px] bg-[var(--spidey-red)] mb-6 shadow-[0_0_10px_var(--spidey-red)]" />
 
           {/* Authentic Pitch Text */}
           <p className="text-base sm:text-lg text-[var(--tech-text)]/90 leading-relaxed font-body max-w-xl mb-8">
@@ -49,13 +49,13 @@ export function Hero() {
           </p>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-center gap-4">
-            <Link href="/work" className="spidey-btn">
+          <div className="flex w-full sm:w-auto flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
+            <Link href="/work" className="spidey-btn w-full sm:w-auto justify-center">
               Explore My Work
             </Link>
             <Link
               href="/creator"
-              className="spidey-pill cursor-pointer"
+              className="spidey-pill w-full sm:w-auto justify-center cursor-pointer"
             >
               <span>✦</span> Explore My Content
             </Link>
@@ -109,7 +109,7 @@ export function Hero() {
         </div>
 
         {/* Right Column: Towering, Large Transparent Spider-Man Figure */}
-        <div className="w-full lg:w-1/2 h-[450px] sm:h-[550px] lg:h-[700px] relative flex items-end justify-center lg:justify-end pointer-events-none z-10">
+        <div className="w-full lg:w-1/2 h-[min(58vh,360px)] min-h-[250px] sm:h-[550px] lg:h-[700px] relative flex items-end justify-center lg:justify-end pointer-events-none z-10">
           <div className="relative w-full max-w-[460px] sm:max-w-[540px] lg:max-w-[620px] h-full animate-spidey-float flex items-end justify-center">
             <Image
               src="/spiderman/hero-spiderman-transparent.png"
