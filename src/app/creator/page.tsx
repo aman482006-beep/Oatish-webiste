@@ -43,7 +43,7 @@ export default function CreatorPage() {
         <div className="mb-20">
           <div className="text-xs font-mono uppercase tracking-widest text-white/50 mb-6">Content Pillars</div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex flex-col justify-between">
+            <div className="p-5 sm:p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-lg bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center text-[var(--tech-accent)] mb-6 font-mono font-bold text-lg">
                   01
@@ -56,7 +56,7 @@ export default function CreatorPage() {
               <div className="text-xs font-mono text-[var(--tech-accent)]">Key format: Breakdowns & Explainers</div>
             </div>
 
-            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex flex-col justify-between">
+            <div className="p-5 sm:p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-lg bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center text-[var(--tech-accent)] mb-6 font-mono font-bold text-lg">
                   02
@@ -69,7 +69,7 @@ export default function CreatorPage() {
               <div className="text-xs font-mono text-[var(--tech-accent)]">Key format: Guides & Study Blueprints</div>
             </div>
 
-            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex flex-col justify-between">
+            <div className="p-5 sm:p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-lg bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center text-[var(--tech-accent)] mb-6 font-mono font-bold text-lg">
                   03
