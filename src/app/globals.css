@@ -392,7 +392,7 @@ body.aj-menu-open { overflow: hidden; }
   50% { transform: translateY(-6px) rotate(3deg); }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .aj-photo-frame { animation: aj-photo-float 8s ease-in-out infinite; }
+  html.aj-motion-enabled .aj-photo-frame { animation: aj-photo-float 8s ease-in-out infinite; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto; transition-duration: .01ms; animation-duration: .01ms; animation-iteration-count: 1; }
