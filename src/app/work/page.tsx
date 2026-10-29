@@ -1,6 +1,5 @@
 import Link from "next/link";
-
-const storeUrl = "https://apps.microsoft.com/detail/9p7njldq8gkk?hl=en-GB&gl=IN";
+import { FOKUS } from "@/data/fokus";
 
 export default function WorkPage() {
   return (
@@ -25,14 +24,14 @@ export default function WorkPage() {
             </div>
           </div>
           <div className="aj-work-details">
-            <p className="aj-app-kicker">PRODUCTIVITY <span>•</span> WINDOWS APP</p>
+            <p className="aj-app-kicker">PRODUCTIVITY <span>•</span> FLUTTER APP <span>•</span> WINDOWS STORE</p>
             <h2>Fokus</h2>
             <p className="aj-work-tagline">Stay on Track, Together.</p>
             <p>A focus and productivity app built around keeping your goals visible and building consistent routines. This project page will stay intentionally simple until there is more work I want to showcase.</p>
             <div className="aj-work-tags"><span>Productivity</span><span>Focus systems</span><span>Windows</span><span>Community</span></div>
             <div className="aj-feature-actions">
-              <a className="aj-button aj-button-primary" href={storeUrl} target="_blank" rel="noopener noreferrer">Get Fokus <span aria-hidden="true">↗</span></a>
-              <a className="aj-button aj-button-outline" href="https://github.com/aman482006-beep/FOKUS-PRODUCTIVITY" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+              <a className="aj-button aj-button-primary" href={FOKUS.storeUrl} target="_blank" rel="noopener noreferrer">Get Fokus <span aria-hidden="true">↗</span></a>
+              <a className="aj-button aj-button-outline" href={FOKUS.sourceUrl} target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </article>
