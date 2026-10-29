@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[var(--tech-bg)] border-t border-[#232936] text-[var(--tech-text-muted)] pt-12 pb-8 px-6 sm:px-12 lg:px-20">
+    <footer className="relative overflow-hidden bg-[var(--tech-bg)] border-t border-[rgba(224,27,27,0.28)] text-[var(--tech-text-muted)] pt-12 pb-8 px-6 sm:px-12 lg:px-20">
       {/* Spider-Man hanging web strand from top edge */}
       <div className="absolute top-0 right-16 sm:right-28 pointer-events-none z-10 flex flex-col items-center animate-strand-swing origin-top">
         <div className="w-[1.5px] h-14 bg-gradient-to-b from-white/30 via-[var(--tech-accent)] to-[var(--tech-accent)] shadow-[0_0_8px_var(--tech-accent)]" />
@@ -18,7 +18,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-[#232936]/60">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-[rgba(224,27,27,0.28)]/60">
         <div>
           <div className="text-2xl font-bold font-display tracking-wider text-white mb-2">
             AMAN <span className="text-[var(--tech-accent)]">JAIN</span>
