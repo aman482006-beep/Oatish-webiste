@@ -44,7 +44,7 @@ const screenshotSlots = [
 
 export default function WorkPage() {
   return (
-    <main className="aj-inner-page aj-work-page">
+    <main id="main" className="aj-inner-page aj-work-page">
       <div className="aj-container">
         <header className="aj-inner-heading aj-work-hero">
           <p className="aj-eyebrow aj-eyebrow-accent">SELECTED WORK · CASE STUDY</p>
