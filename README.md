@@ -2,53 +2,65 @@
 
 **Finance × Technology × Communication**
 
-This is the source code for [amanmalu.me](https://amanmalu.me), the personal website of Aman Jain, a BBA student studying Finance & Marketing Analytics at CHRIST (Deemed to be University), Bengaluru.
+Source code for [amanmalu.me](https://amanmalu.me), the personal portfolio of Aman Jain, a BBA student studying Finance & Marketing Analytics at CHRIST (Deemed to be University), Bengaluru.
 
-The site uses a warm, editorial **Modular Universe** design: cream surfaces, restrained orange accents, pastel Finance / Build / Create cards, a photo-led introduction, a featured Fokus project, long-form YouTube videos, recruiter information, and contact links. The same visual tokens are shared across the site's other pages.
+The site uses the warm, editorial **Modular Universe** design system: cream surfaces, restrained orange accents, pastel Finance / Build / Create cards, an editorial serif paired with Manrope, a portrait-led introduction and compact section spacing. The visual system is shared across all routes.
 
 ## Routes
 
-- `/` — Homepage, areas of interest, the Fokus app, recent long-form videos, recruiter snapshot, and contact form.
-- `/work` — Fokus app case study and selected finance work.
-- `/creator` — Creator hub with an automatically refreshed long-form YouTube feed.
-- `/recruiters` — Education, internships, CFA candidate status, skills, and credentials.
-- `/resources` — Resource library.
-- `/contact` — Contact options and outbound social links.
+- \`/\` — Intro, three areas of interest, the Fokus feature, clearly-labelled finance-work placeholders, YouTube feed, recruiter overview and contact.
+- \`/work\` — Fokus case study and selected finance-work placeholders. Product screenshots and project-specific personal notes are explicitly marked TODO where source material is not in the repository.
+- \`/creator\` — Creator hub with a server-rendered long-form YouTube feed.
+- \`/recruiters\` — Education, internship experience, CFA candidate status, skills and credentials.
+- \`/resources\` — Resource ideas, visibly marked as placeholders until downloadable files are added.
+- \`/contact\` — Accessible email-draft helper and outbound social links.
+- \`/api/youtube\` — Cached YouTube Data API feed for integrations that need JSON.
 
 ## Stack
 
-- Next.js 16 App Router + React 19 + TypeScript
-- Tailwind CSS v4 and shared custom CSS design tokens
-- Framer Motion / GSAP / Lenis dependencies retained where existing components need them
-- Vercel deployment
+- Next.js 16 App Router, React 19 and TypeScript
+- Tailwind CSS v4 with one CSS-first theme for the whole site
+- Manrope, Newsreader and Caveat through \`next/font\`
+- Lenis for restrained desktop wheel scrolling; CSS transitions and a subtle portrait float for motion
+- Vercel Web Analytics and Speed Insights components (enable both in the Vercel project dashboard to collect/display data)
 
 ## Local development
 
-```bash
-npm install
+\`\`\`bash
+npm ci
 npm run dev
-```
+\`\`\`
 
-For a production build:
+Quality checks and production build:
 
-```bash
-npm run build
+\`\`\`bash
 npm run lint
-```
+npx tsc --noEmit
+npm run build
+\`\`\`
 
 ## Automatic long-form YouTube feed
 
-The homepage and Creator page use the same server endpoint, `/api/youtube`. It calls the YouTube Data API, looks up the channel's upload playlist from the `@AmanJain-4` handle, obtains video metadata, filters out videos of three minutes or less, and returns the newest three remaining videos. Titles, thumbnails, publication dates, and links come directly from YouTube. API responses are cached for up to one hour, so new public long-form videos appear without editing the website.
+The homepage and Creator page use the shared server-side helper in \`src/lib/youtube.ts\`; the public JSON route remains available at \`/api/youtube\`. It looks up the uploads playlist for the \`@AmanJain-4\` channel, fetches video metadata, excludes videos of three minutes or less, and returns the newest three remaining videos. Titles, thumbnails, publication dates and links come from YouTube. API responses are cached for up to one hour.
 
 One-time deployment setup:
 
 1. In Google Cloud Console, create/select a project, enable **YouTube Data API v3**, and create an API key.
-2. Add `YOUTUBE_API_KEY` to the site's Vercel environment variables for Production (and Preview if desired).
+2. Add \`YOUTUBE_API_KEY\` to the Vercel project's environment variables for Production (and Preview if desired).
 3. Redeploy once so the environment variable is available.
 
-The key is read only on the server and is not sent to the browser. A sample environment file is included as `.env.example`. Until the key is configured, the page shows a graceful feed-unavailable message with a direct link to the channel.
+The key is read only on the server and is not sent to the browser. A sample environment file is included as \`.env.example\`. If no feed can be returned, the site presents a visitor-friendly link to the channel rather than exposing API setup details.
 
 **Short-form policy:** uploads longer than 180 seconds are included; videos at or below three minutes are excluded to keep short-form uploads out of the showcase.
+
+## Content placeholders to complete
+
+- Add the current résumé at \`public/Aman-Jain-Resume.pdf\` to enable the résumé download button.
+- Add real Fokus screenshots and verified notes on personal role / engineering lessons to the case study.
+- Attach finished finance-work PDFs or Excel files and replace their \`TODO(Aman)\` takeaways.
+- Replace resource-library placeholder cards with actual files and verified descriptions.
+
+No outcomes, project metrics or downloadable files are claimed until they are supplied.
 
 ## Contact & links
 
