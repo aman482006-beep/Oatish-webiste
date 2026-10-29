@@ -109,7 +109,7 @@ export function Hero() {
         </div>
 
         {/* Right Column: Towering, Large Transparent Spider-Man Figure */}
-        <div className="w-full lg:w-1/2 h-[min(58vh,360px)] min-h-[250px] sm:h-[550px] lg:h-[700px] relative flex items-end justify-center lg:justify-end pointer-events-none z-10">
+        <div className="w-full min-w-0 lg:w-1/2 h-[clamp(220px,48vh,340px)] sm:h-[550px] lg:h-[700px] relative flex items-end justify-center lg:justify-end pointer-events-none z-10">
           <div className="relative w-full max-w-[360px] sm:max-w-[540px] lg:max-w-[620px] h-full animate-spidey-float flex items-end justify-center">
             <Image
               src="/spiderman/hero-spiderman-transparent.png"
