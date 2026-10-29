@@ -557,7 +557,10 @@ main [class*="bg-gold"] {
   box-shadow: 3px 3px 0 rgba(224, 27, 27, 0.11);
 }
 
-.spidey-btn:active,
+.spidey-btn:active {
+  transform: skewX(-5deg) translateY(1px) scale(0.99);
+}
+
 .tech-btn:active,
 .spidey-pill:active {
   transform: translateY(1px) scale(0.99);
