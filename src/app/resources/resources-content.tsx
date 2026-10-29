@@ -1,84 +1,30 @@
 "use client";
 
-import { useMemo, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 
-type ResourceCategory = "finance" | "cfa" | "creator";
-type FilterCategory = "all" | ResourceCategory;
-
-type Resource = {
-  id: string;
-  category: ResourceCategory;
-  title: string;
-  description: string;
-  format: string;
-  tags: string[];
-};
-
-const resources: Resource[] = [
+const resourceAreas = [
   {
-    id: "stock-toolkit",
-    category: "finance",
-    title: "Stock Analysis Toolkit — Indian Markets",
-    description: "A workbook concept for financial ratios, statement analysis, conditional formatting and Indian-equity analysis in INR crores.",
-    format: "Excel workbook",
-    tags: ["Excel", "Financial analysis", "Valuation"],
+    number: "01",
+    title: "Finance toolkits",
+    description: "Clear, practical ways to explore financial statements, valuation assumptions and portfolio risk.",
+    tags: ["Excel", "Analysis", "Valuation"],
   },
   {
-    id: "dcf-model",
-    category: "finance",
-    title: "DCF Valuation & Sensitivity Analysis Model",
-    description: "A template concept for WACC, terminal value and bull/base/bear scenario sensitivity.",
-    format: "Excel template",
-    tags: ["DCF", "WACC", "Sensitivity"],
+    number: "02",
+    title: "CFA study systems",
+    description: "Revision trackers, formula references and ways to organise a demanding study plan.",
+    tags: ["Revision", "Fixed income", "FSA"],
   },
   {
-    id: "cfa-tracker",
-    category: "cfa",
-    title: "CFA Master Study & Review Tracker",
-    description: "A study-tracker concept for curriculum modules and spaced-repetition review checkpoints.",
-    format: "Spreadsheet",
-    tags: ["CFA", "Revision", "Study systems"],
+    number: "03",
+    title: "Creator workflows",
+    description: "Frameworks for turning a finance topic into a concise, useful video or visual explanation.",
+    tags: ["Scripting", "Storytelling", "Video"],
   },
-  {
-    id: "cfa-formulas",
-    category: "cfa",
-    title: "CFA Core Valuation & Formula Reference",
-    description: "A quick-reference concept for Financial Statement Analysis, Quantitative Methods and Fixed Income calculations.",
-    format: "PDF guide",
-    tags: ["Formulas", "FSA", "Fixed Income"],
-  },
-  {
-    id: "reels-scripting",
-    category: "creator",
-    title: "Finance Content Storytelling & Script Framework",
-    description: "A framework concept for turning complex finance topics into clear, structured short-form videos.",
-    format: "Document",
-    tags: ["Content", "Storytelling", "Video"],
-  },
-  {
-    id: "equity-report-template",
-    category: "finance",
-    title: "Equity Research Report Template",
-    description: "A report-structure concept covering company overview, industry context, financial analysis and risk factors.",
-    format: "Document template",
-    tags: ["Company analysis", "Reports", "Risk"],
-  },
-];
-
-const filters: { id: FilterCategory; label: string }[] = [
-  { id: "all", label: "All resources" },
-  { id: "finance", label: "Finance" },
-  { id: "cfa", label: "CFA study" },
-  { id: "creator", label: "Creator tools" },
 ];
 
 export function ResourcesContent() {
-  const [activeCategory, setActiveCategory] = useState<FilterCategory>("all");
   const [requestText, setRequestText] = useState("");
-  const filtered = useMemo(
-    () => activeCategory === "all" ? resources : resources.filter((resource) => resource.category === activeCategory),
-    [activeCategory],
-  );
 
   function handleRequest(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -95,38 +41,20 @@ export function ResourcesContent() {
         <header className="aj-inner-heading">
           <p className="aj-eyebrow aj-eyebrow-accent">RESOURCE LIBRARY</p>
           <h1>Useful tools for learning finance.</h1>
-          <p>This page collects resource ideas for finance, CFA study and content creation. The listings below are currently placeholders: files and public access links still need to be added before they are available to download.</p>
+          <p>I’m shaping this library around practical tools, not downloads for the sake of having downloads. These are the areas I plan to build and share as each resource is tested and ready.</p>
         </header>
 
-        <div className="aj-resource-filters" role="group" aria-label="Filter resources by category">
-          {filters.map((filter) => (
-            <button
-              type="button"
-              key={filter.id}
-              className={"aj-resource-filter" + (activeCategory === filter.id ? " is-active" : "")}
-              aria-pressed={activeCategory === filter.id}
-              onClick={() => setActiveCategory(filter.id)}
-            >
-              {filter.label}
-            </button>
-          ))}
-        </div>
-
-        <section className="aj-resource-grid" aria-label="Resource listings">
-          {filtered.map((resource) => (
-            <article className="aj-resource-card" key={resource.id}>
+        <section className="aj-resource-grid" aria-label="Planned resource areas">
+          {resourceAreas.map((area) => (
+            <article className="aj-resource-card" key={area.number}>
               <div className="aj-resource-card-top">
-                <span className="aj-resource-format">{resource.format}</span>
-                <span className="aj-resource-placeholder">COMING SOON</span>
+                <span className="aj-resource-format">PLANNED FOCUS</span>
+                <span className="aj-creator-pillar-number">{area.number}</span>
               </div>
-              <h2>{resource.title}</h2>
-              <p>{resource.description}</p>
+              <h2>{area.title}</h2>
+              <p>{area.description}</p>
               <div className="aj-resource-tags">
-                {resource.tags.map((tag) => <span key={tag}>{tag}</span>)}
-              </div>
-              <div className="aj-resource-footer">
-                <span>TODO(Aman): Add file and verify description</span>
-                <span aria-hidden="true">↗</span>
+                {area.tags.map((tag) => <span key={tag}>{tag}</span>)}
               </div>
             </article>
           ))}
@@ -134,13 +62,20 @@ export function ResourcesContent() {
 
         <section className="aj-resource-request" aria-labelledby="resource-request-heading">
           <div>
-            <p className="aj-eyebrow aj-eyebrow-accent">REQUEST A RESOURCE</p>
-            <h2 id="resource-request-heading">What would be useful?</h2>
-            <p>Send a resource idea by email. This opens a draft in your email app; it does not submit data to the website.</p>
+            <p className="aj-eyebrow aj-eyebrow-accent">SHAPE THE LIBRARY</p>
+            <h2 id="resource-request-heading">What would actually help you?</h2>
+            <p>Suggest a topic and I’ll use it to prioritise future resources. This opens a draft in your email app; it does not submit data to the website.</p>
           </div>
           <form onSubmit={handleRequest}>
             <label htmlFor="resource-request">Resource topic</label>
-            <textarea id="resource-request" value={requestText} onChange={(event) => setRequestText(event.target.value)} rows={3} placeholder="e.g. a portfolio analysis workbook" required />
+            <textarea
+              id="resource-request"
+              value={requestText}
+              onChange={(event) => setRequestText(event.target.value)}
+              rows={3}
+              placeholder="e.g. a portfolio analysis workbook"
+              required
+            />
             <button type="submit" className="aj-button aj-button-primary">Draft email request <span aria-hidden="true">↗</span></button>
           </form>
         </section>
