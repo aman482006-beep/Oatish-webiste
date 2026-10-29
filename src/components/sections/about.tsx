@@ -73,9 +73,9 @@ export function About() {
 
           {/* Floating badge with Spider-Man Red */}
           <div className="absolute -bottom-6 -right-2 sm:-right-4 bg-[#0B0D12] text-white px-7 py-4 rounded-2xl border-2 border-[var(--spidey-red)] transform rotate-[-3deg] hover:rotate-[0deg] transition-transform z-20 shadow-[0_10px_30px_rgba(224,27,27,0.3)]">
-            <span className="font-display text-2xl font-bold block tracking-wider text-center">AGE 19</span>
+            <span className="font-display text-2xl font-bold block tracking-wider text-center">FINANCE × TECH</span>
             <span className="text-xs font-mono font-bold tracking-widest text-[var(--spidey-red)] text-center block mt-0.5">
-              UNDEFEATED
+              BUILDING IN PUBLIC
             </span>
           </div>
         </div>
