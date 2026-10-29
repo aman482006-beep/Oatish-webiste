@@ -8,11 +8,11 @@ The site uses the warm, editorial **Modular Universe** design system: cream surf
 
 ## Routes
 
-- \`/\` — Intro, three areas of interest, the Fokus feature, clearly-labelled finance-work placeholders, YouTube feed, recruiter overview and contact.
-- \`/work\` — Fokus case study and selected finance-work placeholders. Product screenshots and project-specific personal notes are explicitly marked TODO where source material is not in the repository.
+- \`/\` — Portrait-led intro, quick facts, linked Finance / Build / Create paths, Fokus feature, a compact finance-work teaser, YouTube feed, recruiter overview and contact.
+- \`/work\` — Fokus case study, source-backed features and stack, plus a concise note about finance work in preparation. Unverified screenshots and first-person implementation claims are not shown as if complete.
 - \`/creator\` — Creator hub with a server-rendered long-form YouTube feed.
 - \`/recruiters\` — Education, internship experience, CFA candidate status, skills and credentials.
-- \`/resources\` — Resource ideas, visibly marked as placeholders until downloadable files are added.
+- \`/resources\` — Planned finance toolkit, CFA study and creator workflow categories, with an email-draft resource request form.
 - \`/contact\` — Accessible email-draft helper and outbound social links.
 - \`/api/youtube\` — Cached YouTube Data API feed for integrations that need JSON.
 
@@ -56,9 +56,9 @@ The key is read only on the server and is not sent to the browser. A sample envi
 ## Content placeholders to complete
 
 - Add the current résumé at \`public/Aman-Jain-Resume.pdf\` to enable the résumé download button.
-- Add real Fokus screenshots and verified notes on personal role / engineering lessons to the case study.
+- Add genuine Fokus screenshots and verified first-person engineering notes when ready to publish.
 - Attach finished finance-work PDFs or Excel files and replace their \`TODO(Aman)\` takeaways.
-- Replace resource-library placeholder cards with actual files and verified descriptions.
+- Turn the planned resource categories into tested, downloadable files when they are ready.
 
 No outcomes, project metrics or downloadable files are claimed until they are supplied.
 
