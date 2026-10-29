@@ -44,7 +44,7 @@ export function ThreePillars() {
   ];
 
   return (
-    <section id="pillars" className="relative py-24 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg)] border-t border-[#232936]">
+    <section id="pillars" className="relative py-24 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg)] border-t border-[rgba(224,27,27,0.28)]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
@@ -65,14 +65,14 @@ export function ThreePillars() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="group relative p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] hover:border-[var(--tech-accent)]/40 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+              className="group relative p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] hover:border-[var(--tech-accent)]/40 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-lg bg-[var(--tech-bg)] border border-[#232936] flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <div className="w-12 h-12 rounded-lg bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center group-hover:scale-105 transition-transform">
                     {pillar.icon}
                   </div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--tech-text-muted)] bg-[var(--tech-bg)] px-2.5 py-1 rounded border border-[#232936]">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--tech-text-muted)] bg-[var(--tech-bg)] px-2.5 py-1 rounded border border-[rgba(224,27,27,0.28)]">
                     {pillar.tag}
                   </span>
                 </div>
@@ -90,7 +90,7 @@ export function ThreePillars() {
                   {pillar.skills.map((s) => (
                     <span
                       key={s}
-                      className="text-xs font-mono px-2 py-0.5 rounded bg-[var(--tech-bg)] text-[var(--tech-text-muted)] border border-[#232936]"
+                      className="text-xs font-mono px-2 py-0.5 rounded bg-[var(--tech-bg)] text-[var(--tech-text-muted)] border border-[rgba(224,27,27,0.28)]"
                     >
                       {s}
                     </span>
@@ -136,7 +136,7 @@ export function SelectedWorkPreview() {
   ];
 
   return (
-    <section id="work-preview" className="py-24 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg-secondary)] border-t border-[#232936]">
+    <section id="work-preview" className="py-24 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg-secondary)] border-t border-[rgba(224,27,27,0.28)]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
@@ -150,7 +150,7 @@ export function SelectedWorkPreview() {
           </div>
           <Link
             href="/work"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[var(--tech-accent)] text-[var(--tech-accent)] hover:bg-[var(--tech-accent)] hover:text-[#0B0D12] font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 w-fit"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[var(--tech-accent)] text-[var(--tech-accent)] hover:bg-[var(--tech-accent)] hover:text-[#000000] font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 w-fit"
           >
             <span>View Case Studies</span>
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -163,14 +163,14 @@ export function SelectedWorkPreview() {
           {projects.map((proj) => (
             <div
               key={proj.title}
-              className="p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] hover:border-[var(--tech-accent)]/40 transition-all duration-300 flex flex-col justify-between group hover:shadow-[0_10px_35px_rgba(0,0,0,0.6)]"
+              className="p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] hover:border-[var(--tech-accent)]/40 transition-all duration-300 flex flex-col justify-between group hover:shadow-[0_10px_35px_rgba(0,0,0,0.6)]"
             >
               <div>
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                   <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--tech-accent)] bg-[var(--tech-accent)]/10 px-2.5 py-1 rounded border border-[var(--tech-accent)]/20">
                     {proj.category}
                   </span>
-                  <span className="text-[10px] font-mono text-[var(--tech-text-muted)] bg-[var(--tech-bg)] px-2 py-0.5 rounded border border-[#232936]">
+                  <span className="text-[10px] font-mono text-[var(--tech-text-muted)] bg-[var(--tech-bg)] px-2 py-0.5 rounded border border-[rgba(224,27,27,0.28)]">
                     {proj.badge}
                   </span>
                 </div>
@@ -185,7 +185,7 @@ export function SelectedWorkPreview() {
                 </p>
 
                 {proj.disclaimer && (
-                  <div className="mb-6 p-3 rounded-md bg-[var(--tech-bg)] border border-[#232936] text-[11px] font-mono text-[var(--tech-text-muted)] leading-normal">
+                  <div className="mb-6 p-3 rounded-md bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] text-[11px] font-mono text-[var(--tech-text-muted)] leading-normal">
                     {proj.disclaimer}
                   </div>
                 )}
@@ -196,14 +196,14 @@ export function SelectedWorkPreview() {
                   {proj.tags.map((t) => (
                     <span
                       key={t}
-                      className="text-xs font-mono px-2 py-0.5 rounded bg-[var(--tech-bg)] text-[var(--tech-text-muted)] border border-[#232936]"
+                      className="text-xs font-mono px-2 py-0.5 rounded bg-[var(--tech-bg)] text-[var(--tech-text-muted)] border border-[rgba(224,27,27,0.28)]"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-4 pt-4 border-t border-[#232936]">
+                <div className="flex items-center gap-4 pt-4 border-t border-[rgba(224,27,27,0.28)]">
                   {proj.repo && (
                     <a
                       href={proj.repo}
@@ -248,7 +248,7 @@ export function SelectedWorkPreview() {
 
 export function CreatorPreview() {
   return (
-    <section id="creator-preview" className="py-24 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg)] border-t border-[#232936]">
+    <section id="creator-preview" className="py-24 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg)] border-t border-[rgba(224,27,27,0.28)]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -266,7 +266,7 @@ export function CreatorPreview() {
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 href="/creator"
-                className="px-6 py-3 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all duration-200"
+                className="px-6 py-3 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all duration-200"
               >
                 Explore Creator Hub
               </Link>
@@ -274,7 +274,7 @@ export function CreatorPreview() {
                 href="https://www.youtube.com/@AmanJain-4"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-3 rounded-lg border border-[#232936] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all duration-200 flex items-center gap-2"
+                className="px-5 py-3 rounded-lg border border-[rgba(224,27,27,0.28)] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all duration-200 flex items-center gap-2"
               >
                 <span>YouTube</span>
                 <span className="text-[var(--tech-accent)]">↗</span>
@@ -283,7 +283,7 @@ export function CreatorPreview() {
                 href="https://www.instagram.com/aman.ja1n/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-3 rounded-lg border border-[#232936] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all duration-200 flex items-center gap-2"
+                className="px-5 py-3 rounded-lg border border-[rgba(224,27,27,0.28)] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all duration-200 flex items-center gap-2"
               >
                 <span>Instagram</span>
                 <span className="text-[var(--tech-accent)]">↗</span>
@@ -292,8 +292,8 @@ export function CreatorPreview() {
           </div>
 
           <div className="space-y-4">
-            <div className="p-6 rounded-xl bg-[var(--tech-card)] border border-[#232936] flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-[var(--tech-bg)] border border-[#232936] flex items-center justify-center shrink-0 text-[var(--tech-accent)] font-mono font-bold">
+            <div className="p-6 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center shrink-0 text-[var(--tech-accent)] font-mono font-bold">
                 01
               </div>
               <div>
@@ -304,8 +304,8 @@ export function CreatorPreview() {
               </div>
             </div>
 
-            <div className="p-6 rounded-xl bg-[var(--tech-card)] border border-[#232936] flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-[var(--tech-bg)] border border-[#232936] flex items-center justify-center shrink-0 text-[var(--tech-accent)] font-mono font-bold">
+            <div className="p-6 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center shrink-0 text-[var(--tech-accent)] font-mono font-bold">
                 02
               </div>
               <div>
@@ -316,8 +316,8 @@ export function CreatorPreview() {
               </div>
             </div>
 
-            <div className="p-6 rounded-xl bg-[var(--tech-card)] border border-[#232936] flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-[var(--tech-bg)] border border-[#232936] flex items-center justify-center shrink-0 text-[var(--tech-accent)] font-mono font-bold">
+            <div className="p-6 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center shrink-0 text-[var(--tech-accent)] font-mono font-bold">
                 03
               </div>
               <div>
@@ -336,8 +336,8 @@ export function CreatorPreview() {
 
 export function RecruiterPreview() {
   return (
-    <section id="recruiter-preview" className="py-20 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg-secondary)] border-t border-[#232936]">
-      <div className="max-w-7xl mx-auto p-8 sm:p-12 rounded-2xl bg-[var(--tech-card)] border border-[#232936] relative overflow-hidden">
+    <section id="recruiter-preview" className="py-20 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg-secondary)] border-t border-[rgba(224,27,27,0.28)]">
+      <div className="max-w-7xl mx-auto p-8 sm:p-12 rounded-2xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-80 h-80 bg-[radial-gradient(circle,rgba(224,27,27,0.08)_0%,transparent_70%)] pointer-events-none" />
         
         <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
@@ -357,7 +357,7 @@ export function RecruiterPreview() {
           <div className="shrink-0 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
             <Link
               href="/recruiters"
-              className="px-8 py-4 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] text-center transition-all duration-200 shadow-[0_0_20px_rgba(224,27,27,0.25)]"
+              className="px-8 py-4 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] text-center transition-all duration-200 shadow-[0_0_20px_rgba(224,27,27,0.25)]"
             >
               Explore Recruiters Section →
             </Link>
@@ -370,7 +370,7 @@ export function RecruiterPreview() {
 
 export function ContactPreview() {
   return (
-    <section id="contact-preview" className="py-24 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg)] border-t border-[#232936]">
+    <section id="contact-preview" className="py-24 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg)] border-t border-[rgba(224,27,27,0.28)]">
       <div className="max-w-7xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--tech-accent)]/30 bg-[var(--tech-card)] text-[var(--tech-accent)] font-mono text-xs uppercase tracking-widest mb-4">
           <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
@@ -386,13 +386,13 @@ export function ContactPreview() {
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
             href="mailto:jain.aman3789@gmail.com"
-            className="px-8 py-3.5 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all duration-200 shadow-[0_0_20px_rgba(224,27,27,0.2)]"
+            className="px-8 py-3.5 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all duration-200 shadow-[0_0_20px_rgba(224,27,27,0.2)]"
           >
             Email: jain.aman3789@gmail.com
           </a>
           <Link
             href="/contact"
-            className="px-6 py-3.5 rounded-lg border border-[#232936] text-white hover:border-white/40 font-mono text-xs uppercase tracking-wider transition-all duration-200"
+            className="px-6 py-3.5 rounded-lg border border-[rgba(224,27,27,0.28)] text-white hover:border-white/40 font-mono text-xs uppercase tracking-wider transition-all duration-200"
           >
             Open Contact Details
           </Link>
