@@ -1,61 +1,175 @@
-/* Homepage spacing pass: same Modular Universe theme, tighter section rhythm. */
+/* Homepage density pass — preserve Modular Universe visuals, remove dead vertical space. */
 .aj-home .aj-hero {
-  padding-bottom: 24px;
+  padding-top: 96px;
+  padding-bottom: 8px;
 }
 
 .aj-home .aj-pillars-section {
-  padding-top: 16px;
-  padding-bottom: 18px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.aj-home .aj-pillars-section .aj-section-topline {
+  margin-bottom: 10px;
+}
+
+.aj-home .aj-pillars-section .aj-pillar {
+  min-height: 108px;
+  padding: 16px 18px;
+  gap: 12px;
 }
 
 .aj-home .aj-featured-section {
-  padding-top: 22px;
-  padding-bottom: 18px;
+  padding-top: 10px;
+  padding-bottom: 12px;
+}
+
+.aj-home .aj-featured-section .aj-section-heading {
+  margin-bottom: 12px;
+}
+
+.aj-home .aj-featured-section .aj-feature-card {
+  gap: 18px;
+  padding: 10px;
+}
+
+.aj-home .aj-featured-section .aj-focus-art {
+  min-height: 244px;
+}
+
+.aj-home .aj-featured-section .aj-feature-content {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 16px;
+}
+
+.aj-home .aj-featured-section .aj-feature-content > p {
+  margin-top: 7px;
+  margin-bottom: 13px;
+  line-height: 1.62;
 }
 
 .aj-home .aj-videos-section {
+  padding-top: 12px;
+  padding-bottom: 16px;
+}
+
+.aj-home .aj-videos-section .aj-section-heading {
+  margin-bottom: 12px;
+}
+
+.aj-home .aj-video-grid {
+  gap: 12px;
+}
+
+.aj-home .aj-recruiters-section {
+  padding-top: 14px;
+  padding-bottom: 18px;
+}
+
+.aj-home .aj-contact-section {
   padding-top: 18px;
   padding-bottom: 22px;
 }
 
-.aj-home .aj-recruiters-section {
-  padding-top: 18px;
-  padding-bottom: 24px;
+/* Explicit adjacent-section rules prevent padding from stacking into a blank band. */
+.aj-home .aj-pillars-section + .aj-featured-section,
+.aj-home .aj-featured-section + #creator .aj-videos-section,
+.aj-home #creator + .aj-recruiters-section,
+.aj-home .aj-recruiters-section + .aj-contact-section {
+  margin-top: 0;
 }
 
-.aj-home .aj-contact-section {
-  padding-top: 24px;
-  padding-bottom: 28px;
+/* Tablet: retain breathing room without oversized transitions. */
+@media (max-width: 980px) {
+  .aj-home .aj-hero {
+    padding-top: 94px;
+    padding-bottom: 8px;
+  }
+
+  .aj-home .aj-featured-section .aj-feature-card {
+    gap: 12px;
+  }
+
+  .aj-home .aj-featured-section .aj-focus-art {
+    min-height: 220px;
+  }
 }
 
-/* Keep the tighter rhythm intentional across tablet and mobile layouts. */
+/* Mobile: trim section transitions but preserve tap space and readable cards. */
 @media (max-width: 700px) {
   .aj-home .aj-hero {
-    padding-bottom: 10px;
+    padding-top: 82px;
+    padding-bottom: 4px;
+  }
+
+  .aj-home .aj-hero-grid {
+    gap: 2px;
+  }
+
+  .aj-home .aj-hero-visual {
+    min-height: 260px;
+    margin-top: 0;
   }
 
   .aj-home .aj-pillars-section {
-    padding-top: 14px;
-    padding-bottom: 14px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .aj-home .aj-pillars-section .aj-section-topline {
+    margin-bottom: 9px;
+  }
+
+  .aj-home .aj-pillar-grid {
+    gap: 8px;
+  }
+
+  .aj-home .aj-pillar {
+    padding: 13px 14px;
   }
 
   .aj-home .aj-featured-section {
-    padding-top: 18px;
-    padding-bottom: 12px;
+    padding-top: 10px;
+    padding-bottom: 8px;
+  }
+
+  .aj-home .aj-featured-section .aj-section-heading {
+    margin-bottom: 10px;
+  }
+
+  .aj-home .aj-featured-section .aj-focus-art {
+    min-height: 218px;
+  }
+
+  .aj-home .aj-featured-section .aj-feature-content {
+    padding: 12px 9px 10px;
   }
 
   .aj-home .aj-videos-section {
-    padding-top: 18px;
-    padding-bottom: 18px;
+    padding-top: 10px;
+    padding-bottom: 12px;
+  }
+
+  .aj-home .aj-videos-section .aj-section-heading {
+    margin-bottom: 10px;
   }
 
   .aj-home .aj-recruiters-section {
-    padding-top: 16px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 14px;
   }
 
   .aj-home .aj-contact-section {
-    padding-top: 20px;
-    padding-bottom: 24px;
+    padding-top: 14px;
+    padding-bottom: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aj-home *,
+  .aj-home *::before,
+  .aj-home *::after {
+    scroll-behavior: auto !important;
   }
 }
