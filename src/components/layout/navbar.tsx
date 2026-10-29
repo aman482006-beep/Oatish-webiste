@@ -82,7 +82,7 @@ export function Navbar() {
       toggleRef.current?.focus();
     }
     return () => document.body.classList.remove("aj-menu-open");
-  }, [mobileMenuOpen]);
+  }, [mobileMenuOpen, closeMenu]);
 
   return (
     <header ref={headerRef} className={"aj-site-header" + (scrolled ? " is-scrolled" : "")}>
@@ -109,7 +109,7 @@ export function Navbar() {
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
           aria-controls="primary-navigation"
-          onClick={() => setMenuState((current) => ({ open: !mobileMenuOpen, pathname }))}
+          onClick={() => setMenuState({ open: !mobileMenuOpen, pathname })}
         >
           <span /><span />
         </button>
