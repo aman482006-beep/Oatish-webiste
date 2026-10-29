@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Caveat, Manrope, Newsreader } from "next/font/google";
 import "./globals.css";
 import { ScrollProgressBar } from "@/components/ui/scroll-progress";
@@ -82,6 +84,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="site-main">{children}</div>
           <Footer />
         </SmoothScroll>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
