@@ -443,7 +443,8 @@ main :is(
   [class*="bg-[var(--tech-card)]"][class*="rounded-2xl"],
   [class*="bg-[var(--tech-card)]"][class*="rounded-3xl"]
 ) {
-  background-repeat: no-repeat, no-repeat;
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-position: 0 0, top right, 0 0;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -683,7 +684,9 @@ hr,
   main > section::before,
   main > div.min-h-screen::before {
     opacity: 0.25;
-    background-size: 11px 11px, 220px 220px;
+    background-size: 11px 11px, min(100vw, 420px) min(100vw, 420px), min(100vw, 420px) min(100vw, 420px);
+    background-repeat: repeat, no-repeat, no-repeat;
+    background-position: 0 0, top right, top right;
   }
 
   main > section::after,
