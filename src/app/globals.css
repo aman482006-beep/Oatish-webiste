@@ -60,7 +60,7 @@ body.aj-menu-open { overflow: hidden; }
 .aj-container { width: min(calc(100% - 48px), 1180px); margin-inline: auto; }
 .aj-eyebrow {
   display: flex; align-items: center; gap: 9px; margin: 0 0 12px;
-  color: #747780; font-size: 12px; font-weight: 800; letter-spacing: .16em; line-height: 1.5;
+  color: #626670; font-size: 12px; font-weight: 800; letter-spacing: .16em; line-height: 1.5;
 }
 .aj-eyebrow > span { display: inline-block; width: 20px; height: 2px; background: var(--aj-orange); }
 .aj-eyebrow-accent { color: #C84220; }
@@ -262,7 +262,7 @@ body.aj-menu-open { overflow: hidden; }
 .aj-footer { padding: 20px 0; background: var(--aj-paper-alt); border-top: 1px solid var(--aj-line); color: var(--aj-muted); }
 .aj-footer-inner { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 20px; }
 .aj-footer-nav, .aj-footer-socials { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 12px; }
-.aj-footer-nav a { min-height: 40px; display: inline-flex; align-items: center; color: var(--aj-muted); font-size: 12px; text-decoration: none; }
+.aj-footer-nav a { min-height: 44px; display: inline-flex; align-items: center; color: var(--aj-muted); font-size: 12px; text-decoration: none; }
 .aj-footer-nav a:hover, .aj-footer-socials a:hover { color: var(--aj-orange); }
 .aj-footer-socials a { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; color: var(--aj-ink); text-decoration: none; transition: color .2s ease, transform .2s var(--aj-ease); }
 .aj-footer-socials a svg { width: 18px; height: 18px; }
@@ -367,7 +367,7 @@ body.aj-menu-open { overflow: hidden; }
 .aj-contact-social-arrow { position: absolute; top: 12px; right: 13px; color: var(--aj-orange); }
 
 .aj-resource-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
-.aj-resource-filter { min-height: 42px; padding: 0 15px; border: 1px solid var(--aj-line); border-radius: 999px; color: var(--aj-muted); background: #fff; font-size: 13px; font-weight: 750; cursor: pointer; }
+.aj-resource-filter { min-height: 44px; padding: 0 15px; border: 1px solid var(--aj-line); border-radius: 999px; color: var(--aj-muted); background: #fff; font-size: 13px; font-weight: 750; cursor: pointer; }
 .aj-resource-filter:hover, .aj-resource-filter.is-active { border-color: var(--aj-orange); color: var(--aj-ink); background: #FFF4EB; }
 .aj-resource-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .aj-resource-card { min-width: 0; display: flex; flex-direction: column; padding: 17px; border: 1px solid var(--aj-line); border-radius: 13px; background: #fff; }
