@@ -5,12 +5,13 @@ import { FOKUS } from "@/data/fokus";
 import { financeWork } from "@/data/finance-work";
 import { currentlyOpenTo } from "@/data/profile";
 import { ResumeDownload } from "@/components/sections/resume-download";
+import { SocialIcon, type SocialIconName } from "@/components/layout/social-icon";
 
-const socials = [
-  { label: "GitHub", href: "https://github.com/aman482006-beep", mark: "GH" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/amanmalu/", mark: "in" },
-  { label: "YouTube", href: "https://www.youtube.com/@AmanJain-4", mark: "▶" },
-  { label: "Instagram", href: "https://www.instagram.com/aman.ja1n/", mark: "◎" },
+const socials: { label: string; href: string; icon: SocialIconName }[] = [
+  { label: "GitHub", href: "https://github.com/aman482006-beep", icon: "github" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/amanmalu/", icon: "linkedin" },
+  { label: "YouTube", href: "https://www.youtube.com/@AmanJain-4", icon: "youtube" },
+  { label: "Instagram", href: "https://www.instagram.com/aman.ja1n/", icon: "instagram" },
 ];
 
 const pillars = [
@@ -55,7 +56,7 @@ export default function Home() {
             <div className="aj-socials" aria-label="Social links">
               {socials.map((social) => (
                 <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
-                  <span className={"aj-social-mark aj-social-" + social.mark.replace(/[^a-z0-9]/gi, "")}>{social.mark}</span>
+                  <span className="aj-social-mark"><SocialIcon name={social.icon} /></span>
                   <span>{social.label}</span>
                 </a>
               ))}
