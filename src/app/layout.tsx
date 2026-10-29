@@ -45,6 +45,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={newsreader.variable + " " + manrope.variable + " " + caveat.variable + " font-body antialiased min-h-screen"}>
+        <a className="aj-skip-link" href="#main">Skip to content</a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
