@@ -102,7 +102,7 @@ export default function Home() {
       <section className="aj-section aj-featured-section" id="featured">
         <div className="aj-container">
           <div className="aj-section-heading aj-section-heading-inline">
-            <div><p className="aj-eyebrow aj-eyebrow-accent">FEATURED PROJECT</p><h2>Focus <span>— Stay on Track, Together.</span></h2></div>
+            <div><p className="aj-eyebrow aj-eyebrow-accent">FEATURED PROJECT</p><h2>Fokus <span>— Stay on Track, Together.</span></h2></div>
             <Link className="aj-text-link" href="/work">View case study <span aria-hidden="true">→</span></Link>
           </div>
           <article className="aj-feature-card">
