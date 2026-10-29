@@ -20,7 +20,7 @@ const newsreader = Newsreader({
 
 const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-manrope",
   display: "swap",
 });
 
