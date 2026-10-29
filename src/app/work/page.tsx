@@ -128,7 +128,7 @@ export default function WorkPage() {
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap items-center gap-2 mb-12 pb-6 border-b border-[#232936]">
+        <div className="flex flex-wrap items-center gap-2 mb-12 pb-6 border-b border-[rgba(224,27,27,0.28)]">
           {(["All", "Finance", "AI & Technology", "Product & Design"] as ProjectCategory[]).map((filter) => {
             const isActive = activeFilter === filter;
             return (
@@ -137,8 +137,8 @@ export default function WorkPage() {
                 onClick={() => setActiveFilter(filter)}
                 className={`px-4 py-2 rounded-lg font-mono text-xs uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                   isActive
-                    ? "bg-[var(--tech-accent)] text-[#0B0D12] font-bold shadow-[0_0_15px_rgba(224,27,27,0.3)]"
-                    : "bg-[var(--tech-card)] text-[var(--tech-text-muted)] hover:text-white border border-[#232936] hover:border-white/20"
+                    ? "bg-[var(--tech-accent)] text-[#000000] font-bold shadow-[0_0_15px_rgba(224,27,27,0.3)]"
+                    : "bg-[var(--tech-card)] text-[var(--tech-text-muted)] hover:text-white border border-[rgba(224,27,27,0.28)] hover:border-white/20"
                 }`}
               >
                 {filter}
@@ -155,14 +155,14 @@ export default function WorkPage() {
           {filteredProjects.map((proj) => (
             <div
               key={proj.id}
-              className="p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] hover:border-[var(--tech-accent)]/50 transition-all duration-300 flex flex-col justify-between group shadow-lg"
+              className="p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] hover:border-[var(--tech-accent)]/50 transition-all duration-300 flex flex-col justify-between group shadow-lg"
             >
               <div>
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                   <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--tech-accent)] bg-[var(--tech-accent)]/10 px-2.5 py-1 rounded border border-[var(--tech-accent)]/20">
                     {proj.category}
                   </span>
-                  <span className="text-[10px] font-mono text-[var(--tech-text-muted)] bg-[var(--tech-bg)] px-2 py-0.5 rounded border border-[#232936]">
+                  <span className="text-[10px] font-mono text-[var(--tech-text-muted)] bg-[var(--tech-bg)] px-2 py-0.5 rounded border border-[rgba(224,27,27,0.28)]">
                     {proj.statusTag}
                   </span>
                 </div>
@@ -177,13 +177,13 @@ export default function WorkPage() {
                 </p>
 
                 {proj.attribution && (
-                  <div className="mb-4 p-3 rounded-md bg-[var(--tech-bg)] border border-[#232936] text-[11px] font-mono text-[var(--tech-text-muted)] leading-relaxed">
+                  <div className="mb-4 p-3 rounded-md bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] text-[11px] font-mono text-[var(--tech-text-muted)] leading-relaxed">
                     {proj.attribution}
                   </div>
                 )}
 
                 {proj.disclaimer && (
-                  <div className="mb-6 p-3 rounded-md bg-[var(--tech-bg)] border border-[#232936] text-[11px] font-mono text-[var(--tech-text-muted)] leading-relaxed">
+                  <div className="mb-6 p-3 rounded-md bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] text-[11px] font-mono text-[var(--tech-text-muted)] leading-relaxed">
                     {proj.disclaimer}
                   </div>
                 )}
@@ -194,22 +194,22 @@ export default function WorkPage() {
                   {proj.technologies.slice(0, 5).map((t) => (
                     <span
                       key={t}
-                      className="text-xs font-mono px-2 py-0.5 rounded bg-[var(--tech-bg)] text-[var(--tech-text-muted)] border border-[#232936]"
+                      className="text-xs font-mono px-2 py-0.5 rounded bg-[var(--tech-bg)] text-[var(--tech-text-muted)] border border-[rgba(224,27,27,0.28)]"
                     >
                       {t}
                     </span>
                   ))}
                   {proj.technologies.length > 5 && (
-                    <span className="text-xs font-mono px-2 py-0.5 rounded bg-[var(--tech-bg)] text-[var(--tech-text-muted)] border border-[#232936]">
+                    <span className="text-xs font-mono px-2 py-0.5 rounded bg-[var(--tech-bg)] text-[var(--tech-text-muted)] border border-[rgba(224,27,27,0.28)]">
                       +{proj.technologies.length - 5} more
                     </span>
                   )}
                 </div>
 
-                <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-[#232936]">
+                <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-[rgba(224,27,27,0.28)]">
                   <button
                     onClick={() => setSelectedProject(proj.id)}
-                    className="px-4 py-2 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] text-xs font-mono uppercase font-bold tracking-wider hover:bg-[var(--tech-accent-hover)] transition-colors cursor-pointer"
+                    className="px-4 py-2 rounded-lg bg-[var(--tech-accent)] text-[#000000] text-xs font-mono uppercase font-bold tracking-wider hover:bg-[var(--tech-accent-hover)] transition-colors cursor-pointer"
                   >
                     Read Full Case Study
                   </button>
@@ -250,7 +250,7 @@ export default function WorkPage() {
         {/* Detailed Case Study Viewer */}
         {currentModalProject && (
           <div id="case-study-detail" className="p-8 sm:p-12 rounded-2xl bg-[var(--tech-card)] border border-[var(--tech-accent)]/30 scroll-mt-32">
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-[#232936]">
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-[rgba(224,27,27,0.28)]">
               <div>
                 <span className="text-xs font-mono text-[var(--tech-accent)] uppercase tracking-wider block mb-1">
                   CASE STUDY ANALYSIS · {currentModalProject.category}
@@ -268,7 +268,7 @@ export default function WorkPage() {
                   href={currentModalProject.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-lg bg-[var(--tech-bg)] border border-[#232936] text-white hover:border-white/30 text-xs font-mono flex items-center gap-2"
+                  className="px-4 py-2 rounded-lg bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] text-white hover:border-white/30 text-xs font-mono flex items-center gap-2"
                 >
                   <span>View Repository</span>
                   <span className="text-[var(--tech-accent)]">↗</span>
@@ -278,7 +278,7 @@ export default function WorkPage() {
                     href={currentModalProject.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs font-bold hover:bg-[var(--tech-accent-hover)] flex items-center gap-2"
+                    className="px-4 py-2 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs font-bold hover:bg-[var(--tech-accent-hover)] flex items-center gap-2"
                   >
                     <span>Launch Live Demo</span>
                     <span>↗</span>
@@ -300,7 +300,7 @@ export default function WorkPage() {
             )}
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-              <div className="p-6 rounded-xl bg-[var(--tech-bg)] border border-[#232936]">
+              <div className="p-6 rounded-xl bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)]">
                 <h4 className="text-lg font-bold font-display text-white mb-2 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[var(--tech-accent)]" />
                   Problem & Motivation
@@ -310,7 +310,7 @@ export default function WorkPage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-xl bg-[var(--tech-bg)] border border-[#232936]">
+              <div className="p-6 rounded-xl bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)]">
                 <h4 className="text-lg font-bold font-display text-white mb-2 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[var(--tech-accent)]" />
                   My Individual Contribution
@@ -321,7 +321,7 @@ export default function WorkPage() {
               </div>
             </div>
 
-            <div className="p-6 rounded-xl bg-[var(--tech-bg)] border border-[#232936] mb-8">
+            <div className="p-6 rounded-xl bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] mb-8">
               <h4 className="text-lg font-bold font-display text-white mb-2 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[var(--tech-accent)]" />
                 Technical & Analytical Approach
@@ -330,7 +330,7 @@ export default function WorkPage() {
                 {currentModalProject.approach}
               </p>
 
-              <div className="mt-4 pt-4 border-t border-[#232936]/60">
+              <div className="mt-4 pt-4 border-t border-[rgba(224,27,27,0.28)]/60">
                 <div className="text-xs font-mono uppercase text-white/50 tracking-wider mb-3">System Architecture & Modules</div>
                 <ul className="space-y-2">
                   {currentModalProject.architecture.map((item, idx) => (
@@ -344,7 +344,7 @@ export default function WorkPage() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="p-6 rounded-xl bg-[var(--tech-bg)] border border-[#232936]">
+              <div className="p-6 rounded-xl bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)]">
                 <h4 className="text-lg font-bold font-display text-white mb-3 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[var(--tech-accent)]" />
                   Technologies & Libraries
@@ -353,7 +353,7 @@ export default function WorkPage() {
                   {currentModalProject.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs font-mono px-3 py-1 rounded bg-[var(--tech-card)] text-white border border-[#232936]"
+                      className="text-xs font-mono px-3 py-1 rounded bg-[var(--tech-card)] text-white border border-[rgba(224,27,27,0.28)]"
                     >
                       {tech}
                     </span>
@@ -361,7 +361,7 @@ export default function WorkPage() {
                 </div>
               </div>
 
-              <div className="p-6 rounded-xl bg-[var(--tech-bg)] border border-[#232936]">
+              <div className="p-6 rounded-xl bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)]">
                 <h4 className="text-lg font-bold font-display text-white mb-3 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-amber-400" />
                   Limitations & Future Work
