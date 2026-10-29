@@ -3,7 +3,7 @@ import { ResourcesContent } from "./resources-content";
 
 export const metadata: Metadata = {
   title: "Resources",
-  description: "Finance, CFA study and creator resources from Aman Jain. Listings are marked clearly until files and public links are available.",
+  description: "Planned finance toolkits, CFA study systems and creator workflows from Aman Jain, with a way to request future resources.",
   alternates: { canonical: "/resources" },
 };
 
