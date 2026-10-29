@@ -22,7 +22,7 @@ export default function CreatorPage() {
               href="https://www.youtube.com/@AmanJain-4"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(224,27,27,0.25)]"
+              className="px-6 py-3 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(224,27,27,0.25)]"
             >
               <span>Subscribe on YouTube</span>
               <span className="font-sans font-bold">↗</span>
@@ -31,7 +31,7 @@ export default function CreatorPage() {
               href="https://www.instagram.com/aman.ja1n/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-lg border border-[#232936] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all flex items-center gap-2"
+              className="px-6 py-3 rounded-lg border border-[rgba(224,27,27,0.28)] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all flex items-center gap-2"
             >
               <span>Follow on Instagram</span>
               <span className="text-[var(--tech-accent)] font-bold">↗</span>
@@ -43,9 +43,9 @@ export default function CreatorPage() {
         <div className="mb-20">
           <div className="text-xs font-mono uppercase tracking-widest text-white/50 mb-6">Content Pillars</div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] flex flex-col justify-between">
+            <div className="p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-lg bg-[var(--tech-bg)] border border-[#232936] flex items-center justify-center text-[var(--tech-accent)] mb-6 font-mono font-bold text-lg">
+                <div className="w-12 h-12 rounded-lg bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center text-[var(--tech-accent)] mb-6 font-mono font-bold text-lg">
                   01
                 </div>
                 <h2 className="text-2xl font-bold font-display text-white mb-3">Finance Education</h2>
@@ -56,9 +56,9 @@ export default function CreatorPage() {
               <div className="text-xs font-mono text-[var(--tech-accent)]">Key format: Breakdowns & Explainers</div>
             </div>
 
-            <div className="p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] flex flex-col justify-between">
+            <div className="p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-lg bg-[var(--tech-bg)] border border-[#232936] flex items-center justify-center text-[var(--tech-accent)] mb-6 font-mono font-bold text-lg">
+                <div className="w-12 h-12 rounded-lg bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center text-[var(--tech-accent)] mb-6 font-mono font-bold text-lg">
                   02
                 </div>
                 <h2 className="text-2xl font-bold font-display text-white mb-3">Learning & Careers</h2>
@@ -69,9 +69,9 @@ export default function CreatorPage() {
               <div className="text-xs font-mono text-[var(--tech-accent)]">Key format: Guides & Study Blueprints</div>
             </div>
 
-            <div className="p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] flex flex-col justify-between">
+            <div className="p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 rounded-lg bg-[var(--tech-bg)] border border-[#232936] flex items-center justify-center text-[var(--tech-accent)] mb-6 font-mono font-bold text-lg">
+                <div className="w-12 h-12 rounded-lg bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center text-[var(--tech-accent)] mb-6 font-mono font-bold text-lg">
                   03
                 </div>
                 <h2 className="text-2xl font-bold font-display text-white mb-3">Tools & Experiments</h2>
@@ -85,7 +85,7 @@ export default function CreatorPage() {
         </div>
 
         {/* Section E: Partnerships */}
-        <div className="p-8 sm:p-12 rounded-2xl bg-[var(--tech-card)] border border-[#232936] relative overflow-hidden">
+        <div className="p-8 sm:p-12 rounded-2xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] relative overflow-hidden">
           <div className="relative z-10 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--tech-accent)]/30 bg-[var(--tech-bg)] text-[var(--tech-accent)] font-mono text-xs uppercase tracking-widest mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
@@ -101,7 +101,7 @@ export default function CreatorPage() {
             <div className="flex flex-wrap items-center gap-4">
               <a
                 href="mailto:jain.aman3789@gmail.com?subject=Collaboration%20Inquiry%20-%20Aman%20Jain"
-                className="px-6 py-3.5 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all shadow-[0_0_20px_rgba(224,27,27,0.2)]"
+                className="px-6 py-3.5 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all shadow-[0_0_20px_rgba(224,27,27,0.2)]"
               >
                 Discuss a Collaboration
               </a>
