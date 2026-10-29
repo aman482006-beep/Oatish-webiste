@@ -148,6 +148,7 @@ html.aj-motion-enabled [data-reveal][data-revealed="true"] {
   }
 
   .aj-marquee { display: none; }
+  .aj-scroll-progress-fill { transition: none; }
   .aj-pillar::after { display: none; }
   .aj-pillar-svg path { stroke-dasharray: none; stroke-dashoffset: 0; }
   .aj-focus-art .aj-chart-bars i { transform: none; }
