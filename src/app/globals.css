@@ -936,3 +936,125 @@ main > div.min-h-screen::before {
     letter-spacing: 0.06em;
   }
 }
+
+
+/* PHONE COMPOSITION PASS — compact the key visual sections without changing the art direction. */
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: calc(68px + 1.1rem);
+    padding-bottom: 2.25rem;
+    align-items: flex-start;
+  }
+
+  .hero-layout {
+    gap: 1.15rem !important;
+    align-items: stretch !important;
+  }
+
+  .hero-copy { padding-block: 0 !important; }
+
+  .hero-copy h1 {
+    font-size: clamp(1.95rem, 8.4vw, 2.7rem) !important;
+    line-height: 0.99 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 1.1rem !important;
+  }
+
+  .hero-copy > p {
+    font-size: 0.96rem;
+    line-height: 1.62;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .hero-copy .spidey-btn,
+  .hero-copy .spidey-pill {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .hero-copy [class*="mt-8"][class*="border-t"] {
+    margin-top: 1.4rem !important;
+    padding-top: 1rem !important;
+  }
+
+  .hero-art {
+    height: clamp(180px, 55vw, 245px) !important;
+    min-height: 0 !important;
+    width: 100%;
+    justify-content: center !important;
+  }
+
+  .hero-art > div {
+    width: clamp(200px, 74vw, 295px) !important;
+    max-width: 100% !important;
+  }
+
+  #about {
+    min-height: auto !important;
+    padding-top: 3.75rem !important;
+    padding-bottom: 4.25rem !important;
+    align-items: flex-start !important;
+  }
+
+  .about-layout {
+    gap: 2.15rem !important;
+    align-items: stretch !important;
+  }
+
+  .about-portrait-wrap { padding-bottom: 0.25rem; }
+
+  .about-portrait {
+    width: min(100%, 18rem) !important;
+    max-width: 100% !important;
+    border-radius: 0.9rem !important;
+  }
+
+  .about-copy {
+    padding: 1.15rem !important;
+    border-radius: 0.9rem !important;
+  }
+
+  #about .about-copy h2 {
+    font-size: clamp(1.8rem, 8vw, 2.3rem) !important;
+    line-height: 1.03 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #about .about-copy p { line-height: 1.65; }
+
+  main [class*="mb-16"],
+  main [class*="mb-20"] {
+    margin-bottom: 2.5rem !important;
+  }
+
+  main [class*="gap-10"] { gap: 1.5rem !important; }
+
+  main .spidey-btn,
+  main .spidey-pill,
+  main .tech-btn { min-height: 46px; }
+
+  main :is(img, video, canvas, iframe) { max-width: 100%; }
+
+  main pre,
+  main code {
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-section { padding-inline: 0.875rem; }
+
+  .hero-copy h1 {
+    font-size: clamp(1.82rem, 8.2vw, 2.05rem) !important;
+  }
+
+  .hero-art { height: 185px !important; }
+
+  #about .about-copy { padding: 1rem !important; }
+
+  #about .about-portrait-wrap > div:last-child {
+    max-width: calc(100% - 0.5rem);
+  }
+}
