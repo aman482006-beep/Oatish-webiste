@@ -40,7 +40,7 @@ export function Hero() {
             I CREATE TO MAKE IDEAS USEFUL.
           </h1>
 
-          <div className="w-16 sm:w-20 h-[3px] bg-[var(--spidey-red)] mb-6 shadow-[0_0_10px_var(--spidey-red)]" />
+          <div className="w-16 sm:w-16 sm:w-20 h-[3px] bg-[var(--spidey-red)] mb-6 shadow-[0_0_10px_var(--spidey-red)]" />
 
           {/* Authentic Pitch Text */}
           <p className="text-base sm:text-lg text-[var(--tech-text)]/90 leading-relaxed font-body max-w-xl mb-8">
