@@ -90,7 +90,7 @@ export function ResourcesContent() {
   }
 
   return (
-    <main className="aj-inner-page aj-resources-page">
+    <main id="main" className="aj-inner-page aj-resources-page">
       <div className="aj-container">
         <header className="aj-inner-heading">
           <p className="aj-eyebrow aj-eyebrow-accent">RESOURCE LIBRARY</p>
