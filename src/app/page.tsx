@@ -70,7 +70,7 @@ export default function Home() {
             <div className="aj-note aj-note-right">Same curiosity.<br />Different ways. ☺</div>
             <div className="aj-photo-backdrop" />
             <div className="aj-photo-frame">
-              <Image src="/profile-2.png" alt="Aman Jain" fill priority sizes="(max-width: 900px) 78vw, 440px" className="aj-profile-image" />
+              <Image src="/profile-2.png" alt="Portrait of Aman Jain" fill preload sizes="(max-width: 900px) 78vw, 440px" className="aj-profile-image" />
             </div>
             <div className="aj-photo-caption"><strong>BBA</strong><span>Finance &amp; Marketing Analytics</span><span>CHRIST University</span><span>Bengaluru, India</span></div>
             <span className="aj-spark aj-spark-one" aria-hidden="true">〰</span>
