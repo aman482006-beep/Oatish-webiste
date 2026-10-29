@@ -257,7 +257,7 @@ export default function ResourcesPage() {
             </form>
 
             {submitted && (
-              <p className="font-mono text-xs text-green-400 mt-3">
+              <p className="font-mono text-xs text-[var(--tech-accent)] mt-3">
                 ✓ Request received! I will notify the community when this is added.
               </p>
             )}
