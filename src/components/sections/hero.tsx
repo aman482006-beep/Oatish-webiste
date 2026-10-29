@@ -8,11 +8,11 @@ export function Hero() {
   const [hudActive, setHudActive] = useState(true);
 
   return (
-    <section className="relative w-full min-h-[100svh] flex items-center overflow-hidden bg-[var(--tech-bg)] pt-24 pb-12 px-4 sm:pb-16 sm:px-12 lg:px-20 select-none">
+    <section className="relative w-full min-h-[100svh] flex items-center overflow-hidden bg-[var(--tech-bg)] pt-24 pb-12 px-4 sm:pb-16 sm:px-12 lg:px-20 ">
       
       {/* Cinematic Red Ambient Spotlights */}
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.2)_0%,rgba(143,13,13,0.06)_50%,transparent_75%)] blur-[100px] pointer-events-none" />
-      <div className="absolute -bottom-20 left-10 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.08)_0%,transparent_70%)] blur-[90px] pointer-events-none" />
+      <div className="absolute -bottom-20 left-10 w-[320px] h-[320px] sm:w-[500px] sm:h-[500px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.08)_0%,transparent_70%)] blur-[90px] pointer-events-none" />
 
       {/* Massive Background Typography Layer for Depth */}
       <div
@@ -40,7 +40,7 @@ export function Hero() {
             I CREATE TO MAKE IDEAS USEFUL.
           </h1>
 
-          <div className="w-16 sm:w-16 sm:w-20 h-[3px] bg-[var(--spidey-red)] mb-6 shadow-[0_0_10px_var(--spidey-red)]" />
+          <div className="w-16 sm:w-20 h-[3px] bg-[var(--spidey-red)] mb-6 shadow-[0_0_10px_var(--spidey-red)]" />
 
           {/* Authentic Pitch Text */}
           <p className="text-base sm:text-lg text-[var(--tech-text)]/90 leading-relaxed font-body max-w-xl mb-8">
@@ -62,7 +62,7 @@ export function Hero() {
           </div>
 
           {/* Subtle links to GitHub & LinkedIn */}
-          <div className="flex items-center gap-4 mt-6 text-xs font-mono text-[var(--tech-text-muted)]">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-6 text-xs font-mono text-[var(--tech-text-muted)]">
             <span>External:</span>
             <a
               href="https://github.com/aman482006-beep"
@@ -110,7 +110,7 @@ export function Hero() {
 
         {/* Right Column: Towering, Large Transparent Spider-Man Figure */}
         <div className="w-full lg:w-1/2 h-[min(58vh,360px)] min-h-[250px] sm:h-[550px] lg:h-[700px] relative flex items-end justify-center lg:justify-end pointer-events-none z-10">
-          <div className="relative w-full max-w-[460px] sm:max-w-[540px] lg:max-w-[620px] h-full animate-spidey-float flex items-end justify-center">
+          <div className="relative w-full max-w-[360px] sm:max-w-[540px] lg:max-w-[620px] h-full animate-spidey-float flex items-end justify-center">
             <Image
               src="/spiderman/hero-spiderman-transparent.png"
               alt="Spider-Man"
