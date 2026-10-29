@@ -330,7 +330,7 @@ export default function WorkPage() {
                 {currentModalProject.approach}
               </p>
 
-              <div className="mt-4 pt-4 border-t border-[rgba(224,27,27,0.28)]/60">
+              <div className="mt-4 pt-4 border-t border-[rgba(224,27,27,0.18)]">
                 <div className="text-xs font-mono uppercase text-white/50 tracking-wider mb-3">System Architecture & Modules</div>
                 <ul className="space-y-2">
                   {currentModalProject.architecture.map((item, idx) => (
