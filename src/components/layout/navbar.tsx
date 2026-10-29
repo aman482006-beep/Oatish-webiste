@@ -32,8 +32,8 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-[500] transition-all duration-300 h-[72px] px-6 sm:px-10 lg:px-16 flex items-center justify-between ${
         scrolled
-          ? "bg-[#0B0D12]/95 backdrop-blur-md border-b border-[#232936] shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
-          : "bg-[#0B0D12]/80 backdrop-blur-sm border-b border-white/[0.06]"
+          ? "bg-[#000000]/95 backdrop-blur-md border-b border-[rgba(224,27,27,0.28)] shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+          : "bg-[#000000]/80 backdrop-blur-sm border-b border-white/[0.06]"
       }`}
     >
       {/* Brand Logo */}
@@ -70,13 +70,13 @@ export function Navbar() {
               href={link.href}
               className={`relative px-3.5 py-1.5 rounded-lg text-xs font-mono tracking-wider transition-all duration-200 flex items-center gap-1.5 ${
                 isActive
-                  ? "bg-[rgba(255,133,71,0.15)] text-[var(--tech-accent)] font-semibold border border-[rgba(255,133,71,0.3)] shadow-[0_0_12px_rgba(255,133,71,0.15)]"
+                  ? "bg-[rgba(224,27,27,0.15)] text-[var(--tech-accent)] font-semibold border border-[rgba(224,27,27,0.3)] shadow-[0_0_12px_rgba(224,27,27,0.15)]"
                   : "text-[var(--tech-text-muted)] hover:text-white hover:bg-white/[0.04]"
               }`}
             >
               <span>{link.label}</span>
               {link.badge && (
-                <span className="px-1.5 py-0.2 rounded text-[8px] bg-[var(--tech-accent)] text-[#0B0D12] font-mono font-bold tracking-wider">
+                <span className="px-1.5 py-0.2 rounded text-[8px] bg-[var(--tech-accent)] text-white font-mono font-bold tracking-wider">
                   {link.badge}
                 </span>
               )}
@@ -89,7 +89,7 @@ export function Navbar() {
       <div className="hidden lg:flex items-center gap-4">
         <Link
           href="/contact"
-          className="px-5 py-2 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs uppercase font-bold tracking-wider hover:bg-[var(--tech-accent-hover)] transition-all duration-200 shadow-[0_0_15px_rgba(255,133,71,0.25)] hover:shadow-[0_0_22px_rgba(255,133,71,0.4)]"
+          className="px-5 py-2 rounded-lg bg-[var(--tech-accent)] text-white font-mono text-xs uppercase font-bold tracking-wider hover:bg-[var(--tech-accent-hover)] transition-all duration-200 shadow-[0_0_15px_rgba(224,27,27,0.25)] hover:shadow-[0_0_22px_rgba(224,27,27,0.4)]"
         >
           LET&apos;S TALK
         </Link>
@@ -112,7 +112,7 @@ export function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden absolute top-[72px] left-0 right-0 bg-[#0B0D12]/98 backdrop-blur-xl border-b border-[#232936] p-6 shadow-2xl flex flex-col gap-3">
+        <div className="lg:hidden absolute top-[72px] left-0 right-0 bg-[#000000]/98 backdrop-blur-xl border-b border-[rgba(224,27,27,0.28)] p-6 shadow-2xl flex flex-col gap-3">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -122,13 +122,13 @@ export function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`px-4 py-2.5 rounded-lg text-sm font-mono tracking-wider transition-colors flex items-center justify-between ${
                   isActive
-                    ? "bg-[rgba(255,133,71,0.15)] text-[var(--tech-accent)] font-semibold border border-[rgba(255,133,71,0.3)]"
+                    ? "bg-[rgba(224,27,27,0.15)] text-[var(--tech-accent)] font-semibold border border-[rgba(224,27,27,0.3)]"
                     : "text-[var(--tech-text-muted)] hover:text-white hover:bg-white/[0.04]"
                 }`}
               >
                 <span>{link.label}</span>
                 {link.badge && (
-                  <span className="px-1.5 py-0.5 rounded text-[9px] bg-[var(--tech-accent)] text-[#0B0D12] font-mono font-bold tracking-wider">
+                  <span className="px-1.5 py-0.5 rounded text-[9px] bg-[var(--tech-accent)] text-white font-mono font-bold tracking-wider">
                     {link.badge}
                   </span>
                 )}
@@ -138,7 +138,7 @@ export function Navbar() {
           <Link
             href="/contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="mt-2 text-center py-3 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs uppercase font-bold tracking-wider hover:bg-[var(--tech-accent-hover)] transition-all"
+            className="mt-2 text-center py-3 rounded-lg bg-[var(--tech-accent)] text-white font-mono text-xs uppercase font-bold tracking-wider hover:bg-[var(--tech-accent-hover)] transition-all"
           >
             LET&apos;S TALK
           </Link>
