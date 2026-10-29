@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { usePathname, useRouter } from "next/navigation";
+
+let resolvePendingViewTransition: (() => void) | null = null;
 
 type ViewTransitionDocument = Document & {
   startViewTransition?: (callback: () => void | Promise<void>) => { finished: Promise<void> };
@@ -10,7 +12,6 @@ type ViewTransitionDocument = Document & {
 export default function Template({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
-  const resolvePendingTransition = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -38,7 +39,7 @@ export default function Template({ children }: { children: ReactNode }) {
 
       event.preventDefault();
       transitionDocument.startViewTransition?.(() => new Promise<void>((resolve) => {
-        resolvePendingTransition.current = resolve;
+        resolvePendingViewTransition = resolve;
         router.push(destination.pathname + destination.search + destination.hash);
       }));
     };
@@ -52,9 +53,9 @@ export default function Template({ children }: { children: ReactNode }) {
 
   // Resolve the browser's snapshot callback only after React has committed the new route.
   useEffect(() => {
-    const resolve = resolvePendingTransition.current;
+    const resolve = resolvePendingViewTransition;
     if (!resolve) return;
-    resolvePendingTransition.current = null;
+    resolvePendingViewTransition = null;
     resolve();
   }, [pathname]);
 
