@@ -97,7 +97,7 @@ body.aj-menu-open { overflow: hidden; }
 .aj-brand { display: inline-flex; align-items: center; gap: 11px; flex-shrink: 0; color: var(--aj-ink); text-decoration: none; }
 .aj-brand-monogram { font-family: var(--font-display); font-size: 31px; letter-spacing: -.08em; font-weight: 700; line-height: 1; }
 .aj-brand-monogram > span { color: var(--aj-orange); }
-.aj-brand-name { font-size: 11px; font-weight: 800; letter-spacing: .18em; white-space: nowrap; }
+.aj-brand-name { font-size: 12px; font-weight: 800; letter-spacing: .18em; white-space: nowrap; }
 .aj-nav-links { display: flex; align-items: center; gap: 5px; }
 .aj-nav-links > a {
   position: relative; display: inline-flex; min-height: 44px; align-items: center;
@@ -159,11 +159,11 @@ body.aj-menu-open { overflow: hidden; }
 .aj-pillar-blue { background: var(--aj-blue); }
 .aj-pillar-green { background: var(--aj-green); }
 .aj-pillar-icon { padding-top: 4px; color: var(--aj-orange); font-size: 30px; font-weight: 400; }
-.aj-pillar-blue .aj-pillar-icon { color: #2378E7; }
-.aj-pillar-green .aj-pillar-icon { color: #51865B; }
+.aj-pillar-blue .aj-pillar-icon { color: var(--aj-orange); }
+.aj-pillar-green .aj-pillar-icon { color: var(--aj-orange); }
 .aj-pillar-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
 .aj-pillar h2 { margin: 0; color: var(--aj-ink); font-family: var(--font-display); font-size: 27px; font-weight: 500; letter-spacing: -.04em; line-height: 1.1; }
-.aj-pillar-head > span { color: #C28D68; font-size: 12px; }
+.aj-pillar-head > span { color: #C13B19; font-size: 12px; }
 .aj-pillar p { margin: 7px 0 0; color: #555A63; font-size: 14px; line-height: 1.5; }
 
 .aj-featured-section { padding-top: 10px; padding-bottom: 12px; }
@@ -372,7 +372,7 @@ body.aj-menu-open { overflow: hidden; }
 .aj-resource-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .aj-resource-card { min-width: 0; display: flex; flex-direction: column; padding: 17px; border: 1px solid var(--aj-line); border-radius: 13px; background: #fff; }
 .aj-resource-card-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
-.aj-resource-format { color: #C13B19; font-size: 12px; font-weight: 800; }
+.aj-resource-format { color: #C13B19; font-size: 12px; font-weight: 800; text-transform: uppercase; }
 .aj-resource-placeholder { color: var(--aj-muted); font-size: 12px; font-weight: 850; letter-spacing: .1em; }
 .aj-resource-card h2 { margin: 0 0 8px; font-family: var(--font-display); font-size: 25px; font-weight: 600; line-height: 1.1; letter-spacing: -.035em; }
 .aj-resource-card > p { margin: 0; color: var(--aj-muted); font-size: 14px; line-height: 1.55; }
@@ -432,7 +432,7 @@ body.aj-menu-open { overflow: hidden; }
   .aj-nav { gap: 10px; }
   .aj-brand { gap: 9px; }
   .aj-brand-monogram { font-size: 28px; }
-  .aj-brand-name { font-size: 10px; }
+  .aj-brand-name { font-size: 12px; }
   .aj-nav-cta { display: none; }
   .aj-menu-toggle { display: flex; }
   .aj-nav-links {
@@ -553,7 +553,7 @@ body.aj-menu-open { overflow: hidden; }
 }
 @media (max-width: 420px) {
   .aj-container { width: min(calc(100% - 28px), 560px); }
-  .aj-brand-name { font-size: 9px; letter-spacing: .13em; }
+  .aj-brand-name { font-size: 12px; letter-spacing: .13em; }
   .aj-hero h1 { font-size: clamp(35px, 9vw, 42px); }
   .aj-hero-actions .aj-button { flex: 1 1 auto; }
   .aj-socials { column-gap: 11px; }
