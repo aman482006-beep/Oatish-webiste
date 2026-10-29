@@ -78,7 +78,7 @@ export default function RecruitersPage() {
     <div className="min-h-screen bg-[var(--tech-bg)] text-[var(--tech-text)] pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-8 lg:px-20">
       <div className="max-w-6xl mx-auto">
         {/* Page Introduction */}
-        <div className="mb-14 pb-10 border-b border-[#232936]">
+        <div className="mb-14 pb-10 border-b border-[rgba(224,27,27,0.28)]">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--tech-accent)]/30 bg-[var(--tech-card)] text-[var(--tech-accent)] font-mono text-xs uppercase tracking-widest mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
             <span>EXECUTIVE BRIEFING · RECRUITERS & FOUNDERS</span>
@@ -96,7 +96,7 @@ export default function RecruitersPage() {
           <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
             <a
               href="mailto:jain.aman3789@gmail.com?subject=Opportunity%20Inquiry%20-%20Aman%20Jain"
-              className="px-6 py-3 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all shadow-[0_0_20px_rgba(255,133,71,0.2)]"
+              className="px-6 py-3 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all shadow-[0_0_20px_rgba(224,27,27,0.2)]"
             >
               Get In Touch Directly
             </a>
@@ -104,7 +104,7 @@ export default function RecruitersPage() {
               href="https://www.linkedin.com/in/amanmalu/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-3 rounded-lg border border-[#232936] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all flex items-center gap-2"
+              className="px-5 py-3 rounded-lg border border-[rgba(224,27,27,0.28)] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all flex items-center gap-2"
             >
               <span>LinkedIn Profile</span>
               <span className="text-[var(--tech-accent)]">↗</span>
@@ -113,7 +113,7 @@ export default function RecruitersPage() {
               href="https://github.com/aman482006-beep"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-3 rounded-lg border border-[#232936] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all flex items-center gap-2"
+              className="px-5 py-3 rounded-lg border border-[rgba(224,27,27,0.28)] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all flex items-center gap-2"
             >
               <span>GitHub</span>
               <span className="text-[var(--tech-accent)]">↗</span>
@@ -125,7 +125,7 @@ export default function RecruitersPage() {
         <div className="mb-16">
           <div className="text-xs font-mono uppercase tracking-widest text-[var(--tech-accent)] mb-3">01 · OVERVIEW</div>
           <h2 className="text-2xl font-bold font-display text-white mb-4">Professional Summary</h2>
-          <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] text-base leading-relaxed text-[var(--tech-text-muted)] font-sans">
+          <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] text-base leading-relaxed text-[var(--tech-text-muted)] font-sans">
             I&apos;m a BBA student focused on Finance & Marketing Analytics, with internship exposure in finance and commercial business environments. Alongside my academic work, I build analytical and technology-oriented projects and create finance-focused educational content. My goal is to apply quantitative discipline, business curiosity, and practical engineering skills to financial analysis, fintech, or investment research teams.
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function RecruitersPage() {
           <div>
             <div className="text-xs font-mono uppercase tracking-widest text-[var(--tech-accent)] mb-3">02 · ACADEMICS</div>
             <h2 className="text-2xl font-bold font-display text-white mb-4">Education</h2>
-            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] h-[calc(100%-3rem)] flex flex-col justify-between">
+            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] h-[calc(100%-3rem)] flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--tech-accent)] bg-[var(--tech-accent)]/10 px-2.5 py-0.5 rounded border border-[var(--tech-accent)]/20 mb-3 inline-block">
                   Undergraduate Degree
@@ -155,7 +155,7 @@ export default function RecruitersPage() {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#232936] flex items-center justify-between text-xs font-mono text-[var(--tech-text-muted)]">
+              <div className="pt-4 border-t border-[rgba(224,27,27,0.28)] flex items-center justify-between text-xs font-mono text-[var(--tech-text-muted)]">
                 <span>Period: 2024 – 2027</span>
                 <span className="text-emerald-400 font-semibold">Expected: 2027</span>
               </div>
@@ -166,9 +166,9 @@ export default function RecruitersPage() {
           <div>
             <div className="text-xs font-mono uppercase tracking-widest text-[var(--tech-accent)] mb-3">03 · PROFESSIONAL CREDENTIALS</div>
             <h2 className="text-2xl font-bold font-display text-white mb-4">CFA Program</h2>
-            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] h-[calc(100%-3rem)] flex flex-col justify-between">
+            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] h-[calc(100%-3rem)] flex flex-col justify-between">
               <div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400 bg-amber-400/10 px-2.5 py-0.5 rounded border border-amber-400/20 mb-3 inline-block">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--tech-accent)] bg-[var(--tech-accent)]/10 px-2.5 py-0.5 rounded border border-[var(--tech-accent)]/20 mb-3 inline-block">
                   Active Candidate Status
                 </span>
                 <h3 className="text-xl font-bold text-white mb-1">
@@ -185,7 +185,7 @@ export default function RecruitersPage() {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#232936] text-[11px] font-mono text-white/50">
+              <div className="pt-4 border-t border-[rgba(224,27,27,0.28)] text-[11px] font-mono text-white/50">
                 <span>Note: Current registration flagged as Level II candidate in accordance with CFA Institute compliance standards.</span>
               </div>
             </div>
@@ -199,13 +199,13 @@ export default function RecruitersPage() {
           
           <div className="space-y-6">
             {/* Internship 1: Nuvama Wealth */}
-            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] hover:border-[var(--tech-accent)]/40 transition-colors">
+            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] hover:border-[var(--tech-accent)]/40 transition-colors">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                 <div>
                   <h3 className="text-2xl font-bold font-display text-white">Nuvama Wealth</h3>
                   <div className="text-sm font-mono text-[var(--tech-accent)] font-semibold">Finance Intern</div>
                 </div>
-                <div className="text-xs font-mono text-[var(--tech-text-muted)] bg-[var(--tech-bg)] px-3 py-1 rounded border border-[#232936] w-fit">
+                <div className="text-xs font-mono text-[var(--tech-text-muted)] bg-[var(--tech-bg)] px-3 py-1 rounded border border-[rgba(224,27,27,0.28)] w-fit">
                   July 2026 – August 2026 · Bengaluru, India
                 </div>
               </div>
@@ -215,13 +215,13 @@ export default function RecruitersPage() {
             </div>
 
             {/* Internship 2: DAGAS */}
-            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] hover:border-[var(--tech-accent)]/40 transition-colors">
+            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] hover:border-[var(--tech-accent)]/40 transition-colors">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                 <div>
                   <h3 className="text-2xl font-bold font-display text-white">DAGAS</h3>
                   <div className="text-sm font-mono text-[var(--tech-accent)] font-semibold">Finance Intern</div>
                 </div>
-                <div className="text-xs font-mono text-[var(--tech-text-muted)] bg-[var(--tech-bg)] px-3 py-1 rounded border border-[#232936] w-fit">
+                <div className="text-xs font-mono text-[var(--tech-text-muted)] bg-[var(--tech-bg)] px-3 py-1 rounded border border-[rgba(224,27,27,0.28)] w-fit">
                   April 2026 – July 2026 · Bengaluru, India
                 </div>
               </div>
@@ -239,7 +239,7 @@ export default function RecruitersPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {skillsCategories.map((group) => (
-              <div key={group.category} className="p-6 rounded-xl bg-[var(--tech-card)] border border-[#232936]">
+              <div key={group.category} className="p-6 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)]">
                 <h3 className="text-lg font-bold font-display text-white mb-4 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[var(--tech-accent)]" />
                   {group.category}
@@ -248,7 +248,7 @@ export default function RecruitersPage() {
                   {group.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="text-xs font-mono px-3 py-1 rounded bg-[var(--tech-bg)] text-[var(--tech-text-muted)] border border-[#232936]"
+                      className="text-xs font-mono px-3 py-1 rounded bg-[var(--tech-bg)] text-[var(--tech-text-muted)] border border-[rgba(224,27,27,0.28)]"
                     >
                       {skill}
                     </span>
@@ -266,7 +266,7 @@ export default function RecruitersPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {credentials.map((c) => (
-              <div key={c.title} className="p-6 rounded-xl bg-[var(--tech-card)] border border-[#232936] flex flex-col justify-between">
+              <div key={c.title} className="p-6 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex flex-col justify-between">
                 <div>
                   <div className="text-[10px] font-mono text-[var(--tech-accent)] uppercase tracking-wider mb-2">
                     {c.issuer}
@@ -280,7 +280,7 @@ export default function RecruitersPage() {
         </div>
 
         {/* Section H & J: Résumé & Contact for Opportunities */}
-        <div className="p-5 sm:p-12 rounded-2xl bg-[var(--tech-card)] border border-[#232936] relative overflow-hidden">
+        <div className="p-5 sm:p-12 rounded-2xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] relative overflow-hidden">
           <div className="max-w-2xl">
             <div className="text-xs font-mono uppercase tracking-widest text-[var(--tech-accent)] mb-3">07 · NEXT STEPS</div>
             <h2 className="text-3xl font-bold font-display text-white mb-4">
@@ -293,7 +293,7 @@ export default function RecruitersPage() {
             <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
               <a
                 href="mailto:jain.aman3789@gmail.com?subject=Professional%20Opportunity%20-%20Aman%20Jain"
-                className="px-6 py-3.5 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all shadow-[0_0_20px_rgba(255,133,71,0.2)]"
+                className="px-6 py-3.5 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all shadow-[0_0_20px_rgba(224,27,27,0.2)]"
               >
                 Request Official Résumé via Email
               </a>
@@ -301,7 +301,7 @@ export default function RecruitersPage() {
                 href="https://www.linkedin.com/in/amanmalu/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3.5 rounded-lg border border-[#232936] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all"
+                className="px-6 py-3.5 rounded-lg border border-[rgba(224,27,27,0.28)] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all"
               >
                 Connect on LinkedIn
               </a>
