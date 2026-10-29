@@ -1,5 +1,6 @@
 "use client";
 
+import { type FormEvent } from "react";
 import Image from "next/image";
 
 const socialLinks = [
@@ -53,7 +54,7 @@ const sideQuests = [
 ];
 
 export default function Home() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
