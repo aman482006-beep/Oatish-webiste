@@ -44,7 +44,7 @@ export function ThreePillars() {
   ];
 
   return (
-    <section id="pillars" className="relative py-24 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg)] border-t border-[rgba(224,27,27,0.28)]">
+    <section id="pillars" className="relative py-16 sm:py-24 px-4 sm:px-8 lg:px-20 bg-[var(--tech-bg)] border-t border-[rgba(224,27,27,0.28)]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
@@ -52,7 +52,7 @@ export function ThreePillars() {
               <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
               <span>THE THREE PILLARS</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white max-w-2xl leading-[1.1]">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white max-w-2xl leading-[1.1]">
               Finance × Technology × Communication
             </h2>
           </div>
@@ -65,7 +65,7 @@ export function ThreePillars() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="group relative p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] hover:border-[var(--tech-accent)]/40 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+              className="group relative p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] hover:border-[var(--tech-accent)]/40 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
@@ -107,14 +107,14 @@ export function ThreePillars() {
 
 export function SelectedWorkPreview() {
   return (
-    <section id="work-preview" className="py-24 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg-secondary)] border-t border-[rgba(224,27,27,0.28)]">
+    <section id="work-preview" className="py-16 sm:py-24 px-4 sm:px-8 lg:px-20 bg-[var(--tech-bg-secondary)] border-t border-[rgba(224,27,27,0.28)]">
       <div className="max-w-5xl mx-auto">
         <div className="mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--tech-accent)]/30 bg-[var(--tech-card)] text-[var(--tech-accent)] font-mono text-xs uppercase tracking-widest mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
             <span>FEATURED APP</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white leading-[1.1]">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white leading-[1.1]">
             Fokus App
           </h2>
           <p className="text-[var(--tech-text-muted)] text-sm sm:text-base max-w-2xl mt-4 leading-relaxed">
@@ -149,7 +149,7 @@ export function SelectedWorkPreview() {
                 href="https://apps.microsoft.com/detail/9p7njldq8gkk?hl=en-GB&gl=IN"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-fit px-5 py-3 min-h-11 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all duration-200"
               >
                 <span>Get Fokus App</span>
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -166,7 +166,7 @@ export function SelectedWorkPreview() {
 
 export function CreatorPreview() {
   return (
-    <section id="creator-preview" className="py-24 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg)] border-t border-[rgba(224,27,27,0.28)]">
+    <section id="creator-preview" className="py-16 sm:py-24 px-4 sm:px-8 lg:px-20 bg-[var(--tech-bg)] border-t border-[rgba(224,27,27,0.28)]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -174,7 +174,7 @@ export function CreatorPreview() {
               <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
               <span>CONTENT CREATION</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white mb-6 leading-[1.1]">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white mb-6 leading-[1.1]">
               Learning finance. Building things. Sharing the journey.
             </h2>
             <p className="text-[var(--tech-text-muted)] text-base sm:text-lg leading-relaxed mb-8 font-sans">
@@ -254,8 +254,8 @@ export function CreatorPreview() {
 
 export function RecruiterPreview() {
   return (
-    <section id="recruiter-preview" className="py-20 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg-secondary)] border-t border-[rgba(224,27,27,0.28)]">
-      <div className="max-w-7xl mx-auto p-8 sm:p-12 rounded-2xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] relative overflow-hidden">
+    <section id="recruiter-preview" className="py-16 sm:py-20 px-4 sm:px-8 lg:px-20 bg-[var(--tech-bg-secondary)] border-t border-[rgba(224,27,27,0.28)]">
+      <div className="max-w-7xl mx-auto p-5 sm:p-12 rounded-2xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-80 h-80 bg-[radial-gradient(circle,rgba(224,27,27,0.08)_0%,transparent_70%)] pointer-events-none" />
         
         <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
@@ -288,13 +288,13 @@ export function RecruiterPreview() {
 
 export function ContactPreview() {
   return (
-    <section id="contact-preview" className="py-24 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg)] border-t border-[rgba(224,27,27,0.28)]">
+    <section id="contact-preview" className="py-16 sm:py-24 px-4 sm:px-8 lg:px-20 bg-[var(--tech-bg)] border-t border-[rgba(224,27,27,0.28)]">
       <div className="max-w-7xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--tech-accent)]/30 bg-[var(--tech-card)] text-[var(--tech-accent)] font-mono text-xs uppercase tracking-widest mb-4">
           <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
           <span>GET IN TOUCH</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white mb-6">
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white mb-6">
           Have something interesting in mind?
         </h2>
         <p className="text-[var(--tech-text-muted)] text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-10 font-sans">
