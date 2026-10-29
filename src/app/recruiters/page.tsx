@@ -65,7 +65,7 @@ const credentials = [
 
 export default function RecruitersPage() {
   return (
-    <main className="aj-inner-page aj-recruiters-page">
+    <main id="main" className="aj-inner-page aj-recruiters-page">
       <div className="aj-container">
         <header className="aj-inner-heading aj-recruiters-hero">
           <p className="aj-eyebrow aj-eyebrow-accent">FOR RECRUITERS & COLLABORATORS</p>
