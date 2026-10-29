@@ -1,6 +1,13 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
+import { currentlyOpenTo } from "@/data/profile";
+import { ResumeDownload } from "@/components/sections/resume-download";
+
+export const metadata: Metadata = {
+  title: "Recruiters | Aman Jain",
+  description: "Education, internships, CFA candidate status, skills and selected qualifications for recruiters and collaborators.",
+  alternates: { canonical: "/recruiters" },
+};
 
 export default function RecruitersPage() {
   const skillsCategories = [
@@ -92,6 +99,7 @@ export default function RecruitersPage() {
           <p className="text-[var(--tech-text-muted)] text-base leading-relaxed max-w-3xl font-sans">
             I&apos;m <strong className="text-white font-semibold">Aman Jain</strong>, a BBA student at CHRIST (Deemed to be University) in Bengaluru specializing in Finance & Marketing Analytics. My interests span finance, analytical tools, fintech, technology and educational content. This page brings together my academic background, experience and selected work in one structured location.
           </p>
+          <p className="aj-currently-line"><strong>Currently:</strong> {currentlyOpenTo}</p>
 
           <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
             <a
@@ -118,6 +126,7 @@ export default function RecruitersPage() {
               <span>GitHub</span>
               <span className="text-[var(--tech-accent)]">↗</span>
             </a>
+            <ResumeDownload />
           </div>
         </div>
 
