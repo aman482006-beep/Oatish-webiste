@@ -312,3 +312,407 @@ html {
     font-size: 0.78rem;
   }
 }
+
+
+/* ==========================================================================
+   SPIDER-VERSE DESIGN SYSTEM
+   Ink-black surfaces, Spider-Man red, printed halftones, web geometry,
+   comic-panel borders, offset ink shadows, and touch-safe interactions.
+   ========================================================================== */
+
+:root {
+  --spidey-ink: #000000;
+  --spidey-red-hot: #ff2424;
+  --spidey-print-red: rgba(224, 27, 27, 0.42);
+  --spidey-panel-edge: rgba(224, 27, 27, 0.34);
+  --spidey-panel-shadow: rgba(224, 27, 27, 0.12);
+  --spidey-web-ink: rgba(224, 27, 27, 0.075);
+}
+
+/* The whole document stays in the black / red suit palette. */
+html,
+body {
+  background: #000000;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse at 50% -12%, rgba(224, 27, 27, 0.10), transparent 50%),
+    linear-gradient(180deg, #000000 0%, #030000 55%, #000000 100%);
+}
+
+::selection {
+  background: #E01B1B;
+  color: #FFFFFF;
+}
+
+/* Every route and homepage section gets a quiet printed-comic treatment. */
+main > section,
+main > div.min-h-screen {
+  position: relative;
+  isolation: isolate;
+}
+
+main > section::before,
+main > div.min-h-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.48;
+  background-image:
+    radial-gradient(circle, rgba(224, 27, 27, 0.20) 0.7px, transparent 1px),
+    linear-gradient(135deg, transparent 49.5%, rgba(224, 27, 27, 0.045) 49.8%, rgba(224, 27, 27, 0.045) 50.2%, transparent 50.5%);
+  background-size: 9px 9px, 180px 180px;
+  -webkit-mask-image: radial-gradient(ellipse at 100% 0%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(ellipse at 100% 0%, #000 0%, transparent 72%);
+}
+
+main > section::after,
+main > div.min-h-screen::after {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: 0;
+  height: 1px;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(224, 27, 27, 0.30) 18%, rgba(224, 27, 27, 0.12) 82%, transparent);
+}
+
+/* Comic-print title treatment: a restrained red ink-registration offset. */
+main h1,
+main h2,
+main h3 {
+  text-wrap: balance;
+  text-shadow: 1.5px 0 rgba(224, 27, 27, 0.16), -1px 0 rgba(255, 255, 255, 0.025);
+}
+
+main h1,
+main h2 {
+  letter-spacing: -0.025em;
+}
+
+.font-display {
+  text-rendering: geometricPrecision;
+}
+
+/* Comic panels: angular red keylines, ink depth and subtle halftone shading. */
+main :is(
+  [class*="bg-[var(--tech-card)]"][class*="rounded-xl"],
+  [class*="bg-[var(--tech-card)]"][class*="rounded-2xl"],
+  [class*="bg-[var(--tech-card)]"][class*="rounded-3xl"]
+) {
+  border-color: var(--spidey-panel-edge) !important;
+  background-image:
+    linear-gradient(135deg, rgba(224, 27, 27, 0.045), transparent 48%),
+    radial-gradient(circle at 100% 0%, rgba(224, 27, 27, 0.085), transparent 32%);
+  box-shadow: 4px 4px 0 var(--spidey-panel-shadow), inset 0 0 0 1px rgba(224, 27, 27, 0.035);
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.spidey-card,
+.spidey-comic-panel {
+  border: 1px solid var(--spidey-panel-edge);
+  border-radius: 12px;
+  background-color: #000000;
+  background-image:
+    linear-gradient(135deg, rgba(224, 27, 27, 0.06), transparent 52%),
+    radial-gradient(circle at 100% 0%, rgba(224, 27, 27, 0.12), transparent 35%),
+    radial-gradient(circle, rgba(224, 27, 27, 0.075) 0.7px, transparent 0.95px);
+  background-size: auto, auto, 8px 8px;
+  box-shadow: 5px 5px 0 rgba(224, 27, 27, 0.10);
+}
+
+/* Small comic-panel corners and suit-like stitching on featured cards. */
+main :is(
+  [class*="bg-[var(--tech-card)]"][class*="rounded-xl"],
+  [class*="bg-[var(--tech-card)]"][class*="rounded-2xl"],
+  [class*="bg-[var(--tech-card)]"][class*="rounded-3xl"]
+) {
+  background-repeat: no-repeat, no-repeat;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  main :is(
+    [class*="bg-[var(--tech-card)]"][class*="rounded-xl"],
+    [class*="bg-[var(--tech-card)]"][class*="rounded-2xl"],
+    [class*="bg-[var(--tech-card)]"][class*="rounded-3xl"]
+  ):hover {
+    border-color: rgba(255, 36, 36, 0.78) !important;
+    box-shadow: 6px 6px 0 rgba(224, 27, 27, 0.16), 0 12px 32px rgba(224, 27, 27, 0.075);
+    transform: translateY(-2px);
+  }
+
+  .spidey-card:hover {
+    border-color: var(--spidey-red-hot);
+    box-shadow: 6px 6px 0 rgba(224, 27, 27, 0.18), 0 0 26px rgba(224, 27, 27, 0.13);
+    transform: translateY(-3px);
+  }
+}
+
+/* Spider-Man red is the single accent across interactive states. */
+a,
+button,
+input,
+textarea,
+select {
+  accent-color: #E01B1B;
+  -webkit-tap-highlight-color: rgba(224, 27, 27, 0.18);
+}
+
+main a[href],
+main button,
+footer a,
+nav a,
+nav button {
+  outline-offset: 4px;
+}
+
+main a[href]:focus-visible,
+main button:focus-visible,
+main input:focus-visible,
+main textarea:focus-visible,
+main select:focus-visible,
+nav a:focus-visible,
+nav button:focus-visible,
+footer a:focus-visible {
+  outline: 2px solid #ff2424;
+  box-shadow: 0 0 0 4px rgba(224, 27, 27, 0.20);
+}
+
+main button {
+  min-height: 44px;
+}
+
+main input,
+main textarea,
+main select {
+  color: #F5F7FA;
+  background-color: #050000;
+  border-color: rgba(224, 27, 27, 0.34);
+  border-radius: 8px;
+}
+
+main input::placeholder,
+main textarea::placeholder {
+  color: #A5ADBB;
+  opacity: 0.85;
+}
+
+main input:focus,
+main textarea:focus,
+main select:focus {
+  border-color: #E01B1B;
+  box-shadow: 0 0 0 3px rgba(224, 27, 27, 0.15);
+}
+
+/* Form controls, filter pills and resource tags do not drift into other palettes. */
+main [class*="text-amber-"],
+main [class*="text-green-"],
+main [class*="text-blue-"],
+main [class*="text-gold"] {
+  color: #ff3838 !important;
+}
+
+main [class*="border-amber-"],
+main [class*="border-green-"],
+main [class*="border-blue-"],
+main [class*="border-gold"] {
+  border-color: rgba(224, 27, 27, 0.45) !important;
+}
+
+main [class*="bg-amber-"],
+main [class*="bg-green-"],
+main [class*="bg-blue-"],
+main [class*="bg-gold"] {
+  background-color: rgba(224, 27, 27, 0.12) !important;
+}
+
+/* Primary actions feel stamped into the comic panel, not like generic SaaS buttons. */
+.spidey-btn,
+.tech-btn {
+  border: 1px solid #ff3838;
+  box-shadow: 5px 5px 0 rgba(224, 27, 27, 0.22), 0 0 22px rgba(224, 27, 27, 0.12);
+  text-shadow: none;
+}
+
+.spidey-pill {
+  border-color: rgba(224, 27, 27, 0.7);
+  background-color: #000000;
+  box-shadow: 3px 3px 0 rgba(224, 27, 27, 0.11);
+}
+
+.spidey-btn:active,
+.tech-btn:active,
+.spidey-pill:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+/* Header reads like a dark suit panel with a red web seam. */
+nav[class*="fixed"][class*="top-0"] {
+  border-bottom-color: rgba(224, 27, 27, 0.40);
+  box-shadow: inset 0 -1px rgba(224, 27, 27, 0.08);
+}
+
+nav a[aria-current="page"] {
+  text-shadow: 0 0 14px rgba(224, 27, 27, 0.35);
+}
+
+nav a:hover,
+footer a:hover {
+  text-shadow: 0 0 12px rgba(224, 27, 27, 0.32);
+}
+
+footer {
+  position: relative;
+  z-index: 3;
+  background-image:
+    radial-gradient(circle at 92% 0%, rgba(224, 27, 27, 0.09), transparent 28%),
+    radial-gradient(circle, rgba(224, 27, 27, 0.07) 0.7px, transparent 0.95px);
+  background-size: auto, 9px 9px;
+}
+
+/* Loader styling: halftone dots and radial web lines behind the emblem. */
+.spidey-loader {
+  isolation: isolate;
+  background-image: radial-gradient(ellipse at center, rgba(224, 27, 27, 0.12), #000000 58%);
+}
+
+.spidey-loader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.65;
+  background-image:
+    radial-gradient(circle, rgba(224, 27, 27, 0.25) 0.8px, transparent 1px),
+    repeating-conic-gradient(from 0deg at 50% 43%, transparent 0deg 14.5deg, rgba(224, 27, 27, 0.09) 14.7deg 15deg, transparent 15.2deg 30deg);
+  background-size: 10px 10px, min(100vw, 820px) min(100vw, 820px);
+  background-repeat: repeat, no-repeat;
+  background-position: center, center 40%;
+}
+
+.spidey-loader button {
+  min-height: 44px;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(224, 27, 27, 0.42);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+/* Fine red strands make scroll progress, browser focus and separators feel related. */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff3838, #8F0D0D);
+  border-radius: 0;
+}
+
+hr,
+.section-divider {
+  border-color: rgba(224, 27, 27, 0.35);
+}
+
+/* Older section components share the same visual language if reused on another route. */
+.section-label {
+  color: #ff3838 !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.skills-section,
+.credentials,
+.socials-section {
+  color: #F5F7FA;
+  background-color: #000000;
+  background-image:
+    radial-gradient(circle at 100% 0%, rgba(224, 27, 27, 0.11), transparent 30%),
+    radial-gradient(circle, rgba(224, 27, 27, 0.06) 0.7px, transparent 0.95px);
+  background-size: auto, 9px 9px;
+}
+
+.skill-card,
+.cred-featured,
+.cred-item,
+.social-btn,
+.contact-form-wrap,
+.contact-form {
+  border-color: rgba(224, 27, 27, 0.35) !important;
+  background-color: #000000 !important;
+  box-shadow: 4px 4px 0 rgba(224, 27, 27, 0.10);
+}
+
+.skill-name,
+.cred-name,
+.cred-featured-name,
+.contact-form-title {
+  color: #F5F7FA !important;
+}
+
+.skill-card:hover,
+.cred-item:hover,
+.social-btn:hover {
+  border-color: #E01B1B !important;
+  box-shadow: 5px 5px 0 rgba(224, 27, 27, 0.16);
+}
+
+/* Mobile polish: avoid parallax-like hovers and keep patterns lightweight. */
+@media (hover: none), (max-width: 640px) {
+  main > section::before,
+  main > div.min-h-screen::before {
+    opacity: 0.25;
+    background-size: 11px 11px, 220px 220px;
+  }
+
+  main > section::after,
+  main > div.min-h-screen::after {
+    left: 6%;
+    right: 6%;
+  }
+
+  main :is(
+    [class*="bg-[var(--tech-card)]"][class*="rounded-xl"],
+    [class*="bg-[var(--tech-card)]"][class*="rounded-2xl"],
+    [class*="bg-[var(--tech-card)]"][class*="rounded-3xl"]
+  ) {
+    box-shadow: 3px 3px 0 rgba(224, 27, 27, 0.10);
+  }
+
+  .spidey-card:hover,
+  .spidey-btn:hover,
+  .spidey-pill:hover,
+  .skill-card:hover,
+  .cred-item:hover,
+  .social-btn:hover {
+    transform: none;
+  }
+}
+
+/* Motion remains optional for visitors who request reduced animation. */
+@media (prefers-reduced-motion: reduce) {
+  main :is(
+    [class*="bg-[var(--tech-card)]"][class*="rounded-xl"],
+    [class*="bg-[var(--tech-card)]"][class*="rounded-2xl"],
+    [class*="bg-[var(--tech-card)]"][class*="rounded-3xl"]
+  ),
+  .spidey-card,
+  .spidey-btn,
+  .spidey-pill {
+    transition: none !important;
+    animation: none !important;
+  }
+}
