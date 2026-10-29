@@ -30,7 +30,7 @@ const creatorPillars = [
 
 export default function CreatorPage() {
   return (
-    <main className="aj-inner-page aj-creator-page">
+    <main id="main" className="aj-inner-page aj-creator-page">
       <div className="aj-container">
         <header className="aj-inner-heading aj-creator-hero">
           <p className="aj-eyebrow aj-eyebrow-accent">CREATOR HUB</p>
