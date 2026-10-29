@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SocialIcon, type SocialIconName } from "@/components/layout/social-icon";
+import { BackToTop } from "@/components/layout/back-to-top";
 
 const socials: { label: string; href: string; icon: SocialIconName }[] = [
   { label: "GitHub", href: "https://github.com/aman482006-beep", icon: "github" },
@@ -24,6 +25,7 @@ export function Footer() {
         </div>
         <p className="aj-footer-copy">© {new Date().getFullYear()} Aman Jain.<br />Built with curiosity.</p>
       </div>
+      <BackToTop />
     </footer>
   );
 }

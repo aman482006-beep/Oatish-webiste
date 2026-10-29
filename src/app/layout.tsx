@@ -3,10 +3,12 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Caveat, Manrope, Newsreader } from "next/font/google";
 import "./globals.css";
+import "./motion.css";
 import { ScrollProgressBar } from "@/components/ui/scroll-progress";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { MotionRoot } from "@/components/motion/motion-root";
 
 const newsreader = Newsreader({
   weight: ["400", "500", "600", "700"],
@@ -80,9 +82,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <ScrollProgressBar />
         <SmoothScroll>
-          <Navbar />
-          <div className="site-main">{children}</div>
-          <Footer />
+          <MotionRoot>
+            <Navbar />
+            <div className="site-main">{children}</div>
+            <Footer />
+          </MotionRoot>
         </SmoothScroll>
         <Analytics />
         <SpeedInsights />
