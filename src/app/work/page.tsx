@@ -65,44 +65,6 @@ const projects: CaseStudy[] = [
     ],
   },
   {
-    id: "agentic-finance-lab",
-    title: "Agentic Finance Research Lab",
-    subtitle: "AI-Powered Financial Research & Portfolio Risk Guardian",
-    category: "AI & Technology",
-    categories: ["All", "Finance", "AI & Technology"],
-    repoUrl: "https://github.com/aman482006-beep/Aman-trading-agent",
-    statusTag: "Research & Systems Experiment",
-    attribution:
-      "Framework Attribution: This project utilizes and forks the upstream TradingAgents framework created by Tauric Research. My individual engineering contributions are located within the custom agent_lab directory and custom portfolio guardian implementation.",
-    disclaimer:
-      "Strict Notice: This software is purely an academic research and engineering prototype. It does NOT generate guaranteed trading returns, automated buy/sell orders, or professional financial advice.",
-    overview:
-      "An experimental multi-agent research harness designed to structure qualitative financial analysis and enforce quantitative risk controls. The system features a Research Copilot that parses filings and market reports with evidence tracking, paired with a deterministic Portfolio Guardian.",
-    problem:
-      "Language models used in finance are notorious for hallucinations, unverified claims, and erratic decision traces. Without deterministic boundary guards and mathematical concentration checks, LLM reasoning cannot be safely applied in analytical workflows.",
-    contribution:
-      "Engineered the custom `agent_lab` evaluation pipeline and the deterministic Portfolio Guardian module. Implemented structured citation tracking requiring agents to attach verifiable source documents to every synthesis claim, and built stress-test scenario handlers.",
-    approach:
-      "Designed a strict two-stage pipeline: (1) Generative Multi-Agent Synthesis with Confidence Scoring where agents deliberate Bull/Bear perspectives; (2) Deterministic Portfolio Guardian that enforces mathematical constraints (Max Sector Weight <= 25%, Volatility VaR caps) completely independent of LLM whims.",
-    technologies: [
-      "Python",
-      "LangChain / Custom Agent Harness",
-      "Tauric Research TradingAgents Core",
-      "NumPy / SciPy",
-      "Structured JSON Validation (Pydantic)",
-    ],
-    architecture: [
-      "Research Copilot: Multi-agent debate environment (Fundamental Analyst, Macro Analyst, Risk Skeptic).",
-      "Evidence Tracker: Document citation index binding agent deductions to extracted filing passages.",
-      "Portfolio Guardian: Hard-coded mathematical validator evaluating concentration, correlation matrices, and historical stress scenarios.",
-      "Trace Visualizer: Exportable JSON decision traces outlining confidence intervals and failure flags.",
-    ],
-    limitations: [
-      "Agent deliberation quality is dependent on the context window and token latency of underlying models.",
-      "Stress testing scenarios rely on historical volatility benchmarks and do not predict unprecedented black-swan events.",
-    ],
-  },
-  {
     id: "ideas-to-execution",
     title: "Ideas to Execution",
     subtitle: "Independent Venture Capital Storytelling & Interactive Founder Process",
@@ -137,41 +99,7 @@ const projects: CaseStudy[] = [
       "Contains conceptual case studies based solely on public domain information rather than internal proprietary portfolio data.",
     ],
   },
-  {
-    id: "air-math-ai",
-    title: "Air Math AI",
-    subtitle: "Experimental Webcam Gesture Mathematics Workspace",
-    category: "AI & Technology",
-    categories: ["All", "AI & Technology"],
-    repoUrl: "https://github.com/aman482006-beep/Airmath-AI",
-    statusTag: "Secondary Engineering Experiment",
-    isSecondary: true,
-    overview:
-      "An experimental webcam-driven computational workspace that enables users to draw mathematical equations in mid-air using hand gestures, extracting handwriting via OCR and solving expressions symbolically with SymPy.",
-    problem:
-      "Typing complex mathematical equations using standard keyboards or LaTeX markup is slow and unintuitive for students solving interactive algebraic problems in real time.",
-    contribution:
-      "Developed the webcam gesture tracking integration using MediaPipe landmarks, engineered the virtual drawing canvas with smoothing interpolation, and connected the browser client to a FastAPI backend running SymPy.",
-    approach:
-      "Processed hand landmark coordinates to detect pinch-and-draw gestures, rendered vector strokes onto an HTML5 canvas overlay, and piped rendered frame buffers over WebSockets for OCR recognition and mathematical parsing.",
-    technologies: [
-      "Python",
-      "FastAPI",
-      "MediaPipe / OpenCV",
-      "SymPy (Symbolic Math)",
-      "HTML5 Canvas",
-      "WebSockets",
-    ],
-    architecture: [
-      "Vision Pipeline: MediaPipe Hand tracking isolated to index fingertip coordinate delta tracking.",
-      "Canvas Engine: Double-buffered HTML5 canvas smoothing handwritten strokes.",
-      "Solving Engine: FastAPI backend parsing LaTeX/OCR output into SymPy trees for step-by-step simplification.",
-    ],
-    limitations: [
-      "Gesture accuracy degrades under poor lighting conditions or low webcam frame rates.",
-      "Symbolic OCR is currently limited to elementary algebra, polynomials, and single-variable calculus.",
-    ],
-  },
+
 ];
 
 export default function WorkPage() {
