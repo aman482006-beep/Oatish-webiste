@@ -90,7 +90,7 @@ export default function Home() {
             </span>
           </div>
 
-          <h1 className="max-w-4xl text-5xl font-bold leading-[0.98] tracking-tight sm:text-7xl lg:text-8xl">
+          <h1 className="font-display max-w-4xl text-5xl font-bold leading-[0.98] tracking-tight sm:text-7xl lg:text-8xl">
             Hey, I’m Aman.
             <span className="mt-2 block text-[#e11b1b]">I collect side quests.</span>
           </h1>
@@ -134,7 +134,7 @@ export default function Home() {
           <p className="mb-3 text-[10px] font-mono uppercase tracking-[0.22em] text-[#e11b1b]">
             The lore, basically
           </p>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
             My current side quests<span className="text-[#e11b1b]">.</span>
           </h2>
 
