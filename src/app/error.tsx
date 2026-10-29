@@ -16,7 +16,7 @@ export default function ErrorPage({
   }, [error]);
 
   return (
-    <main className="aj-inner-page aj-error-page">
+    <main id="main" className="aj-inner-page aj-error-page">
       <div className="aj-container aj-error-content">
         <p className="aj-eyebrow aj-eyebrow-accent">SOMETHING WENT WRONG</p>
         <h1>This page didn&apos;t load as expected.</h1>
