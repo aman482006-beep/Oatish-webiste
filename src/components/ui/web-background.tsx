@@ -6,6 +6,8 @@ export function WebBackground() {
   const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!window.matchMedia("(pointer: fine)").matches) return;
+
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
     let curX = mouseX;
@@ -41,7 +43,7 @@ export function WebBackground() {
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[var(--spidey-black)]" aria-hidden="true">
       {/* Spiderweb SVG Texture Layer — subtle ~2.5% opacity for clean minimal depth */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-[0.025] stroke-white"
+        className="absolute inset-0 hidden sm:block w-full h-full opacity-[0.025] stroke-white"
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
         height="100%"
@@ -69,7 +71,7 @@ export function WebBackground() {
       {/* Floating interactive soft red radial glow that slowly drifts */}
       <div
         ref={glowRef}
-        className="absolute top-0 left-0 w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.12)_0%,rgba(143,13,13,0.04)_40%,transparent_70%)] blur-[90px] will-change-transform pointer-events-none"
+        className="absolute top-0 left-0 w-[360px] h-[360px] sm:w-[700px] sm:h-[700px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.12)_0%,rgba(143,13,13,0.04)_40%,transparent_70%)] blur-[55px] sm:blur-[90px] will-change-transform pointer-events-none"
       />
     </div>
   );
