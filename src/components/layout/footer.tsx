@@ -20,7 +20,7 @@ export function Footer() {
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-[rgba(224,27,27,0.18)]">
         <div>
-          <div className="text-xl sm:text-2xl font-bold font-display tracking-wider text-white mb-2">
+          <div className="text-xl sm:text-xl sm:text-2xl font-bold font-display tracking-wider text-white mb-2">
             AMAN <span className="text-[var(--tech-accent)]">JAIN</span>
           </div>
           <p className="text-xs font-mono text-[var(--tech-text-muted)] max-w-sm">
