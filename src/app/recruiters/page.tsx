@@ -4,7 +4,7 @@ import { currentlyOpenTo } from "@/data/profile";
 import { ResumeDownload } from "@/components/sections/resume-download";
 
 export const metadata: Metadata = {
-  title: "Recruiters | Aman Jain",
+  title: "Recruiters",
   description: "Education, internships, CFA candidate status, skills and selected qualifications for recruiters and collaborators.",
   alternates: { canonical: "/recruiters" },
 };
