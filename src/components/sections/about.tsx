@@ -22,9 +22,26 @@ export function About() {
         <div className="w-full lg:w-1/2 flex justify-center items-center relative">
           <div
             className="w-full max-w-[360px] sm:max-w-[480px] aspect-[4/5] relative rounded-3xl overflow-hidden border border-[rgba(224,27,27,0.28)] bg-[var(--tech-card)] transition-all duration-300 hover:-translate-y-1.5 cursor-pointer group select-none shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
-            onMouseEnter={() => setIsUnmasked(true)}
-            onMouseLeave={() => setIsUnmasked(false)}
-            onClick={() => setIsUnmasked(!isUnmasked)}
+            role="button"
+            tabIndex={0}
+            aria-pressed={isUnmasked}
+            onMouseEnter={() => {
+              if (window.matchMedia("(pointer: fine)").matches) setIsUnmasked(true);
+            }}
+            onMouseLeave={() => {
+              if (window.matchMedia("(pointer: fine)").matches) setIsUnmasked(false);
+            }}
+            onClick={() => {
+              if (window.matchMedia("(pointer: coarse)").matches) {
+                setIsUnmasked((current) => !current);
+              }
+            }}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                setIsUnmasked((current) => !current);
+              }
+            }}
           >
             {/* Real Face Layer Underneath */}
             <div className="absolute inset-0 w-full h-full">
@@ -33,7 +50,7 @@ export function About() {
                 alt="Aman Jain Revealed"
                 fill
                 sizes="(max-width: 1024px) 100vw, 500px"
-                className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
+                className={`object-cover object-center transition-all duration-700 ${isUnmasked ? "grayscale-0" : "grayscale"}`}
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent opacity-80" />
