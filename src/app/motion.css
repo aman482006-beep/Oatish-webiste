@@ -3,10 +3,20 @@
   from { opacity: .72; translate: 0 7px; }
   to { opacity: 1; translate: 0 0; }
 }
+@keyframes aj-view-old { to { opacity: 0; } }
+@keyframes aj-view-new { from { opacity: 0; } to { opacity: 1; } }
 
 @media (prefers-reduced-motion: no-preference) {
-  .aj-route-transition {
+  html:not(.aj-view-transitions) .aj-route-transition {
     animation: aj-route-enter 480ms var(--aj-ease) both;
+  }
+
+  html.aj-view-transitions::view-transition-old(root) {
+    animation: aj-view-old 180ms ease-in both;
+  }
+
+  html.aj-view-transitions::view-transition-new(root) {
+    animation: aj-view-new 380ms var(--aj-ease) both;
   }
 }
 
@@ -149,14 +159,15 @@ html.aj-motion-enabled [data-reveal][data-revealed="true"] {
   width: max-content;
   min-height: 36px;
   align-items: center;
-  gap: 28px;
-  padding-inline: 24px;
+  gap: 0;
+  padding-inline: 0;
   white-space: nowrap;
 }
 .aj-marquee-item {
   display: inline-flex;
   align-items: center;
   gap: 28px;
+  margin-right: 28px;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: .16em;
@@ -284,6 +295,9 @@ html.aj-motion-enabled .aj-pillar[data-revealed="true"] .aj-pillar-svg path {
 
 /* The motion layer never hides useful content for reduced-motion visitors. */
 @media (prefers-reduced-motion: reduce) {
+  .aj-route-transition,
+  html.aj-view-transitions::view-transition-old(root),
+  html.aj-view-transitions::view-transition-new(root) { animation: none; }
   .aj-marquee { display: none; }
   .aj-pillar::after { display: none; }
   .aj-pillar-svg path { stroke-dasharray: none; stroke-dashoffset: 0; }
