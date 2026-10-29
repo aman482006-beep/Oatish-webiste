@@ -3,6 +3,8 @@ import Link from "next/link";
 import { LatestVideos } from "@/components/sections/latest-videos";
 import { FOKUS } from "@/data/fokus";
 import { financeWork } from "@/data/finance-work";
+import { currentlyOpenTo } from "@/data/profile";
+import { ResumeDownload } from "@/components/sections/resume-download";
 
 const socials = [
   { label: "GitHub", href: "https://github.com/aman482006-beep", mark: "GH" },
@@ -171,7 +173,11 @@ export default function Home() {
             <p className="aj-eyebrow aj-eyebrow-accent">RECRUITERS</p>
             <h2>A quick overview.</h2>
             <p>My education, internships, skills and career interests in one place.</p>
-            <Link href="/recruiters" className="aj-button aj-button-primary">View full profile <span aria-hidden="true">→</span></Link>
+            <p className="aj-currently-line"><strong>Currently:</strong> {currentlyOpenTo}</p>
+            <div className="aj-recruiter-actions">
+              <Link href="/recruiters" className="aj-button aj-button-primary">View full profile <span aria-hidden="true">→</span></Link>
+              <ResumeDownload compact />
+            </div>
           </div>
           <div className="aj-recruiter-facts">
             <article><span className="aj-fact-icon">⌂</span><h3>Education</h3><p>BBA — Finance &amp; Marketing Analytics<br />CHRIST University<br />(2024–2027)</p></article>
