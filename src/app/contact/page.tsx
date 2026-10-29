@@ -73,7 +73,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-[var(--tech-bg)] text-[var(--tech-text)] pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-8 lg:px-20">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="mb-14 pb-8 border-b border-[#232936]">
+        <div className="mb-14 pb-8 border-b border-[rgba(224,27,27,0.28)]">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--tech-accent)]/30 bg-[var(--tech-card)] text-[var(--tech-accent)] font-mono text-xs uppercase tracking-widest mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
             <span>DIRECT INQUIRIES & CONNECT</span>
@@ -88,7 +88,7 @@ export default function ContactPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Main Action Card: Categorized Email Dispatch */}
-          <div className="lg:col-span-2 p-5 sm:p-10 rounded-2xl bg-[var(--tech-card)] border border-[#232936] flex flex-col justify-between">
+          <div className="lg:col-span-2 p-5 sm:p-10 rounded-2xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex flex-col justify-between">
             <div>
               <div className="text-xs font-mono uppercase tracking-widest text-[var(--tech-accent)] mb-2">
                 STEP 1 · SELECT INQUIRY PURPOSE
@@ -104,8 +104,8 @@ export default function ContactPage() {
                     onClick={() => setSelectedCategory(cat.label)}
                     className={`p-4 rounded-xl text-left border transition-all duration-200 cursor-pointer ${
                       selectedCategory === cat.label
-                        ? "bg-[var(--tech-bg)] border-[var(--tech-accent)] text-white shadow-[0_0_15px_rgba(255,133,71,0.15)]"
-                        : "bg-[var(--tech-bg)]/50 border-[#232936] text-[var(--tech-text-muted)] hover:border-white/20 hover:text-white"
+                        ? "bg-[var(--tech-bg)] border-[var(--tech-accent)] text-white shadow-[0_0_15px_rgba(224,27,27,0.15)]"
+                        : "bg-[var(--tech-bg)]/50 border-[rgba(224,27,27,0.28)] text-[var(--tech-text-muted)] hover:border-white/20 hover:text-white"
                     }`}
                   >
                     <div className="text-xs font-mono font-bold mb-1">{cat.label}</div>
@@ -114,7 +114,7 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              <div className="p-4 rounded-xl bg-[var(--tech-bg)] border border-[#232936] mb-8 font-mono text-xs">
+              <div className="p-4 rounded-xl bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] mb-8 font-mono text-xs">
                 <div className="text-[10px] uppercase text-white/50 tracking-wider mb-2">Pre-configured Subject Line</div>
                 <div className="text-[var(--tech-accent)] font-semibold mb-3">{currentCategory.subject}</div>
                 <div className="text-[10px] uppercase text-white/50 tracking-wider mb-1">Destination Address</div>
@@ -122,10 +122,10 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="pt-6 border-t border-[#232936] flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
+            <div className="pt-6 border-t border-[rgba(224,27,27,0.28)] flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
               <a
                 href={mailtoHref}
-                className="w-full sm:w-fit justify-center px-5 sm:px-6 py-3.5 min-h-11 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all shadow-[0_0_20px_rgba(255,133,71,0.25)] flex items-center gap-2"
+                className="w-full sm:w-fit justify-center px-5 sm:px-6 py-3.5 min-h-11 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all shadow-[0_0_20px_rgba(224,27,27,0.25)] flex items-center gap-2"
               >
                 <span>Launch Email Client</span>
                 <span className="font-bold">↗</span>
@@ -133,7 +133,7 @@ export default function ContactPage() {
 
               <button
                 onClick={copyEmail}
-                className="w-full sm:w-fit justify-center px-5 py-3.5 min-h-11 rounded-lg border border-[#232936] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2"
+                className="w-full sm:w-fit justify-center px-5 py-3.5 min-h-11 rounded-lg border border-[rgba(224,27,27,0.28)] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2"
               >
                 <span>{copied ? "Copied to Clipboard!" : "Copy Email Address"}</span>
               </button>
@@ -142,7 +142,7 @@ export default function ContactPage() {
 
           {/* Social Channels & Fast Direct Info */}
           <div className="space-y-4">
-            <div className="p-5 sm:p-6 rounded-2xl bg-[var(--tech-card)] border border-[#232936]">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)]">
               <div className="text-xs font-mono uppercase tracking-wider text-[var(--tech-accent)] mb-2">LOCATION & TIMEZONE</div>
               <div className="text-white font-bold font-display text-xl mb-1">Bengaluru, India</div>
               <div className="text-xs font-mono text-[var(--tech-text-muted)]">IST (UTC+5:30) · Open to global remote discussions</div>
@@ -158,7 +158,7 @@ export default function ContactPage() {
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 sm:p-5 rounded-xl bg-[var(--tech-card)] border border-[#232936] hover:border-[var(--tech-accent)]/50 transition-all flex flex-col justify-between group block"
+                className="p-4 sm:p-5 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] hover:border-[var(--tech-accent)]/50 transition-all flex flex-col justify-between group block"
               >
                 <div className="flex items-center justify-between mb-1">
                   <span className="font-bold font-display text-lg text-white group-hover:text-[var(--tech-accent)] transition-colors">
