@@ -106,140 +106,58 @@ export function ThreePillars() {
 }
 
 export function SelectedWorkPreview() {
-  const projects = [
-    {
-      title: "Market Monitor",
-      subtitle: "Indian Equity-Market Intelligence Terminal",
-      category: "Finance & Data Engineering",
-      badge: "Flagship Project",
-      description:
-        "Full-stack market intelligence terminal ingesting Indian equity data into PostgreSQL with FastAPI backend & Next.js UI. Features market breadth analytics, advance/decline distribution, relative volume scanners, and a deterministic market-regime classification engine.",
-      tags: ["FastAPI", "PostgreSQL", "Next.js", "Financial Analytics", "Python"],
-      repo: "https://github.com/aman482006-beep/market-monitor",
-      demo: null,
-      disclaimer: null,
-    },
-    {
-      title: "Ideas to Execution",
-      subtitle: "Independent VC Storytelling & Interactive Founder Process",
-      category: "Product & Design",
-      badge: "Interactive Experience",
-      description:
-        "An independent interactive experience exploring venture-capital research, editorial UI design, portfolio company presentation, and an interactive 30-day founder-process timeline with fluid animations.",
-      tags: ["Next.js", "GSAP & Motion", "Venture Capital", "Interactive UX"],
-      repo: "https://github.com/aman482006-beep/ideas-to-execution",
-      demo: "https://aman482006-beep.github.io/ideas-to-execution/",
-      disclaimer:
-        "Disclaimer: Independent exploratory project inspired by public information about 8i Ventures. Not affiliated with, endorsed by, or operated by 8i Ventures.",
-    },
-
-  ];
-
   return (
     <section id="work-preview" className="py-24 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg-secondary)] border-t border-[rgba(224,27,27,0.28)]">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--tech-accent)]/30 bg-[var(--tech-card)] text-[var(--tech-accent)] font-mono text-xs uppercase tracking-widest mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
-              <span>SELECTED WORK</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white leading-[1.1]">
-              Selected Work
-            </h2>
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--tech-accent)]/30 bg-[var(--tech-card)] text-[var(--tech-accent)] font-mono text-xs uppercase tracking-widest mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
+            <span>FEATURED APP</span>
           </div>
-          <Link
-            href="/work"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[var(--tech-accent)] text-[var(--tech-accent)] hover:bg-[var(--tech-accent)] hover:text-[#000000] font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 w-fit"
-          >
-            <span>View Case Studies</span>
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </Link>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white leading-[1.1]">
+            Fokus App
+          </h2>
+          <p className="text-[var(--tech-text-muted)] text-sm sm:text-base max-w-2xl mt-4 leading-relaxed">
+            A focus app for Windows, available as a free download from the Microsoft Store. More projects will be added here when they are ready to share.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.map((proj) => (
-            <div
-              key={proj.title}
-              className="p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] hover:border-[var(--tech-accent)]/40 transition-all duration-300 flex flex-col justify-between group hover:shadow-[0_10px_35px_rgba(0,0,0,0.6)]"
-            >
-              <div>
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--tech-accent)] bg-[var(--tech-accent)]/10 px-2.5 py-1 rounded border border-[var(--tech-accent)]/20">
-                    {proj.category}
-                  </span>
-                  <span className="text-[10px] font-mono text-[var(--tech-text-muted)] bg-[var(--tech-bg)] px-2 py-0.5 rounded border border-[rgba(224,27,27,0.28)]">
-                    {proj.badge}
-                  </span>
-                </div>
-
-                <h3 className="text-2xl sm:text-3xl font-bold font-display tracking-wide text-white mb-1 group-hover:text-[var(--tech-accent)] transition-colors">
-                  {proj.title}
-                </h3>
-                <div className="text-xs font-mono text-[var(--tech-accent)] mb-4">{proj.subtitle}</div>
-
-                <p className="text-[var(--tech-text-muted)] text-sm leading-relaxed mb-6">
-                  {proj.description}
-                </p>
-
-                {proj.disclaimer && (
-                  <div className="mb-6 p-3 rounded-md bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] text-[11px] font-mono text-[var(--tech-text-muted)] leading-normal">
-                    {proj.disclaimer}
-                  </div>
-                )}
-              </div>
-
-              <div>
-                <div className="flex flex-wrap gap-1.5 mb-6">
-                  {proj.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="text-xs font-mono px-2 py-0.5 rounded bg-[var(--tech-bg)] text-[var(--tech-text-muted)] border border-[rgba(224,27,27,0.28)]"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-4 pt-4 border-t border-[rgba(224,27,27,0.28)]">
-                  {proj.repo && (
-                    <a
-                      href={proj.repo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-mono text-white hover:text-[var(--tech-accent)] transition-colors"
-                    >
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                      </svg>
-                      <span>Repository</span>
-                    </a>
-                  )}
-                  {proj.demo && (
-                    <a
-                      href={proj.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-mono text-[var(--tech-accent)] hover:underline"
-                    >
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                      <span>Live Demo</span>
-                    </a>
-                  )}
-                  <Link
-                    href="/work"
-                    className="ml-auto text-xs font-mono text-[var(--tech-text-muted)] hover:text-white transition-colors"
-                  >
-                    Full Case Study →
-                  </Link>
-                </div>
-              </div>
+        <div className="max-w-3xl p-7 sm:p-9 rounded-2xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] hover:border-[var(--tech-accent)]/50 transition-all duration-300 group">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+            <div className="w-16 h-16 rounded-2xl bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center shrink-0 text-[var(--tech-accent)]">
+              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" />
+              </svg>
             </div>
-          ))}
+            <div className="flex-1">
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--tech-accent)] bg-[var(--tech-accent)]/10 px-2.5 py-1 rounded border border-[var(--tech-accent)]/20">
+                  Windows App
+                </span>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--tech-text-muted)]">
+                  Free download
+                </span>
+              </div>
+              <h3 className="text-2xl font-bold font-display tracking-wide text-white mb-2 group-hover:text-[var(--tech-accent)] transition-colors">
+                Fokus App
+              </h3>
+              <p className="text-sm text-[var(--tech-text-muted)] leading-relaxed mb-5">
+                Find Fokus App on the Microsoft Store and install it on Windows.
+              </p>
+              <a
+                href="https://apps.microsoft.com/detail/9p7njldq8gkk?hl=en-GB&gl=IN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all duration-200"
+              >
+                <span>Get Fokus App</span>
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M7 17 17 7M7 7h10v10" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
