@@ -137,7 +137,7 @@ export default function WorkPage() {
                 onClick={() => setActiveFilter(filter)}
                 className={`px-4 py-2 rounded-lg font-mono text-xs uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                   isActive
-                    ? "bg-[var(--tech-accent)] text-[#0B0D12] font-bold shadow-[0_0_15px_rgba(255,133,71,0.3)]"
+                    ? "bg-[var(--tech-accent)] text-[#0B0D12] font-bold shadow-[0_0_15px_rgba(224,27,27,0.3)]"
                     : "bg-[var(--tech-card)] text-[var(--tech-text-muted)] hover:text-white border border-[#232936] hover:border-white/20"
                 }`}
               >
