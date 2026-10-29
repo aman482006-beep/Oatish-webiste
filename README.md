@@ -4,12 +4,12 @@
 
 This is the source code for [amanmalu.me](https://amanmalu.me), the personal website of Aman Jain, a BBA student studying Finance & Marketing Analytics at CHRIST (Deemed to be University), Bengaluru.
 
-The site uses a warm, editorial **Modular Universe** design: cream surfaces, restrained orange accents, pastel Finance / Build / Create cards, a photo-led introduction, a single Focus project feature, long-form YouTube videos, recruiter information, and contact links. The same visual tokens are shared across the site's other pages.
+The site uses a warm, editorial **Modular Universe** design: cream surfaces, restrained orange accents, pastel Finance / Build / Create cards, a photo-led introduction, a featured Fokus project, long-form YouTube videos, recruiter information, and contact links. The same visual tokens are shared across the site's other pages.
 
 ## Routes
 
-- `/` — Homepage, areas of interest, the Focus app, recent long-form videos, recruiter snapshot, and contact form.
-- `/work` — Focus app case page; the only featured project for now.
+- `/` — Homepage, areas of interest, the Fokus app, recent long-form videos, recruiter snapshot, and contact form.
+- `/work` — Fokus app case study and selected finance work.
 - `/creator` — Creator hub with an automatically refreshed long-form YouTube feed.
 - `/recruiters` — Education, internships, CFA candidate status, skills, and credentials.
 - `/resources` — Resource library.
