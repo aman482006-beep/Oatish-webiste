@@ -65,7 +65,7 @@ export function ThreePillars() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="group relative p-5 sm:p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] hover:border-[var(--tech-accent)]/40 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+              className="group relative p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] hover:border-[var(--tech-accent)]/40 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
@@ -181,7 +181,7 @@ export function CreatorPreview() {
               I create finance and career-focused content to make complex ideas easier to understand. This is where I document what I learn and share useful resources, concepts and experiments.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
                 href="/creator"
                 className="px-6 py-3 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all duration-200"
@@ -210,7 +210,7 @@ export function CreatorPreview() {
           </div>
 
           <div className="space-y-4">
-            <div className="p-6 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex items-start gap-4">
+            <div className="p-4 sm:p-6 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex items-start gap-3 sm:gap-4">
               <div className="w-10 h-10 rounded-lg bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center shrink-0 text-[var(--tech-accent)] font-mono font-bold">
                 01
               </div>
@@ -222,7 +222,7 @@ export function CreatorPreview() {
               </div>
             </div>
 
-            <div className="p-6 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex items-start gap-4">
+            <div className="p-4 sm:p-6 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex items-start gap-3 sm:gap-4">
               <div className="w-10 h-10 rounded-lg bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center shrink-0 text-[var(--tech-accent)] font-mono font-bold">
                 02
               </div>
@@ -234,7 +234,7 @@ export function CreatorPreview() {
               </div>
             </div>
 
-            <div className="p-6 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex items-start gap-4">
+            <div className="p-4 sm:p-6 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] flex items-start gap-3 sm:gap-4">
               <div className="w-10 h-10 rounded-lg bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center shrink-0 text-[var(--tech-accent)] font-mono font-bold">
                 03
               </div>
@@ -275,7 +275,7 @@ export function RecruiterPreview() {
           <div className="shrink-0 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
             <Link
               href="/recruiters"
-              className="px-8 py-4 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] text-center transition-all duration-200 shadow-[0_0_20px_rgba(224,27,27,0.25)]"
+              className="w-full sm:w-auto justify-center px-5 sm:px-8 py-3.5 sm:py-4 min-h-11 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] text-center transition-all duration-200 shadow-[0_0_20px_rgba(224,27,27,0.25)]"
             >
               Explore Recruiters Section →
             </Link>
@@ -310,7 +310,7 @@ export function ContactPreview() {
           </a>
           <Link
             href="/contact"
-            className="px-6 py-3.5 rounded-lg border border-[rgba(224,27,27,0.28)] text-white hover:border-white/40 font-mono text-xs uppercase tracking-wider transition-all duration-200"
+            className="w-full sm:w-auto justify-center px-5 sm:px-6 py-3.5 min-h-11 rounded-lg border border-[rgba(224,27,27,0.28)] text-white hover:border-white/40 font-mono text-xs uppercase tracking-wider transition-all duration-200"
           >
             Open Contact Details
           </Link>
