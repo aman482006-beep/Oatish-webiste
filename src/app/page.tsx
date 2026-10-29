@@ -1,8 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { LatestVideos } from "@/components/sections/latest-videos";
+import { FOKUS } from "@/data/fokus";
 
 const socials = [
   { label: "GitHub", href: "https://github.com/aman482006-beep", mark: "GH" },
@@ -100,7 +99,7 @@ export default function Home() {
         <div className="aj-container">
           <div className="aj-section-heading aj-section-heading-inline">
             <div><p className="aj-eyebrow aj-eyebrow-accent">FEATURED PROJECT</p><h2>Focus <span>— Stay on Track, Together.</span></h2></div>
-            <Link className="aj-text-link" href="/work">View project <span aria-hidden="true">→</span></Link>
+            <Link className="aj-text-link" href="/work">View case study <span aria-hidden="true">→</span></Link>
           </div>
           <article className="aj-feature-card">
             <div className="aj-focus-art" aria-label="Fokus app interface concept">
@@ -123,12 +122,12 @@ export default function Home() {
               <div className="aj-focus-note">Less noise.<br />More focus.</div>
             </div>
             <div className="aj-feature-content">
-              <div className="aj-app-kicker">PRODUCTIVITY <span>•</span> WEB APP <span>•</span> COMMUNITY</div>
-              <h3>Fokus</h3>
-              <p>A minimal study and productivity platform to help you focus, track progress and stay accountable with friends. Built around a clean interface and the idea that progress is easier together.</p>
+              <div className="aj-app-kicker">PRODUCTIVITY <span>•</span> FLUTTER <span>•</span> WINDOWS STORE</div>
+              <h3>{FOKUS.name}</h3>
+              <p>A cross-platform Flutter productivity app built around focused work, ambient environments and lightweight personal systems. It combines focus sessions, ambient audio, reminders, analytics and local persistence.</p>
               <div className="aj-feature-actions">
-                <Link href="/work" className="aj-button aj-button-primary">View project <span aria-hidden="true">→</span></Link>
-                <a href="https://github.com/aman482006-beep/FOKUS-PRODUCTIVITY" target="_blank" rel="noopener noreferrer" className="aj-button aj-button-outline"><span aria-hidden="true">⌘</span> View on GitHub</a>
+                <a href={FOKUS.storeUrl} target="_blank" rel="noopener noreferrer" className="aj-button aj-button-primary">Get Fokus <span aria-hidden="true">↗</span></a>
+                <a href={FOKUS.sourceUrl} target="_blank" rel="noopener noreferrer" className="aj-button aj-button-outline"><span aria-hidden="true">⌘</span> View on GitHub</a>
               </div>
             </div>
           </article>
