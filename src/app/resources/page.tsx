@@ -103,14 +103,14 @@ export default function ResourcesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--tech-bg)] text-white pt-36 pb-28 px-6 md:px-12 lg:px-20 relative overflow-hidden">
+    <div className="min-h-screen bg-[var(--tech-bg)] text-white pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-6 md:px-12 lg:px-20 relative overflow-hidden">
       
       {/* Background Ambience */}
-      <div className="absolute top-20 right-1/4 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.14)_0%,transparent_70%)] blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.06)_0%,transparent_70%)] blur-[100px] pointer-events-none" />
+      <div className="absolute top-20 right-1/4 w-[320px] h-[320px] sm:w-[600px] sm:h-[600px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.14)_0%,transparent_70%)] blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-[280px] h-[280px] sm:w-[500px] sm:h-[500px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.06)_0%,transparent_70%)] blur-[100px] pointer-events-none" />
 
       {/* Spider Emblem Watermark */}
-      <div className="absolute top-36 right-10 w-96 h-96 opacity-[0.03] pointer-events-none">
+      <div className="absolute hidden sm:block top-36 right-10 w-96 h-96 opacity-[0.03] pointer-events-none">
         <Image
           src="/spiderman/emblem.svg"
           alt=""
@@ -138,7 +138,7 @@ export default function ResourcesPage() {
             <span>✦</span> THE RESOURCE VAULT
           </div>
 
-          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl text-white tracking-tight leading-[0.95] mb-6">
+          <h1 className="font-display text-4xl sm:text-7xl lg:text-8xl text-white tracking-tight leading-[0.95] mb-6">
             FINANCE & CREATOR<br />
             <span className="text-[var(--spidey-red)] drop-shadow-[0_0_25px_rgba(224,27,27,0.4)]">
               RESOURCES
@@ -161,7 +161,7 @@ export default function ResourcesPage() {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id as any)}
-              className={`font-mono text-xs uppercase tracking-wider px-4 py-2 rounded-full border transition-all cursor-pointer ${
+              className={`font-mono text-[11px] sm:text-xs uppercase tracking-wider px-3 sm:px-4 py-2.5 min-h-11 rounded-full border transition-all cursor-pointer ${
                 activeCategory === cat.id
                   ? "bg-[var(--spidey-red)] text-white border-[var(--spidey-red)] shadow-[0_0_15px_rgba(224,27,27,0.4)]"
                   : "bg-[var(--spidey-carbon)] text-[var(--spidey-muted)] border-white/10 hover:border-[var(--spidey-red)] hover:text-white"
@@ -173,11 +173,11 @@ export default function ResourcesPage() {
         </div>
 
         {/* Resources Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-16 sm:mb-20">
           {filtered.map((item) => (
             <div
               key={item.id}
-              className="spidey-card p-7 rounded-2xl flex flex-col justify-between group hover:-translate-y-1.5 transition-all duration-300"
+              className="spidey-card p-5 sm:p-7 rounded-2xl flex flex-col justify-between group hover:-translate-y-1.5 transition-all duration-300"
             >
               <div>
                 <div className="flex items-center justify-between gap-3 mb-5 pb-3 border-b border-white/5">
@@ -230,7 +230,7 @@ export default function ResourcesPage() {
         </div>
 
         {/* Suggest / Request a Resource Section */}
-        <div className="spidey-card p-8 sm:p-12 rounded-3xl border border-[var(--spidey-red)]/40 bg-[var(--spidey-carbon)] relative overflow-hidden">
+        <div className="spidey-card p-5 sm:p-12 rounded-3xl border border-[var(--spidey-red)]/40 bg-[var(--spidey-carbon)] relative overflow-hidden">
           <div className="max-w-2xl">
             <span className="font-mono text-xs uppercase tracking-widest text-[var(--spidey-red)] font-semibold block mb-2">
               ✦ COMMUNITY REQUESTS
@@ -248,7 +248,7 @@ export default function ResourcesPage() {
                 value={requestText}
                 onChange={(e) => setRequestText(e.target.value)}
                 placeholder="e.g. IPO Analysis Spreadsheet, Option Pricing Model..."
-                className="flex-1 px-4 py-3 rounded-xl bg-[var(--spidey-carbon-light)] border border-white/10 text-white text-sm focus:outline-none focus:border-[var(--spidey-red)] focus:shadow-[0_0_12px_rgba(224,27,27,0.3)] transition-all font-body"
+                className="flex-1 min-w-0 min-h-11 px-4 py-3 rounded-xl bg-[var(--spidey-carbon-light)] border border-white/10 text-white text-sm focus:outline-none focus:border-[var(--spidey-red)] focus:shadow-[0_0_12px_rgba(224,27,27,0.3)] transition-all font-body"
                 required
               />
               <button type="submit" className="spidey-btn !py-3 !px-6">
