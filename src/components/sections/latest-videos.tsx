@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import Image from "next/image";
 
 type Video = {
   id: string;
@@ -49,7 +49,7 @@ export function LatestVideos() {
           <div className="aj-video-grid">
             {videos.slice(0, 3).map((video) => (
               <a key={video.id} className="aj-video-card" href={video.url} target="_blank" rel="noopener noreferrer">
-                <div className="aj-video-thumbnail"><img src={video.thumbnail} alt="" loading="lazy" /><span className="aj-video-duration">{video.duration}</span><span className="aj-play-button" aria-hidden="true">▶</span></div>
+                <div className="aj-video-thumbnail"><Image src={video.thumbnail} alt="" fill sizes="(max-width: 700px) 45vw, 30vw" unoptimized /><span className="aj-video-duration">{video.duration}</span><span className="aj-play-button" aria-hidden="true">▶</span></div>
                 <h3>{video.title}</h3>
                 <p>{new Date(video.publishedAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</p>
               </a>
