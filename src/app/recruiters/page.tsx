@@ -53,7 +53,7 @@ const credentials = [
   },
   {
     title: "Private Equity & Venture Capital Course",
-    issuer: "LinkedIn course",
+    issuer: "Academic & Professional Seminar",
     focus: "Term sheets, capitalization tables, deal sourcing and investment committee evaluation.",
   },
   {
