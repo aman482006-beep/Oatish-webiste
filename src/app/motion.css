@@ -7,7 +7,7 @@
 @keyframes aj-view-new { from { opacity: 0; } to { opacity: 1; } }
 
 @media (prefers-reduced-motion: no-preference) {
-  html:not(.aj-view-transitions) .aj-route-transition {
+  html.aj-motion-enabled:not(.aj-view-transitions) .aj-route-transition {
     animation: aj-route-enter 480ms var(--aj-ease) both;
   }
 
@@ -39,7 +39,7 @@ html.aj-motion-enabled [data-reveal][data-revealed="true"] {
     will-change: translate;
   }
 
-  .aj-video-card {
+  html.aj-motion-enabled .aj-video-card {
     transform-style: preserve-3d;
     transition:
       transform 220ms var(--aj-ease),
@@ -47,7 +47,7 @@ html.aj-motion-enabled [data-reveal][data-revealed="true"] {
       box-shadow 220ms ease;
   }
 
-  .aj-video-card:hover {
+  html.aj-motion-enabled .aj-video-card:hover {
     translate: 0 -3px;
   }
 
@@ -291,7 +291,7 @@ html.aj-motion-enabled .aj-pillar[data-revealed="true"] .aj-pillar-svg path {
 }
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    .aj-home .aj-photo-frame {
+    html.aj-motion-enabled .aj-home .aj-photo-frame {
       animation-name: aj-photo-float, aj-hero-photo-scroll;
       animation-duration: 8s, 1s;
       animation-timing-function: ease-in-out, linear;
@@ -301,7 +301,7 @@ html.aj-motion-enabled .aj-pillar[data-revealed="true"] .aj-pillar-svg path {
       animation-timeline: auto, view();
       animation-range: normal, exit 0% exit 100%;
     }
-    .aj-home .aj-note-left, .aj-home .aj-note-right {
+    html.aj-motion-enabled .aj-home .aj-note-left, html.aj-motion-enabled .aj-home .aj-note-right {
       animation: aj-hero-note-fade 1s linear both;
       animation-timeline: view();
       animation-range: exit 0% exit 100%;
