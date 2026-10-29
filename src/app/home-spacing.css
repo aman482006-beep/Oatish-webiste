@@ -1,0 +1,61 @@
+/* Homepage spacing pass: same Modular Universe theme, tighter section rhythm. */
+.aj-home .aj-hero {
+  padding-bottom: 24px;
+}
+
+.aj-home .aj-pillars-section {
+  padding-top: 16px;
+  padding-bottom: 18px;
+}
+
+.aj-home .aj-featured-section {
+  padding-top: 22px;
+  padding-bottom: 18px;
+}
+
+.aj-home .aj-videos-section {
+  padding-top: 18px;
+  padding-bottom: 22px;
+}
+
+.aj-home .aj-recruiters-section {
+  padding-top: 18px;
+  padding-bottom: 24px;
+}
+
+.aj-home .aj-contact-section {
+  padding-top: 24px;
+  padding-bottom: 28px;
+}
+
+/* Keep the tighter rhythm intentional across tablet and mobile layouts. */
+@media (max-width: 700px) {
+  .aj-home .aj-hero {
+    padding-bottom: 10px;
+  }
+
+  .aj-home .aj-pillars-section {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .aj-home .aj-featured-section {
+    padding-top: 18px;
+    padding-bottom: 12px;
+  }
+
+  .aj-home .aj-videos-section {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .aj-home .aj-recruiters-section {
+    padding-top: 16px;
+    padding-bottom: 20px;
+  }
+
+  .aj-home .aj-contact-section {
+    padding-top: 20px;
+    padding-bottom: 24px;
+  }
+}
