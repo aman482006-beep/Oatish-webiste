@@ -21,15 +21,14 @@ export function ScrollProgressBar() {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 h-[2px] z-[1000] pointer-events-none bg-black/40"
+      className="fixed top-0 left-0 right-0 h-[2px] z-[1000] pointer-events-none bg-[var(--aj-line)]"
       aria-hidden="true"
     >
       <div
-        className="h-full bg-[var(--spidey-red)] shadow-[0_0_8px_var(--spidey-red),0_0_16px_var(--spidey-red)] transition-[width] duration-75 ease-out relative"
+        className="h-full bg-[var(--aj-orange)] transition-[width] duration-75 ease-out relative"
         style={{ width: `${progress}%` }}
       >
-        {/* Subtle glowing web droplet on the thread head */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_6px_#fff]" />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[var(--aj-orange)]" />
       </div>
     </div>
   );
