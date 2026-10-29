@@ -1,15 +1,16 @@
 "use client";
 
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 type ViewTransitionDocument = Document & {
-  startViewTransition?: (callback: () => void) => { finished: Promise<void> };
+  startViewTransition?: (callback: () => void | Promise<void>) => { finished: Promise<void> };
 };
 
 export default function Template({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
+  const resolvePendingTransition = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -33,15 +34,13 @@ export default function Template({ children }: { children: ReactNode }) {
       if (!href || href.startsWith("#") || /^(mailto:|tel:|javascript:)/i.test(href)) return;
 
       const destination = new URL(link.href, window.location.href);
-      if (destination.origin !== window.location.origin) return;
-      if (destination.pathname === window.location.pathname &&
-          destination.search === window.location.search &&
-          destination.hash) return;
+      if (destination.origin !== window.location.origin || destination.pathname === window.location.pathname) return;
 
       event.preventDefault();
-      transitionDocument.startViewTransition?.(() => {
+      transitionDocument.startViewTransition?.(() => new Promise<void>((resolve) => {
+        resolvePendingTransition.current = resolve;
         router.push(destination.pathname + destination.search + destination.hash);
-      });
+      }));
     };
 
     document.addEventListener("click", onClick, true);
@@ -50,6 +49,14 @@ export default function Template({ children }: { children: ReactNode }) {
       document.documentElement.classList.remove("aj-view-transitions");
     };
   }, [pathname, router]);
+
+  // Resolve the browser's snapshot callback only after React has committed the new route.
+  useEffect(() => {
+    const resolve = resolvePendingTransition.current;
+    if (!resolve) return;
+    resolvePendingTransition.current = null;
+    resolve();
+  }, [pathname]);
 
   return <div className="aj-route-transition">{children}</div>;
 }
