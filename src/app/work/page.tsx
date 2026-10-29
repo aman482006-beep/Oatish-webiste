@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { FOKUS } from "@/data/fokus";
-import { financeWork } from "@/data/finance-work";
 
 export const metadata: Metadata = {
   title: "Fokus Case Study",
@@ -33,13 +32,6 @@ const stack = [
   "window_manager",
   "Win32 / FFI",
   "app_links",
-];
-
-const screenshotSlots = [
-  { title: "Focus session", note: "TODO(Aman): Add a genuine screenshot of a focus session." },
-  { title: "Ambient environments", note: "TODO(Aman): Add a genuine screenshot of ambient audio and visual scenes." },
-  { title: "Productivity analytics", note: "TODO(Aman): Add a genuine screenshot of the analytics view." },
-  { title: "Desktop experience", note: "TODO(Aman): Add a genuine screenshot of the Windows app." },
 ];
 
 export default function WorkPage() {
@@ -88,39 +80,6 @@ export default function WorkPage() {
           </div>
         </section>
 
-        <section className="aj-case-section" aria-labelledby="screens-heading">
-          <div className="aj-case-section-heading">
-            <p className="aj-eyebrow aj-eyebrow-accent">03 · PRODUCT SCREENS</p>
-            <h2 id="screens-heading">A closer look at Fokus.</h2>
-            <p>Real app screenshots are not currently checked into the portfolio repository. These are explicit placeholders, not product screenshots.</p>
-          </div>
-          <div className="aj-case-screenshots">
-            {screenshotSlots.map((slot, index) => (
-              <figure className="aj-case-screenshot-placeholder" key={slot.title}>
-                <div className="aj-case-placeholder-visual" role="img" aria-label={slot.note}>
-                  <span className="aj-case-placeholder-index">0{index + 1}</span>
-                  <span className="aj-case-placeholder-symbol" aria-hidden="true">＋</span>
-                  <span className="aj-case-placeholder-title">{slot.title}</span>
-                </div>
-                <figcaption>{slot.note}</figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
-
-        <section className="aj-case-section aj-case-split" aria-labelledby="role-heading">
-          <div>
-            <p className="aj-eyebrow aj-eyebrow-accent">04 · MY ROLE</p>
-            <h2 id="role-heading">The details should be specific.</h2>
-            <p className="aj-case-placeholder-copy">TODO(Aman): Describe the parts of the project you personally designed, implemented and maintained. This is intentionally left blank rather than claiming unverified ownership.</p>
-          </div>
-          <div>
-            <p className="aj-eyebrow aj-eyebrow-accent">05 · WHAT I LEARNED</p>
-            <h2>Engineering notes.</h2>
-            <p className="aj-case-placeholder-copy">TODO(Aman): Add two or three concrete technical or product lessons, plus what you plan to improve next.</p>
-          </div>
-        </section>
-
         <section className="aj-case-section" aria-labelledby="stack-heading">
           <div className="aj-case-section-heading">
             <p className="aj-eyebrow aj-eyebrow-accent">06 · STACK</p>
@@ -132,25 +91,11 @@ export default function WorkPage() {
           <p className="aj-case-source-note">The stack above is listed in the Fokus repository README; it is not a claim that each package is used by every platform build.</p>
         </section>
 
-        <section className="aj-case-section aj-finance-work-section" id="selected-finance-work">
+        <section className="aj-case-section" id="selected-finance-work" aria-labelledby="finance-work-heading">
           <div className="aj-case-section-heading">
-            <p className="aj-eyebrow aj-eyebrow-accent">07 · SELECTED FINANCE WORK</p>
-            <h2>Selected finance work.</h2>
-            <p>These are planned portfolio entries. Actual files and verified takeaways will be added before any entry is presented as completed work.</p>
-          </div>
-          <div className="aj-finance-work-grid">
-            {financeWork.map((item) => (
-              <article className="aj-finance-work-card" key={item.id}>
-                <div className="aj-finance-work-card-top">
-                  <span className="aj-finance-format">{item.format}</span>
-                  <span className="aj-finance-status">PLACEHOLDER</span>
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <p className="aj-finance-takeaway">{item.takeaway}</p>
-                <span className="aj-finance-work-pending">TODO(Aman): Attach completed {item.format} file</span>
-              </article>
-            ))}
+            <p className="aj-eyebrow aj-eyebrow-accent">07 · FINANCE & ANALYSIS</p>
+            <h2 id="finance-work-heading">Finance work, published with the evidence attached.</h2>
+            <p>I’m preparing shareable models and analysis. This section will grow when the underlying files and findings are ready to verify.</p>
           </div>
         </section>
 
@@ -158,7 +103,7 @@ export default function WorkPage() {
           <div>
             <p className="aj-eyebrow aj-eyebrow-accent">NEXT</p>
             <h2>Fokus is still under active development.</h2>
-            <p>The next update to this case study should add real app screenshots and specific examples of product decisions and engineering work.</p>
+            <p>This page currently covers the product scope and technology stack. As the case study develops, I’ll add genuine app screenshots and specific engineering decisions.</p>
           </div>
           <div className="aj-feature-actions">
             <a className="aj-button aj-button-primary" href={FOKUS.storeUrl} target="_blank" rel="noopener noreferrer">Get Fokus <span aria-hidden="true">↗</span></a>
