@@ -10,18 +10,18 @@ export function About() {
   return (
     <section
       id="about"
-      className="relative w-full min-h-screen py-16 sm:py-24 px-4 sm:px-8 lg:px-20 bg-[var(--tech-bg)] flex items-center justify-center overflow-hidden border-t border-[rgba(224,27,27,0.28)]"
+      className="about-section relative w-full min-h-screen py-16 sm:py-24 px-4 sm:px-8 lg:px-20 bg-[var(--tech-bg)] flex items-center justify-center overflow-hidden border-t border-[rgba(224,27,27,0.28)]"
     >
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] border border-[rgba(224,27,27,0.1)] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[300px] bg-[var(--spidey-red-deep)] opacity-10 blur-[120px] pointer-events-none" />
 
-      <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-10 sm:gap-12 lg:gap-16 z-10 relative">
+      <div className="about-layout flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-10 sm:gap-12 lg:gap-16 z-10 relative">
         
         {/* Left Side: Interactive Spider-Man -> Face Hover Card */}
-        <div className="w-full lg:w-1/2 flex justify-center items-center relative">
+        <div className="about-portrait-wrap w-full lg:w-1/2 flex justify-center items-center relative">
           <div
-            className="w-full max-w-[360px] sm:max-w-[480px] aspect-[4/5] relative rounded-3xl overflow-hidden border border-[rgba(224,27,27,0.28)] bg-[var(--tech-card)] transition-all duration-300 hover:-translate-y-1.5 cursor-pointer group select-none shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+            className="about-portrait w-full max-w-[360px] sm:max-w-[480px] aspect-[4/5] relative rounded-3xl overflow-hidden border border-[rgba(224,27,27,0.28)] bg-[var(--tech-card)] transition-all duration-300 hover:-translate-y-1.5 cursor-pointer group select-none shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
             role="button"
             tabIndex={0}
             aria-pressed={isUnmasked}
@@ -77,7 +77,7 @@ export function About() {
 
             {/* Subtle Hover Cue Banner */}
             <div className="absolute top-4 left-4 z-20 px-3.5 py-1 rounded-full bg-[#000000]/80 backdrop-blur-md border border-[var(--spidey-red)]/50 text-[10px] font-mono tracking-widest text-white uppercase shadow-[0_0_10px_rgba(224,27,27,0.3)]">
-              {isUnmasked ? "● IDENTITY REVEALED" : "✦ TAP OR TAP OR HOVER TO UNMASK"}
+              {isUnmasked ? "● IDENTITY REVEALED" : "✦ TAP TO UNMASK"}
             </div>
 
             {/* Red flash sweep effect on hover transition */}
@@ -98,7 +98,7 @@ export function About() {
         </div>
 
         {/* Right Side: Content Block */}
-        <div className="w-full lg:w-1/2 p-5 sm:p-10 lg:p-12 bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] rounded-3xl text-white relative z-10 shadow-xl">
+        <div className="about-copy w-full lg:w-1/2 p-5 sm:p-10 lg:p-12 bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] rounded-3xl text-white relative z-10 shadow-xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--tech-accent)]/30 bg-[var(--tech-bg)] text-[var(--tech-accent)] font-mono text-xs uppercase tracking-widest mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
             <span>ABOUT AMAN JAIN</span>
