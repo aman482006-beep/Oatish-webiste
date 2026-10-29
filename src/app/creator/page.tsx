@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LatestVideos } from "@/components/sections/latest-videos";
 
 export const metadata: Metadata = {
-  title: "Creator | Aman Jain",
+  title: "Creator",
   description: "Finance education, learning resources and useful ideas from Aman Jain's YouTube and Instagram content.",
   alternates: { canonical: "/creator" },
 };
