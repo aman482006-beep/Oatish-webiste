@@ -233,17 +233,7 @@ html.aj-motion-enabled .aj-pillar[data-revealed="true"] .aj-pillar-svg path {
   --aj-icon-offset: 0;
 }
 
-/* One coordinated, low-amplitude rhythm links the analytics bars and CTA. */
-@keyframes aj-bars-live {
-  0%, 80%, 100% { scale: 1 1; }
-  87% { scale: 1 .78; }
-  94% { scale: 1 1; }
-}
-@keyframes aj-phone-cta-pulse {
-  0%, 80%, 100% { scale: 1; }
-  87% { scale: 1.035; }
-  94% { scale: 1; }
-}
+/* Reveal-only micro-interactions: no endless loops when the illustration is off-screen. */
 @keyframes aj-task-check {
   from { opacity: 0; scale: .2; }
   to { opacity: 1; scale: 1; }
@@ -262,17 +252,10 @@ html.aj-motion-enabled .aj-pillar[data-revealed="true"] .aj-pillar-svg path {
   scale: .2;
   opacity: 0;
 }
-@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+@media (prefers-reduced-motion: no-preference) {
   .aj-focus-art[data-revealed="true"] .aj-chart-bars i {
-    animation-name: aj-bars-grow, aj-bars-live;
-    animation-duration: 600ms, 8s;
-    animation-timing-function: var(--aj-ease), ease-in-out;
-    animation-delay: 0ms, 900ms;
-    animation-iteration-count: 1, infinite;
-    animation-fill-mode: both, none;
-  }
-  .aj-focus-art[data-revealed="true"] .aj-phone-cta {
-    animation: aj-phone-cta-pulse 8s ease-in-out 900ms infinite;
+    transform-origin: center bottom;
+    animation: aj-bars-grow 600ms var(--aj-ease) both;
   }
   .aj-focus-art[data-revealed="true"] .aj-phone-task i::after {
     animation: aj-task-check 300ms var(--aj-ease) both;
