@@ -279,71 +279,10 @@ export default function RecruitersPage() {
           </div>
         </div>
 
-        {/* Section G: Selected Professional Projects */}
-        <div className="mb-16">
-          <div className="text-xs font-mono uppercase tracking-widest text-[var(--tech-accent)] mb-3">07 · PORTFOLIO EVIDENCE</div>
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            <h2 className="text-2xl font-bold font-display text-white">Selected Technical Projects</h2>
-            <Link href="/work" className="text-xs font-mono text-[var(--tech-accent)] hover:underline">
-              View Detailed Architecture & Case Studies →
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-xl bg-[var(--tech-card)] border border-[#232936]">
-              <h3 className="text-xl font-bold font-display text-white mb-1">Market Monitor</h3>
-              <p className="text-xs text-[var(--tech-text-muted)] mb-4 font-sans">
-                Indian equity intelligence terminal built with FastAPI, PostgreSQL, and Next.js.
-              </p>
-              <a
-                href="https://github.com/aman482006-beep/market-monitor"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-mono text-[var(--tech-accent)] hover:underline inline-flex items-center gap-1"
-              >
-                <span>GitHub Repository</span>
-                <span>↗</span>
-              </a>
-            </div>
-
-            <div className="p-6 rounded-xl bg-[var(--tech-card)] border border-[#232936]">
-              <h3 className="text-xl font-bold font-display text-white mb-1">Agentic Finance Lab</h3>
-              <p className="text-xs text-[var(--tech-text-muted)] mb-4 font-sans">
-                AI research copilot with deterministic Portfolio Guardian for concentration and risk stress tests.
-              </p>
-              <a
-                href="https://github.com/aman482006-beep/Aman-trading-agent"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-mono text-[var(--tech-accent)] hover:underline inline-flex items-center gap-1"
-              >
-                <span>GitHub Repository</span>
-                <span>↗</span>
-              </a>
-            </div>
-
-            <div className="p-6 rounded-xl bg-[var(--tech-card)] border border-[#232936]">
-              <h3 className="text-xl font-bold font-display text-white mb-1">Ideas to Execution</h3>
-              <p className="text-xs text-[var(--tech-text-muted)] mb-4 font-sans">
-                Independent venture capital storytelling platform with interactive 30-day founder journey.
-              </p>
-              <a
-                href="https://aman482006-beep.github.io/ideas-to-execution/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-mono text-[var(--tech-accent)] hover:underline inline-flex items-center gap-1"
-              >
-                <span>Live Demonstration</span>
-                <span>↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
         {/* Section H & J: Résumé & Contact for Opportunities */}
-        <div className="p-8 sm:p-12 rounded-2xl bg-[var(--tech-card)] border border-[#232936] relative overflow-hidden">
+        <div className="p-5 sm:p-12 rounded-2xl bg-[var(--tech-card)] border border-[#232936] relative overflow-hidden">
           <div className="max-w-2xl">
-            <div className="text-xs font-mono uppercase tracking-widest text-[var(--tech-accent)] mb-3">08 · NEXT STEPS</div>
+            <div className="text-xs font-mono uppercase tracking-widest text-[var(--tech-accent)] mb-3">07 · NEXT STEPS</div>
             <h2 className="text-3xl font-bold font-display text-white mb-4">
               Let&apos;s connect.
             </h2>
