@@ -24,8 +24,6 @@ export function Navbar() {
     };
   }, []);
 
-  useEffect(() => setMobileMenuOpen(false), [pathname]);
-
   const navLinks = [
     { label: "HOME", href: "/" },
     { label: "WORK", href: "/work" },
