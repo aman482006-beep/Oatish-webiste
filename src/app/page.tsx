@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { LatestVideos } from "@/components/sections/latest-videos";
 import { FOKUS } from "@/data/fokus";
+import { financeWork } from "@/data/finance-work";
 
 const socials = [
   { label: "GitHub", href: "https://github.com/aman482006-beep", mark: "GH" },
@@ -131,6 +132,34 @@ export default function Home() {
               </div>
             </div>
           </article>
+        </div>
+      </section>
+
+
+      <section className="aj-section aj-finance-work-section" id="finance-work">
+        <div className="aj-container">
+          <div className="aj-section-heading aj-section-heading-inline">
+            <div>
+              <p className="aj-eyebrow aj-eyebrow-accent">SELECTED FINANCE WORK</p>
+              <h2>Proof behind the finance side.</h2>
+              <p className="aj-heading-subtitle">Models and analysis belong here when the underlying files are ready to share.</p>
+            </div>
+            <Link className="aj-text-link" href="/work">View all work <span aria-hidden="true">→</span></Link>
+          </div>
+          <div className="aj-finance-work-grid">
+            {financeWork.map((item) => (
+              <article className="aj-finance-work-card" key={item.id}>
+                <div className="aj-finance-work-card-top">
+                  <span className="aj-finance-format">{item.format}</span>
+                  <span className="aj-finance-status">PLACEHOLDER</span>
+                </div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <p className="aj-finance-takeaway">{item.takeaway}</p>
+                <span className="aj-finance-work-pending">TODO(Aman): Add {item.format} file</span>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
