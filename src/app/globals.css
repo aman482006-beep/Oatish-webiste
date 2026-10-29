@@ -811,3 +811,128 @@ main > div.min-h-screen::before {
     animation: none !important;
   }
 }
+
+
+/* Phone-first layout corrections: preserve the existing Spider-Man art direction. */
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 76px;
+  }
+
+  body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: clip;
+  }
+
+  main,
+  main > *,
+  main section,
+  main section > *,
+  main article,
+  main [class*="grid-cols-"],
+  main [class*="flex"] > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  main > section,
+  main > div.min-h-screen {
+    scroll-margin-top: 76px;
+  }
+
+  main h1 {
+    font-size: clamp(2rem, 9.2vw, 3rem) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.02em;
+    overflow-wrap: anywhere;
+  }
+
+  main h2 {
+    font-size: clamp(1.55rem, 7.3vw, 2.15rem);
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+  }
+
+  main h3 {
+    overflow-wrap: anywhere;
+  }
+
+  main p,
+  main li,
+  main a,
+  main button,
+  main label,
+  footer a {
+    overflow-wrap: anywhere;
+  }
+
+  main > section {
+    padding-inline: 1rem;
+  }
+
+  main > div.min-h-screen {
+    padding-inline: 1rem;
+  }
+
+  main [class*="grid-cols-"] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  main [class*="gap-12"],
+  main [class*="gap-16"] {
+    row-gap: 2rem;
+  }
+
+  main [class*="rounded-3xl"],
+  main [class*="rounded-2xl"] {
+    border-radius: 0.9rem !important;
+  }
+
+  main input,
+  main textarea,
+  main select,
+  main button,
+  main a[href] {
+    max-width: 100%;
+  }
+
+  /* Avoid large blurred layers consuming the entire small viewport. */
+  main > section::before,
+  main > div.min-h-screen::before {
+    opacity: 0.18;
+  }
+
+  /* Keep the hero artwork in proportion to the screen and prevent the
+     scroll cue from covering the headline or the CTAs. */
+  #about {
+    scroll-margin-top: 76px;
+  }
+}
+
+/* Small phones (320–375 px): use compact page gutters and button sizing. */
+@media (max-width: 380px) {
+  nav[class*="fixed"][class*="top-0"] {
+    padding-inline: 0.75rem;
+  }
+
+  main > section,
+  main > div.min-h-screen {
+    padding-inline: 0.875rem;
+  }
+
+  .spidey-btn,
+  .spidey-pill,
+  .tech-btn {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 0.9rem;
+    font-size: 0.92rem;
+    letter-spacing: 0.055em;
+  }
+
+  main [class*="tracking-widest"],
+  main [class*="tracking-wider"] {
+    letter-spacing: 0.06em;
+  }
+}
