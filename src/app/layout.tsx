@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Space_Grotesk } from "next/font/google";
+import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import { ScrollProgressBar } from "@/components/ui/scroll-progress";
@@ -10,14 +10,14 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Loader } from "@/components/sections/loader";
 
-const bebasNeue = Bebas_Neue({
+const plusJakarta = Plus_Jakarta_Sans({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
@@ -47,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={`${bebasNeue.variable} ${spaceGrotesk.variable} bg-[var(--spidey-black)] text-[var(--spidey-white)] font-body antialiased relative min-h-screen selection:bg-[var(--spidey-red)] selection:text-white`}>
+      <body className={`${plusJakarta.variable} ${manrope.variable} bg-[var(--spidey-black)] text-[var(--spidey-white)] font-body antialiased relative min-h-screen selection:bg-[var(--spidey-red)] selection:text-white`}>
         <Loader />
         <CustomCursor />
         <ScrollProgressBar />
