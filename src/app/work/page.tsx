@@ -82,7 +82,7 @@ export default function WorkPage() {
 
         <section className="aj-case-section" aria-labelledby="stack-heading">
           <div className="aj-case-section-heading">
-            <p className="aj-eyebrow aj-eyebrow-accent">06 · STACK</p>
+            <p className="aj-eyebrow aj-eyebrow-accent">03 · STACK</p>
             <h2 id="stack-heading">Tools and integrations.</h2>
           </div>
           <div className="aj-work-tags aj-case-stack">
@@ -93,7 +93,7 @@ export default function WorkPage() {
 
         <section className="aj-case-section" id="selected-finance-work" aria-labelledby="finance-work-heading">
           <div className="aj-case-section-heading">
-            <p className="aj-eyebrow aj-eyebrow-accent">07 · FINANCE & ANALYSIS</p>
+            <p className="aj-eyebrow aj-eyebrow-accent">04 · FINANCE & ANALYSIS</p>
             <h2 id="finance-work-heading">Finance work, published with the evidence attached.</h2>
             <p>I’m preparing shareable models and analysis. This section will grow when the underlying files and findings are ready to verify.</p>
           </div>
