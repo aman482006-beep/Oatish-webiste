@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-tech-bg: #000000;
-  --color-tech-bg-secondary: #000000;
-  --color-tech-card: #000000;
-  --color-tech-card-hover: #000000;
-  --color-tech-text: #F5F7FA;
-  --color-tech-text-muted: #A5ADBB;
-  --color-tech-accent: #E01B1B;
-  --color-tech-accent-hover: #ff2a2a;
-  --color-tech-border: rgba(224, 27, 27, 0.28);
+  --color-tech-bg: #FFFCF7;
+  --color-tech-bg-secondary: #FBF7F0;
+  --color-tech-card: #FFFFFF;
+  --color-tech-card-hover: #FFF8F1;
+  --color-tech-text: #242630;
+  --color-tech-text-muted: #6D7079;
+  --color-tech-accent: #F45C2A;
+  --color-tech-accent-hover: #D9481D;
+  --color-tech-border: rgba(40, 35, 28, 0.12);
 
-  --color-spidey-red: #E01B1B;
-  --color-spidey-red-deep: #8F0D0D;
-  --color-spidey-black: #000000;
-  --color-spidey-carbon: #000000;
-  --color-spidey-carbon-light: #000000;
-  --color-spidey-white: #F5F7FA;
-  --color-spidey-muted: #A5ADBB;
+  --color-spidey-red: #F45C2A;
+  --color-spidey-red-deep: #C84220;
+  --color-spidey-black: #FFFCF7;
+  --color-spidey-carbon: #FBF7F0;
+  --color-spidey-carbon-light: #F7F0E6;
+  --color-spidey-white: #242630;
+  --color-spidey-muted: #6D7079;
 
   --font-display: var(--font-display), "Plus Jakarta Sans", sans-serif;
   --font-body: var(--font-body), "Manrope", sans-serif;
