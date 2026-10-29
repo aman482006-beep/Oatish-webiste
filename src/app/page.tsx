@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { type FormEvent } from "react";
 import { LatestVideos } from "@/components/sections/latest-videos";
 
 const socials = [
@@ -35,17 +34,6 @@ const pillars = [
     description: "Sharing what I learn through finance education, explanatory videos, career resources, and digital content.",
   },
 ];
-
-function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
-  event.preventDefault();
-  const formData = new FormData(event.currentTarget);
-  const name = String(formData.get("name") ?? "").trim();
-  const email = String(formData.get("email") ?? "").trim();
-  const message = String(formData.get("message") ?? "").trim();
-  const subject = encodeURIComponent("A message from " + name + " via amanmalu.me");
-  const body = encodeURIComponent("Hey Aman,\n\n" + message + "\n\nFrom: " + name + "\nEmail: " + email);
-  window.location.href = "mailto:jain.aman3789@gmail.com?subject=" + subject + "&body=" + body;
-}
 
 export default function Home() {
   return (
@@ -173,15 +161,14 @@ export default function Home() {
             <h2>Have something interesting in mind?</h2>
             <p>Whether it&apos;s a professional opportunity, a project collaboration, or just a conversation, I&apos;m always open to connect.</p>
           </div>
-          <div className="aj-contact-action">
+          <div className="aj-contact-action aj-contact-action-home">
             <span className="aj-paper-plane" aria-hidden="true">↗</span>
-            <form onSubmit={handleContactSubmit} className="aj-contact-form">
-              <label><span>Your name</span><input name="name" autoComplete="name" required placeholder="Your name" /></label>
-              <label><span>Your email</span><input name="email" type="email" autoComplete="email" required placeholder="you@example.com" /></label>
-              <label className="aj-message-field"><span>Message</span><textarea name="message" required rows={2} placeholder="What would you like to talk about?" /></label>
-              <button type="submit" className="aj-button aj-button-primary">Let&apos;s talk <span aria-hidden="true">→</span></button>
-              <p className="aj-form-note">Opens your email app with the message ready to send.</p>
-            </form>
+            <a href="mailto:jain.aman3789@gmail.com?subject=Hello%20Aman%20%E2%80%94%20from%20your%20website" className="aj-button aj-button-primary">Let&apos;s talk <span aria-hidden="true">→</span></a>
+          </div>
+          <div className="aj-contact-details">
+            <a href="mailto:jain.aman3789@gmail.com" className="aj-contact-detail"><span aria-hidden="true">✉</span> jain.aman3789@gmail.com</a>
+            <p className="aj-contact-detail"><span aria-hidden="true">⌖</span> Bengaluru, India</p>
+            <p className="aj-contact-note">Open to opportunities, projects and collaborations.</p>
           </div>
         </div>
       </section>

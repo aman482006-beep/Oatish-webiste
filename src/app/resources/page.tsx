@@ -103,7 +103,7 @@ export default function ResourcesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--tech-bg)] text-white pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-6 md:px-12 lg:px-20 relative overflow-hidden">
+    <div className="aj-editorial-page aj-resources-page min-h-screen bg-[var(--tech-bg)] text-white pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-6 md:px-12 lg:px-20 relative overflow-hidden">
       
       {/* Background Ambience */}
       <div className="absolute top-20 right-1/4 w-[320px] h-[320px] sm:w-[600px] sm:h-[600px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.14)_0%,transparent_70%)] blur-[120px] pointer-events-none" />

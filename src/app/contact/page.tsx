@@ -70,7 +70,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[var(--tech-bg)] text-[var(--tech-text)] pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-8 lg:px-20">
+    <div className="aj-editorial-page aj-contact-page min-h-screen bg-[var(--tech-bg)] text-[var(--tech-text)] pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-8 lg:px-20">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="mb-14 pb-8 border-b border-[rgba(224,27,27,0.28)]">

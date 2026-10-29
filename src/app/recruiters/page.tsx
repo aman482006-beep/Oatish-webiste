@@ -75,7 +75,7 @@ export default function RecruitersPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[var(--tech-bg)] text-[var(--tech-text)] pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-8 lg:px-20">
+    <div className="aj-editorial-page aj-recruiters-page min-h-screen bg-[var(--tech-bg)] text-[var(--tech-text)] pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-8 lg:px-20">
       <div className="max-w-6xl mx-auto">
         {/* Page Introduction */}
         <div className="mb-14 pb-10 border-b border-[rgba(224,27,27,0.28)]">
