@@ -1,22 +1,37 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export function ScrollProgressBar() {
-  const [progress, setProgress] = useState(0);
+  const fillRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalScroll <= 0) return;
-      const currentScroll = window.scrollY;
-      setProgress((currentScroll / totalScroll) * 100);
+    let frame = 0;
+
+    const updateProgress = () => {
+      frame = 0;
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollableHeight > 0
+        ? Math.max(0, Math.min(1, window.scrollY / scrollableHeight))
+        : 0;
+
+      fillRef.current?.style.setProperty("transform", `scaleX(${progress})`);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    const scheduleUpdate = () => {
+      if (frame !== 0) return;
+      frame = window.requestAnimationFrame(updateProgress);
+    };
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate, { passive: true });
+    updateProgress();
+
+    return () => {
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      if (frame !== 0) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   return (
@@ -25,8 +40,9 @@ export function ScrollProgressBar() {
       aria-hidden="true"
     >
       <div
-        className="aj-scroll-progress-fill h-full bg-[var(--aj-orange)] transition-transform duration-75 ease-out origin-left relative"
-        style={{ transform: `scaleX(${progress / 100})` }}
+        ref={fillRef}
+        className="aj-scroll-progress-fill relative h-full origin-left bg-[var(--aj-orange)]"
+        style={{ transform: "scaleX(0)" }}
       >
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[var(--aj-orange)]" />
       </div>
