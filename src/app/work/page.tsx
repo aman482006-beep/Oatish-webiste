@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { FOKUS } from "@/data/fokus";
+import { financeWork } from "@/data/finance-work";
 
 export const metadata: Metadata = {
   title: "Fokus Case Study",
@@ -129,6 +130,28 @@ export default function WorkPage() {
             {stack.map((item) => <span key={item}>{item}</span>)}
           </div>
           <p className="aj-case-source-note">The stack above is listed in the Fokus repository README; it is not a claim that each package is used by every platform build.</p>
+        </section>
+
+        <section className="aj-case-section aj-finance-work-section" id="selected-finance-work">
+          <div className="aj-case-section-heading">
+            <p className="aj-eyebrow aj-eyebrow-accent">07 · SELECTED FINANCE WORK</p>
+            <h2>Finance work, with the files attached.</h2>
+            <p>These are portfolio placeholders only. They should be replaced by completed work and verified takeaways before being presented as finished projects.</p>
+          </div>
+          <div className="aj-finance-work-grid">
+            {financeWork.map((item) => (
+              <article className="aj-finance-work-card" key={item.id}>
+                <div className="aj-finance-work-card-top">
+                  <span className="aj-finance-format">{item.format}</span>
+                  <span className="aj-finance-status">PLACEHOLDER</span>
+                </div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <p className="aj-finance-takeaway">{item.takeaway}</p>
+                <span className="aj-finance-work-pending">TODO(Aman): Attach completed {item.format} file</span>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className="aj-case-next">
