@@ -132,17 +132,26 @@ html.aj-motion-enabled [data-reveal][data-revealed="true"] {
 
 @media (prefers-reduced-motion: reduce) {
   .aj-route-transition,
+  html.aj-view-transitions::view-transition-old(root),
+  html.aj-view-transitions::view-transition-new(root),
   html.aj-motion-enabled [data-reveal],
   .aj-focus-art[data-revealed="true"] .aj-phone-front,
   .aj-focus-art[data-revealed="true"] .aj-phone-back,
   .aj-focus-art[data-revealed="true"] .aj-chart-bars i,
-  .aj-focus-art[data-revealed="true"] .aj-phone-task {
+  .aj-focus-art[data-revealed="true"] .aj-phone-task,
+  .aj-focus-art[data-revealed="true"] .aj-phone-cta,
+  .aj-focus-art[data-revealed="true"] .aj-phone-task i::after {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;
     translate: none !important;
   }
 
+  .aj-marquee { display: none; }
+  .aj-pillar::after { display: none; }
+  .aj-pillar-svg path { stroke-dasharray: none; stroke-dashoffset: 0; }
+  .aj-focus-art .aj-chart-bars i { transform: none; }
+  .aj-focus-art .aj-phone-task i::after { opacity: 0; scale: 1; }
   .aj-back-to-top { transition: none; }
 }
 
@@ -291,18 +300,4 @@ html.aj-motion-enabled .aj-pillar[data-revealed="true"] .aj-pillar-svg path {
       animation-range: exit 0% exit 100%;
     }
   }
-}
-
-/* The motion layer never hides useful content for reduced-motion visitors. */
-@media (prefers-reduced-motion: reduce) {
-  .aj-route-transition,
-  html.aj-view-transitions::view-transition-old(root),
-  html.aj-view-transitions::view-transition-new(root) { animation: none; }
-  .aj-marquee { display: none; }
-  .aj-pillar::after { display: none; }
-  .aj-pillar-svg path { stroke-dasharray: none; stroke-dashoffset: 0; }
-  .aj-focus-art .aj-chart-bars i,
-  .aj-focus-art .aj-phone-cta,
-  .aj-focus-art .aj-phone-task i::after { animation: none !important; }
-  .aj-focus-art .aj-phone-task i::after { opacity: 0; scale: 1; }
 }
