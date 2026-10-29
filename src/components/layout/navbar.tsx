@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -13,11 +13,11 @@ const navLinks = [
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuState, setMenuState] = useState({ open: false, pathname: "/" });
   const mobileMenuOpen = menuState.open && menuState.pathname === pathname;
-  const closeMenu = () => setMenuState((current) => ({ ...current, open: false }));
-  const pathname = usePathname();
+  const closeMenu = useCallback(() => setMenuState((current) => ({ ...current, open: false })), []);
   const headerRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -46,7 +46,7 @@ export function Navbar() {
 
       const onKeyDown = (event: KeyboardEvent) => {
         if (event.key === "Escape") {
-          setMobileMenuOpen(false);
+          closeMenu();
           toggleRef.current?.focus();
           return;
         }
