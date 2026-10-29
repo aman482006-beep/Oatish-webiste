@@ -135,8 +135,8 @@ export default function WorkPage() {
         <section className="aj-case-section aj-finance-work-section" id="selected-finance-work">
           <div className="aj-case-section-heading">
             <p className="aj-eyebrow aj-eyebrow-accent">07 · SELECTED FINANCE WORK</p>
-            <h2>Finance work, with the files attached.</h2>
-            <p>These are portfolio placeholders only. They should be replaced by completed work and verified takeaways before being presented as finished projects.</p>
+            <h2>Selected finance work.</h2>
+            <p>These are planned portfolio entries. Actual files and verified takeaways will be added before any entry is presented as completed work.</p>
           </div>
           <div className="aj-finance-work-grid">
             {financeWork.map((item) => (
