@@ -65,7 +65,7 @@ export function ThreePillars() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="group relative p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] hover:border-[var(--tech-accent)]/40 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+              className="group relative p-5 sm:p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] hover:border-[var(--tech-accent)]/40 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
