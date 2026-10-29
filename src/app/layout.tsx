@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import "./home-spacing.css";
 import { ScrollProgressBar } from "@/components/ui/scroll-progress";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { Navbar } from "@/components/layout/navbar";
