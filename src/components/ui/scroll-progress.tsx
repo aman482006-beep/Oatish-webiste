@@ -25,8 +25,8 @@ export function ScrollProgressBar() {
       aria-hidden="true"
     >
       <div
-        className="h-full bg-[var(--aj-orange)] transition-[width] duration-75 ease-out relative"
-        style={{ width: `${progress}%` }}
+        className="aj-scroll-progress-fill h-full bg-[var(--aj-orange)] transition-transform duration-75 ease-out origin-left relative"
+        style={{ transform: `scaleX(${progress / 100})` }}
       >
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[var(--aj-orange)]" />
       </div>
