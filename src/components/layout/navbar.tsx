@@ -14,7 +14,9 @@ const navLinks = [
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [menuState, setMenuState] = useState({ open: false, pathname: "/" });
+  const mobileMenuOpen = menuState.open && menuState.pathname === pathname;
+  const closeMenu = () => setMenuState((current) => ({ ...current, open: false }));
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -28,9 +30,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     document.body.classList.toggle("aj-menu-open", mobileMenuOpen);
@@ -41,7 +40,7 @@ export function Navbar() {
 
       const onPointerDown = (event: PointerEvent) => {
         if (event.target instanceof Node && !headerRef.current?.contains(event.target)) {
-          setMobileMenuOpen(false);
+          closeMenu();
         }
       };
 
@@ -110,7 +109,7 @@ export function Navbar() {
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
           aria-controls="primary-navigation"
-          onClick={() => setMobileMenuOpen((open) => !open)}
+          onClick={() => setMenuState((current) => ({ open: !mobileMenuOpen, pathname }))}
         >
           <span /><span />
         </button>
