@@ -39,7 +39,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ScrollProgressBar />
         <SmoothScroll>
           <Navbar />
-          <main className="site-main">{children}</main>
+          <div className="site-main">{children}</div>
           <Footer />
         </SmoothScroll>
       </body>
