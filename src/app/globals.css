@@ -94,7 +94,7 @@ body.aj-menu-open { overflow: hidden; }
 }
 .aj-site-header.is-scrolled { background: rgba(255, 252, 247, .98); border-color: var(--aj-line); box-shadow: 0 5px 20px rgba(42, 32, 23, .045); }
 .aj-nav { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.aj-brand { display: inline-flex; align-items: center; gap: 11px; flex-shrink: 0; color: var(--aj-ink); text-decoration: none; }
+.aj-brand { display: inline-flex; align-items: center; gap: 11px; min-height: 44px; flex-shrink: 0; color: var(--aj-ink); text-decoration: none; }
 .aj-brand-monogram { font-family: var(--font-display); font-size: 31px; letter-spacing: -.08em; font-weight: 700; line-height: 1; }
 .aj-brand-monogram > span { color: var(--aj-orange); }
 .aj-brand-name { font-size: 12px; font-weight: 800; letter-spacing: .18em; white-space: nowrap; }
@@ -244,7 +244,7 @@ body.aj-menu-open { overflow: hidden; }
 .aj-fact-icon { display: grid; place-items: center; width: 40px; height: 40px; margin-bottom: 8px; border-radius: 50%; color: var(--aj-orange); background: #FFF1E5; font-size: 20px; }
 .aj-recruiter-facts h3 { margin: 0 0 4px; font-size: 14px; font-weight: 800; }
 .aj-recruiter-facts p { margin: 0; color: var(--aj-muted); font-size: 14px; line-height: 1.5; }
-.aj-recruiter-facts strong { color: #356B5A; }
+.aj-recruiter-facts strong { color: var(--aj-orange-dark); }
 
 .aj-contact-section { padding: 18px 0 22px; }
 .aj-contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(220px, .78fr); align-items: center; gap: 26px; }
@@ -254,7 +254,7 @@ body.aj-menu-open { overflow: hidden; }
 .aj-contact-action-home { display: flex; align-items: center; gap: 10px; white-space: nowrap; }
 .aj-paper-plane { margin-top: 0; color: var(--aj-orange); font-size: 34px; transform: rotate(12deg); }
 .aj-contact-details { min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 9px; min-height: 86px; padding-left: 22px; border-left: 1px solid var(--aj-line); }
-.aj-contact-detail { display: inline-flex; align-items: center; gap: 9px; margin: 0; color: var(--aj-muted); font-size: 14px; line-height: 1.5; text-decoration: none; overflow-wrap: anywhere; }
+.aj-contact-detail { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; margin: 0; color: var(--aj-muted); font-size: 14px; line-height: 1.5; text-decoration: none; overflow-wrap: anywhere; }
 .aj-contact-detail > span { flex: 0 0 15px; color: var(--aj-muted); font-size: 15px; text-align: center; }
 .aj-contact-detail[href]:hover { color: var(--aj-orange); }
 .aj-contact-note { margin: 0 0 0 24px; color: var(--aj-muted); font-size: 14px; line-height: 1.5; }
@@ -354,7 +354,7 @@ body.aj-menu-open { overflow: hidden; }
 .aj-contact-compose-preview p:last-child { margin-bottom: 0; }
 .aj-contact-template { white-space: pre-line; color: var(--aj-muted); }
 .aj-contact-direct { display: flex; flex-direction: column; align-items: flex-start; }
-.aj-contact-email { display: inline-block; margin: 0 0 14px; color: var(--aj-ink); font-size: 15px; font-weight: 750; overflow-wrap: anywhere; }
+.aj-contact-email { display: inline-flex; align-items: center; min-height: 44px; margin: 0 0 14px; color: var(--aj-ink); font-size: 15px; font-weight: 750; overflow-wrap: anywhere; }
 .aj-contact-location { margin: 20px 0 7px; color: var(--aj-ink); font-size: 14px; font-weight: 750; }
 .aj-contact-direct-note { color: var(--aj-muted); font-size: 14px; line-height: 1.55; }
 .aj-contact-social-section { margin-top: 10px; }
@@ -573,3 +573,7 @@ body.aj-menu-open { overflow: hidden; }
 .aj-error-content h1 { max-width: 760px; margin: 0; font-family: var(--font-display); font-size: clamp(40px, 6vw, 64px); font-weight: 500; line-height: 1.02; letter-spacing: -.055em; }
 .aj-error-content > p:not(.aj-eyebrow) { max-width: 620px; margin: 16px 0 22px; color: var(--aj-muted); font-size: 16px; line-height: 1.6; }
 @media (max-width: 700px) { .aj-error-content { padding-top: 24px; } .aj-error-content > p:not(.aj-eyebrow) { font-size: 15px; } }
+
+/* Consistent pressed feedback and minimum touch areas for keyboard/touch users. */
+a[href]:active, button:active { opacity: .82; }
+.aj-button:active { transform: translateY(1px); }
