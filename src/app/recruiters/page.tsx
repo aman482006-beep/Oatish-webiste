@@ -75,7 +75,7 @@ export default function RecruitersPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[var(--tech-bg)] text-[var(--tech-text)] pt-36 pb-28 px-6 sm:px-12 lg:px-20">
+    <div className="min-h-screen bg-[var(--tech-bg)] text-[var(--tech-text)] pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-8 lg:px-20">
       <div className="max-w-6xl mx-auto">
         {/* Page Introduction */}
         <div className="mb-14 pb-10 border-b border-[#232936]">
@@ -83,7 +83,7 @@ export default function RecruitersPage() {
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
             <span>EXECUTIVE BRIEFING · RECRUITERS & FOUNDERS</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-white mb-4">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-white mb-4">
             Recruiters
           </h1>
           <p className="text-lg font-mono text-[var(--tech-accent)] mb-6">
@@ -93,10 +93,10 @@ export default function RecruitersPage() {
             I&apos;m <strong className="text-white font-semibold">Aman Jain</strong>, a BBA student at CHRIST (Deemed to be University) in Bengaluru specializing in Finance & Marketing Analytics. My interests span finance, analytical tools, fintech, technology and educational content. This page brings together my academic background, experience and selected work in one structured location.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
             <a
               href="mailto:jain.aman3789@gmail.com?subject=Opportunity%20Inquiry%20-%20Aman%20Jain"
-              className="px-6 py-3 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all shadow-[0_0_20px_rgba(255,133,71,0.2)]"
+              className="px-6 py-3 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all shadow-[0_0_20px_rgba(255,133,71,0.2)]"
             >
               Get In Touch Directly
             </a>
@@ -125,7 +125,7 @@ export default function RecruitersPage() {
         <div className="mb-16">
           <div className="text-xs font-mono uppercase tracking-widest text-[var(--tech-accent)] mb-3">01 · OVERVIEW</div>
           <h2 className="text-2xl font-bold font-display text-white mb-4">Professional Summary</h2>
-          <div className="p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] text-base leading-relaxed text-[var(--tech-text-muted)] font-sans">
+          <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] text-base leading-relaxed text-[var(--tech-text-muted)] font-sans">
             I&apos;m a BBA student focused on Finance & Marketing Analytics, with internship exposure in finance and commercial business environments. Alongside my academic work, I build analytical and technology-oriented projects and create finance-focused educational content. My goal is to apply quantitative discipline, business curiosity, and practical engineering skills to financial analysis, fintech, or investment research teams.
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function RecruitersPage() {
           <div>
             <div className="text-xs font-mono uppercase tracking-widest text-[var(--tech-accent)] mb-3">02 · ACADEMICS</div>
             <h2 className="text-2xl font-bold font-display text-white mb-4">Education</h2>
-            <div className="p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] h-[calc(100%-3rem)] flex flex-col justify-between">
+            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] h-[calc(100%-3rem)] flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--tech-accent)] bg-[var(--tech-accent)]/10 px-2.5 py-0.5 rounded border border-[var(--tech-accent)]/20 mb-3 inline-block">
                   Undergraduate Degree
@@ -166,7 +166,7 @@ export default function RecruitersPage() {
           <div>
             <div className="text-xs font-mono uppercase tracking-widest text-[var(--tech-accent)] mb-3">03 · PROFESSIONAL CREDENTIALS</div>
             <h2 className="text-2xl font-bold font-display text-white mb-4">CFA Program</h2>
-            <div className="p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] h-[calc(100%-3rem)] flex flex-col justify-between">
+            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] h-[calc(100%-3rem)] flex flex-col justify-between">
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400 bg-amber-400/10 px-2.5 py-0.5 rounded border border-amber-400/20 mb-3 inline-block">
                   Active Candidate Status
@@ -199,7 +199,7 @@ export default function RecruitersPage() {
           
           <div className="space-y-6">
             {/* Internship 1: Nuvama Wealth */}
-            <div className="p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] hover:border-[var(--tech-accent)]/40 transition-colors">
+            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] hover:border-[var(--tech-accent)]/40 transition-colors">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                 <div>
                   <h3 className="text-2xl font-bold font-display text-white">Nuvama Wealth</h3>
@@ -215,7 +215,7 @@ export default function RecruitersPage() {
             </div>
 
             {/* Internship 2: DAGAS */}
-            <div className="p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] hover:border-[var(--tech-accent)]/40 transition-colors">
+            <div className="p-5 sm:p-8 rounded-xl bg-[var(--tech-card)] border border-[#232936] hover:border-[var(--tech-accent)]/40 transition-colors">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                 <div>
                   <h3 className="text-2xl font-bold font-display text-white">DAGAS</h3>
@@ -351,10 +351,10 @@ export default function RecruitersPage() {
               For professional opportunities, internships, analyst roles, project collaborations, or to request a full official curriculum vitae, feel free to reach out directly.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
               <a
                 href="mailto:jain.aman3789@gmail.com?subject=Professional%20Opportunity%20-%20Aman%20Jain"
-                className="px-6 py-3.5 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all shadow-[0_0_20px_rgba(255,133,71,0.2)]"
+                className="px-6 py-3.5 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all shadow-[0_0_20px_rgba(255,133,71,0.2)]"
               >
                 Request Official Résumé via Email
               </a>
