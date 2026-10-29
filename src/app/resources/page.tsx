@@ -107,7 +107,7 @@ export default function ResourcesPage() {
       
       {/* Background Ambience */}
       <div className="absolute top-20 right-1/4 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.14)_0%,transparent_70%)] blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(143,13,13,0.1)_0%,transparent_70%)] blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(224,27,27,0.06)_0%,transparent_70%)] blur-[100px] pointer-events-none" />
 
       {/* Spider Emblem Watermark */}
       <div className="absolute top-36 right-10 w-96 h-96 opacity-[0.03] pointer-events-none">
