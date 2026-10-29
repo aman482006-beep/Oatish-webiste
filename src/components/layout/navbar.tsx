@@ -87,7 +87,7 @@ export function Navbar() {
   return (
     <header ref={headerRef} className={"aj-site-header" + (scrolled ? " is-scrolled" : "")}>
       <nav className="aj-nav aj-container" aria-label="Main navigation">
-        <Link href="/" className="aj-brand" aria-label="Aman Jain — Home" onClick={() => setMobileMenuOpen(false)}>
+        <Link href="/" className="aj-brand" aria-label="Aman Jain — Home" onClick={closeMenu}>
           <span className="aj-brand-monogram">AJ<span>.</span></span>
           <span className="aj-brand-name">AMAN JAIN</span>
         </Link>
@@ -95,10 +95,10 @@ export function Navbar() {
         <div ref={menuRef} className={"aj-nav-links" + (mobileMenuOpen ? " is-open" : "")} id="primary-navigation">
           {navLinks.map((link) => {
             const active = pathname === link.href;
-            return <Link key={link.href} href={link.href} className={active ? "is-active" : ""} aria-current={active ? "page" : undefined} onClick={() => setMobileMenuOpen(false)}>{link.label}</Link>;
+            return <Link key={link.href} href={link.href} className={active ? "is-active" : ""} aria-current={active ? "page" : undefined} onClick={closeMenu}>{link.label}</Link>;
           })}
-          <Link href="/resources" className="aj-mobile-resource" onClick={() => setMobileMenuOpen(false)}>Resources</Link>
-          <Link href="/contact" className="aj-mobile-cta" onClick={() => setMobileMenuOpen(false)}>Let&apos;s connect <span aria-hidden="true">↗</span></Link>
+          <Link href="/resources" className="aj-mobile-resource" onClick={closeMenu}>Resources</Link>
+          <Link href="/contact" className="aj-mobile-cta" onClick={closeMenu}>Let&apos;s connect <span aria-hidden="true">↗</span></Link>
         </div>
 
         <Link href="/contact" className="aj-nav-cta"><span /> Let&apos;s connect <b aria-hidden="true">›</b></Link>
