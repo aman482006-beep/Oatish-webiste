@@ -74,7 +74,6 @@ export async function GET() {
     const detail = await youtubeGet<VideosResponse>("videos", {
       part: "snippet,contentDetails",
       id: ids.join(","),
-      maxResults: "50",
     }, key);
 
     const videos = (detail.items ?? [])
