@@ -4,14 +4,14 @@ const FOKUS_STORE_URL = "https://apps.microsoft.com/detail/9p7njldq8gkk?hl=en-GB
 
 export default function WorkPage() {
   return (
-    <main className="min-h-screen bg-[var(--tech-bg)] text-[var(--tech-text)] pt-36 pb-28 px-6 sm:px-12 lg:px-20">
+    <main className="min-h-screen bg-[var(--tech-bg)] text-[var(--tech-text)] pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-8 lg:px-20">
       <div className="max-w-5xl mx-auto">
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--tech-accent)]/30 bg-[var(--tech-card)] text-[var(--tech-accent)] font-mono text-xs uppercase tracking-widest mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
             <span>APPS & TOOLS</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-white mb-5">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-white mb-5">
             Fokus App
           </h1>
           <p className="text-[var(--tech-text-muted)] text-base sm:text-lg leading-relaxed font-sans">
@@ -19,7 +19,7 @@ export default function WorkPage() {
           </p>
         </div>
 
-        <article className="max-w-4xl rounded-2xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] p-7 sm:p-10 hover:border-[var(--tech-accent)]/50 transition-colors">
+        <article className="max-w-4xl rounded-2xl bg-[var(--tech-card)] border border-[rgba(224,27,27,0.28)] p-5 sm:p-10 hover:border-[var(--tech-accent)]/50 transition-colors">
           <div className="flex flex-col sm:flex-row sm:items-start gap-6">
             <div className="w-16 h-16 rounded-2xl bg-[var(--tech-bg)] border border-[rgba(224,27,27,0.28)] flex items-center justify-center shrink-0 text-[var(--tech-accent)]">
               <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -46,7 +46,7 @@ export default function WorkPage() {
                 href={FOKUS_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all duration-200"
+                className="inline-flex items-center gap-2 px-4 sm:px-5 py-3 min-h-11 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all duration-200"
               >
                 <span>Get Fokus App on Microsoft Store</span>
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
