@@ -120,19 +120,6 @@ export function SelectedWorkPreview() {
       disclaimer: null,
     },
     {
-      title: "Agentic Finance Research Lab",
-      subtitle: "AI-Powered Financial Research & Portfolio Risk Guardian",
-      category: "AI & Technology",
-      badge: "Research & Engineering",
-      description:
-        "Exploring how autonomous agentic workflows support financial research and portfolio stress testing. Features Research Copilot with evidence tracking and Portfolio Guardian for deterministic concentration and volatility scenario analysis.",
-      tags: ["Multi-Agent AI", "Portfolio Guardian", "Risk Modeling", "Python"],
-      repo: "https://github.com/aman482006-beep/Aman-trading-agent",
-      demo: null,
-      disclaimer:
-        "Attribution: Contains a forked copy of upstream TradingAgents framework by Tauric Research. Original engineering work is concentrated in the agent_lab directory. Research tool only; not investment advice.",
-    },
-    {
       title: "Ideas to Execution",
       subtitle: "Independent VC Storytelling & Interactive Founder Process",
       category: "Product & Design",
@@ -145,18 +132,7 @@ export function SelectedWorkPreview() {
       disclaimer:
         "Disclaimer: Independent exploratory project inspired by public information about 8i Ventures. Not affiliated with, endorsed by, or operated by 8i Ventures.",
     },
-    {
-      title: "Air Math AI",
-      subtitle: "Webcam Gesture Mathematics Workspace",
-      category: "AI & Technology",
-      badge: "Secondary Engineering Lab",
-      description:
-        "Experimental webcam-driven mathematics tool combining computer vision hand-gesture tracking, canvas drawing, browser-side OCR, and a FastAPI backend with SymPy symbolic solving.",
-      tags: ["Computer Vision", "SymPy", "FastAPI", "WebSockets"],
-      repo: "https://github.com/aman482006-beep/Airmath-AI",
-      demo: null,
-      disclaimer: null,
-    },
+
   ];
 
   return (
@@ -169,14 +145,14 @@ export function SelectedWorkPreview() {
               <span>SELECTED WORK</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white leading-[1.1]">
-              Verified Projects & Systems
+              Selected Work
             </h2>
           </div>
           <Link
             href="/work"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[var(--tech-accent)] text-[var(--tech-accent)] hover:bg-[var(--tech-accent)] hover:text-[#0B0D12] font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-200 w-fit"
           >
-            <span>View All Case Studies</span>
+            <span>View Case Studies</span>
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
@@ -362,7 +338,7 @@ export function RecruiterPreview() {
   return (
     <section id="recruiter-preview" className="py-20 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg-secondary)] border-t border-[#232936]">
       <div className="max-w-7xl mx-auto p-8 sm:p-12 rounded-2xl bg-[var(--tech-card)] border border-[#232936] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-[radial-gradient(circle,rgba(255,133,71,0.08)_0%,transparent_70%)] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-80 h-80 bg-[radial-gradient(circle,rgba(224,27,27,0.08)_0%,transparent_70%)] pointer-events-none" />
         
         <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
           <div className="max-w-2xl">
@@ -381,7 +357,7 @@ export function RecruiterPreview() {
           <div className="shrink-0 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
             <Link
               href="/recruiters"
-              className="px-8 py-4 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] text-center transition-all duration-200 shadow-[0_0_20px_rgba(255,133,71,0.25)]"
+              className="px-8 py-4 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] text-center transition-all duration-200 shadow-[0_0_20px_rgba(224,27,27,0.25)]"
             >
               Explore Recruiters Section →
             </Link>
@@ -410,7 +386,7 @@ export function ContactPreview() {
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
             href="mailto:jain.aman3789@gmail.com"
-            className="px-8 py-3.5 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all duration-200 shadow-[0_0_20px_rgba(255,133,71,0.2)]"
+            className="px-8 py-3.5 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all duration-200 shadow-[0_0_20px_rgba(224,27,27,0.2)]"
           >
             Email: jain.aman3789@gmail.com
           </a>
