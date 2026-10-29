@@ -40,7 +40,7 @@ const pillars = [
 
 export default function Home() {
   return (
-    <main className="aj-home">
+    <main id="main" className="aj-home">
       <section className="aj-hero">
         <div className="aj-container aj-hero-grid">
           <div className="aj-hero-copy">
