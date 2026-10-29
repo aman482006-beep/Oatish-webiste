@@ -14,7 +14,9 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
     gsap.registerPlugin(ScrollTrigger);
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) {
+    const prefersNativeTouchScroll = window.matchMedia("(pointer: coarse)").matches;
+    // Let phones and tablets use native touch scrolling; Lenis is for wheel/trackpad devices.
+    if (prefersReducedMotion || prefersNativeTouchScroll) {
       return;
     }
 
