@@ -18,25 +18,49 @@ const pillars = [
   {
     number: "01",
     title: "Finance",
-    icon: "↗",
+    icon: "finance",
     tone: "peach",
     description: "Exploring financial analysis, markets, investment concepts, risk, and the business problems behind the numbers.",
   },
   {
     number: "02",
     title: "Build",
-    icon: "</>",
+    icon: "build",
     tone: "blue",
     description: "Experimenting with AI, financial-data tools, dashboards, software projects, and practical automation.",
   },
   {
     number: "03",
     title: "Create",
-    icon: "▷",
+    icon: "create",
     tone: "green",
     description: "Sharing what I learn through finance education, explanatory videos, career resources, and digital content.",
   },
-];
+] as const;
+
+function PillarIcon({ name }: { name: "finance" | "build" | "create" }) {
+  const common = {
+    className: "aj-pillar-svg",
+    width: 30,
+    height: 30,
+    viewBox: "0 0 32 32",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.8,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true as const,
+    focusable: false as const,
+  };
+
+  if (name === "finance") {
+    return <svg {...common}><path pathLength={100} d="M4 7v18h24M7 20l6-7 5 3 8-10M20 6h6v6" /></svg>;
+  }
+  if (name === "build") {
+    return <svg {...common}><path pathLength={100} d="M11 7 4 16l7 9M21 7l7 9-7 9M18 4l-4 24" /></svg>;
+  }
+  return <svg {...common}><path pathLength={100} d="M8 5 27 16 8 27Z" /></svg>;
+}
 
 export default function Home() {
   return (
@@ -79,6 +103,14 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="aj-marquee" aria-hidden="true">
+        <div className="aj-marquee-track">
+          {["FINANCE", "BUILD", "CREATE", "FINANCE", "BUILD", "CREATE"].map((word, index) => (
+            <span className="aj-marquee-item" key={word + index}>{word}<i>✳</i></span>
+          ))}
+        </div>
+      </div>
+
       <section className="aj-section aj-pillars-section" id="explore">
         <div className="aj-container">
           <div className="aj-section-topline">
@@ -88,7 +120,7 @@ export default function Home() {
           <div className="aj-pillar-grid">
             {pillars.map((pillar) => (
               <article className={"aj-pillar aj-pillar-" + pillar.tone} key={pillar.title}>
-                <div className="aj-pillar-icon" aria-hidden="true">{pillar.icon}</div>
+                <div className="aj-pillar-icon" aria-hidden="true"><PillarIcon name={pillar.icon} /></div>
                 <div className="aj-pillar-copy">
                   <div className="aj-pillar-head"><h2>{pillar.title}</h2><span>{pillar.number}</span></div>
                   <p>{pillar.description}</p>
