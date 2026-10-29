@@ -17,7 +17,7 @@ export default function ContactPage() {
     {
       label: "Project Collaborations",
       subject: "Project Collaboration - Aman Jain",
-      bodyTemplate: "Hi Aman,\n\nI saw your work in finance and tech (e.g. Market Monitor / Research Lab) and wanted to explore collaborating on...",
+      bodyTemplate: "Hi Aman,\n\nI saw your finance and technology work and wanted to explore collaborating on...",
     },
     {
       label: "Creator & Brand Partnerships",
@@ -70,7 +70,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[var(--tech-bg)] text-[var(--tech-text)] pt-36 pb-28 px-6 sm:px-12 lg:px-20">
+    <div className="min-h-screen bg-[var(--tech-bg)] text-[var(--tech-text)] pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-8 lg:px-20">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="mb-14 pb-8 border-b border-[#232936]">
@@ -78,7 +78,7 @@ export default function ContactPage() {
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
             <span>DIRECT INQUIRIES & CONNECT</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-white mb-4">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-white mb-4">
             Let&apos;s connect.
           </h1>
           <p className="text-[var(--tech-text-muted)] text-base sm:text-lg leading-relaxed font-sans max-w-2xl">
@@ -88,7 +88,7 @@ export default function ContactPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Main Action Card: Categorized Email Dispatch */}
-          <div className="lg:col-span-2 p-8 sm:p-10 rounded-2xl bg-[var(--tech-card)] border border-[#232936] flex flex-col justify-between">
+          <div className="lg:col-span-2 p-5 sm:p-10 rounded-2xl bg-[var(--tech-card)] border border-[#232936] flex flex-col justify-between">
             <div>
               <div className="text-xs font-mono uppercase tracking-widest text-[var(--tech-accent)] mb-2">
                 STEP 1 · SELECT INQUIRY PURPOSE
@@ -118,14 +118,14 @@ export default function ContactPage() {
                 <div className="text-[10px] uppercase text-white/50 tracking-wider mb-2">Pre-configured Subject Line</div>
                 <div className="text-[var(--tech-accent)] font-semibold mb-3">{currentCategory.subject}</div>
                 <div className="text-[10px] uppercase text-white/50 tracking-wider mb-1">Destination Address</div>
-                <div className="text-white">jain.aman3789@gmail.com</div>
+                <div className="text-white break-all">jain.aman3789@gmail.com</div>
               </div>
             </div>
 
-            <div className="pt-6 border-t border-[#232936] flex flex-wrap items-center gap-4">
+            <div className="pt-6 border-t border-[#232936] flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
               <a
                 href={mailtoHref}
-                className="px-6 py-3.5 rounded-lg bg-[var(--tech-accent)] text-[#0B0D12] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all shadow-[0_0_20px_rgba(255,133,71,0.25)] flex items-center gap-2"
+                className="w-full sm:w-fit justify-center px-5 sm:px-6 py-3.5 min-h-11 rounded-lg bg-[var(--tech-accent)] text-[#000000] font-mono text-xs uppercase tracking-wider font-bold hover:bg-[var(--tech-accent-hover)] transition-all shadow-[0_0_20px_rgba(255,133,71,0.25)] flex items-center gap-2"
               >
                 <span>Launch Email Client</span>
                 <span className="font-bold">↗</span>
@@ -133,7 +133,7 @@ export default function ContactPage() {
 
               <button
                 onClick={copyEmail}
-                className="px-5 py-3.5 rounded-lg border border-[#232936] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2"
+                className="w-full sm:w-fit justify-center px-5 py-3.5 min-h-11 rounded-lg border border-[#232936] text-white hover:border-white/30 font-mono text-xs uppercase tracking-wider transition-all cursor-pointer flex items-center gap-2"
               >
                 <span>{copied ? "Copied to Clipboard!" : "Copy Email Address"}</span>
               </button>
@@ -142,7 +142,7 @@ export default function ContactPage() {
 
           {/* Social Channels & Fast Direct Info */}
           <div className="space-y-4">
-            <div className="p-6 rounded-2xl bg-[var(--tech-card)] border border-[#232936]">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[var(--tech-card)] border border-[#232936]">
               <div className="text-xs font-mono uppercase tracking-wider text-[var(--tech-accent)] mb-2">LOCATION & TIMEZONE</div>
               <div className="text-white font-bold font-display text-xl mb-1">Bengaluru, India</div>
               <div className="text-xs font-mono text-[var(--tech-text-muted)]">IST (UTC+5:30) · Open to global remote discussions</div>
@@ -158,7 +158,7 @@ export default function ContactPage() {
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-5 rounded-xl bg-[var(--tech-card)] border border-[#232936] hover:border-[var(--tech-accent)]/50 transition-all flex flex-col justify-between group block"
+                className="p-4 sm:p-5 rounded-xl bg-[var(--tech-card)] border border-[#232936] hover:border-[var(--tech-accent)]/50 transition-all flex flex-col justify-between group block"
               >
                 <div className="flex items-center justify-between mb-1">
                   <span className="font-bold font-display text-lg text-white group-hover:text-[var(--tech-accent)] transition-colors">
@@ -166,7 +166,7 @@ export default function ContactPage() {
                   </span>
                   <span className="text-xs font-mono text-[var(--tech-accent)]">↗</span>
                 </div>
-                <div className="text-xs font-mono text-white/70 mb-2">{s.handle}</div>
+                <div className="text-xs font-mono text-white/70 mb-2 break-words">{s.handle}</div>
                 <div className="text-[11px] text-[var(--tech-text-muted)] font-sans">{s.description}</div>
               </a>
             ))}
