@@ -1058,3 +1058,153 @@ main > div.min-h-screen::before {
     max-width: calc(100% - 0.5rem);
   }
 }
+
+
+/* MINIMAL SPIDER-VERSE PASS — keep the palette, remove visual noise. */
+:root {
+  --tech-border: rgba(224, 27, 27, 0.18);
+  --spidey-border: rgba(224, 27, 27, 0.18);
+  --spidey-panel-edge: rgba(224, 27, 27, 0.22);
+  --spidey-panel-shadow: transparent;
+  --spidey-web-ink: rgba(224, 27, 27, 0.025);
+}
+
+html,
+body {
+  background: #000 !important;
+  background-image: none !important;
+}
+
+main > section::before,
+main > div.min-h-screen::before,
+main > section::after,
+main > div.min-h-screen::after {
+  content: none !important;
+  animation: none !important;
+  display: none !important;
+}
+
+main h1,
+main h2,
+main h3 {
+  text-shadow: none !important;
+}
+
+main :is(
+  [class*="bg-[var(--tech-card)]"][class*="rounded-xl"],
+  [class*="bg-[var(--tech-card)]"][class*="rounded-2xl"],
+  [class*="bg-[var(--tech-card)]"][class*="rounded-3xl"]
+),
+.spidey-card,
+.spidey-comic-panel,
+.skill-card,
+.cred-featured,
+.cred-item,
+.social-btn,
+.contact-form-wrap,
+.contact-form {
+  background-color: #050505 !important;
+  background-image: none !important;
+  border: 1px solid rgba(224, 27, 27, 0.22) !important;
+  border-top: 1px solid rgba(224, 27, 27, 0.32) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  main :is(
+    [class*="bg-[var(--tech-card)]"][class*="rounded-xl"],
+    [class*="bg-[var(--tech-card)]"][class*="rounded-2xl"],
+    [class*="bg-[var(--tech-card)]"][class*="rounded-3xl"]
+  ):hover,
+  .spidey-card:hover {
+    border-color: rgba(224, 27, 27, 0.55) !important;
+    box-shadow: none !important;
+    transform: translateY(-2px);
+  }
+}
+
+.spidey-btn,
+.tech-btn {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  animation: none !important;
+  border: 1px solid #E01B1B !important;
+  border-radius: 8px !important;
+}
+
+.spidey-btn:hover,
+.spidey-pill:hover,
+.tech-btn:hover {
+  box-shadow: none !important;
+}
+
+.spidey-pill {
+  box-shadow: none !important;
+  border-color: rgba(224, 27, 27, 0.35) !important;
+}
+
+nav[class*="fixed"][class*="top-0"] {
+  box-shadow: none !important;
+  backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.92) !important;
+  border-bottom: 1px solid rgba(224, 27, 27, 0.24) !important;
+}
+
+nav a[aria-current="page"],
+nav a:hover,
+footer a:hover {
+  text-shadow: none !important;
+}
+
+footer {
+  background-image: none !important;
+}
+
+footer > div.absolute.top-0 {
+  opacity: 0.55;
+}
+
+@media (max-width: 640px) {
+  main > section,
+  main > div.min-h-screen {
+    padding-inline: 1.1rem;
+  }
+
+  main > section::before,
+  main > div.min-h-screen::before {
+    display: none !important;
+  }
+
+  main :is(
+    [class*="bg-[var(--tech-card)]"][class*="rounded-xl"],
+    [class*="bg-[var(--tech-card)]"][class*="rounded-2xl"],
+    [class*="bg-[var(--tech-card)]"][class*="rounded-3xl"]
+  ),
+  .spidey-card,
+  .spidey-comic-panel {
+    box-shadow: none !important;
+    background-image: none !important;
+  }
+
+  .spidey-btn,
+  .tech-btn {
+    transform: none !important;
+    letter-spacing: 0.055em;
+  }
+
+  .animate-spidey-float {
+    animation-duration: 8s;
+  }
+}
+
+/* Keep motion subtle rather than making every control pulse. */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-spidey-float {
+    animation-duration: 8s;
+  }
+
+  .animate-strand-swing {
+    animation-duration: 7s;
+  }
+}
