@@ -3,7 +3,7 @@ export function Skills() {
     <section className="skills-section" id="skills">
       <div className="skills-header">
         <div>
-          <div className="section-label reveal">What I Can Do</div>
+          <div className="section-label reveal">✦ What I Can Do</div>
           <h2 className="skills-headline reveal">Built skills,<br /><em>not just a CV</em></h2>
         </div>
         <p className="section-desc reveal" style={{ fontSize: "0.92rem", lineHeight: 1.75, color: "var(--muted)", maxWidth: "400px" }}>

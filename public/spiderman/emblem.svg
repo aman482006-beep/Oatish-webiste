@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="currentColor">
+  <!-- Spider-Man Emblem with Left and Right halves for splitting animation -->
+  <g class="spider-emblem" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left Half -->
+    <g class="emblem-half emblem-left" id="emblem-left">
+      <!-- Head Left -->
+      <path class="spider-part" d="M 100 68 L 93 78 L 100 84 Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" />
+      <!-- Thorax / Abdomen Left -->
+      <path class="spider-part" d="M 100 86 L 90 102 L 94 122 L 100 138 Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" />
+      <!-- Top Leg 1 -->
+      <path class="spider-leg stroke-draw" d="M 94 88 L 74 62 L 62 30 L 52 38" stroke="currentColor" stroke-width="4.5" fill="none" />
+      <!-- Top Leg 2 -->
+      <path class="spider-leg stroke-draw" d="M 92 95 L 64 78 L 44 68 L 36 78" stroke="currentColor" stroke-width="4.5" fill="none" />
+      <!-- Bottom Leg 1 -->
+      <path class="spider-leg stroke-draw" d="M 92 108 L 62 120 L 42 144 L 46 156" stroke="currentColor" stroke-width="4.5" fill="none" />
+      <!-- Bottom Leg 2 -->
+      <path class="spider-leg stroke-draw" d="M 95 118 L 76 142 L 64 174 L 72 182" stroke="currentColor" stroke-width="4.5" fill="none" />
+    </g>
+
+    <!-- Right Half -->
+    <g class="emblem-half emblem-right" id="emblem-right">
+      <!-- Head Right -->
+      <path class="spider-part" d="M 100 68 L 107 78 L 100 84 Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" />
+      <!-- Thorax / Abdomen Right -->
+      <path class="spider-part" d="M 100 86 L 110 102 L 106 122 L 100 138 Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" />
+      <!-- Top Leg 1 -->
+      <path class="spider-leg stroke-draw" d="M 106 88 L 126 62 L 138 30 L 148 38" stroke="currentColor" stroke-width="4.5" fill="none" />
+      <!-- Top Leg 2 -->
+      <path class="spider-leg stroke-draw" d="M 108 95 L 136 78 L 156 68 L 164 78" stroke="currentColor" stroke-width="4.5" fill="none" />
+      <!-- Bottom Leg 1 -->
+      <path class="spider-leg stroke-draw" d="M 108 108 L 138 120 L 158 144 L 154 156" stroke="currentColor" stroke-width="4.5" fill="none" />
+      <!-- Bottom Leg 2 -->
+      <path class="spider-leg stroke-draw" d="M 105 118 L 124 142 L 136 174 L 128 182" stroke="currentColor" stroke-width="4.5" fill="none" />
+    </g>
+  </g>
+</svg>

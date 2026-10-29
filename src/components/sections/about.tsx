@@ -1,73 +1,131 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function About() {
-  return (
-    <section className="about !justify-center !items-center !p-6 md:!p-12 lg:!p-24" id="about" style={{ display: 'flex', minHeight: '100vh', background: 'var(--blue)' }}>
-      {/* Background decorations */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] border-[10px] border-black rounded-full translate-x-1/2 -translate-y-1/2 opacity-20 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[800px] h-[300px] bg-black opacity-10 blur-[100px] pointer-events-none" />
+  const [isUnmasked, setIsUnmasked] = useState(false);
 
-      <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-[1400px] mx-auto gap-10 lg:gap-16 z-10 relative">
+  return (
+    <section
+      id="about"
+      className="relative w-full min-h-screen py-24 px-6 sm:px-12 lg:px-20 bg-[var(--tech-bg)] flex items-center justify-center overflow-hidden border-t border-[#232936]"
+    >
+      {/* Background decorations */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] border border-[rgba(224,27,27,0.1)] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[300px] bg-[var(--spidey-red-deep)] opacity-10 blur-[120px] pointer-events-none" />
+
+      <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-12 lg:gap-16 z-10 relative">
         
-        {/* Left Side: Brutalist Image Card (60% of screen real estate) */}
-        <div className="w-full lg:w-[60%] flex justify-center items-center reveal relative">
-          <div className="w-full aspect-[4/5] relative rounded-[32px] overflow-hidden border-[6px] border-black bg-black transition-all hover:-translate-y-2 hover:shadow-[20px_20px_0px_var(--black)]" style={{ boxShadow: '16px 16px 0px var(--black)' }}>
-            <Image
-              src="/profile-2.png"
-              alt="Aman Malu"
-              fill
-              className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.05]"
-              priority
+        {/* Left Side: Interactive Spider-Man -> Face Hover Card */}
+        <div className="w-full lg:w-1/2 flex justify-center items-center relative">
+          <div
+            className="w-full max-w-[480px] aspect-[4/5] relative rounded-3xl overflow-hidden border border-[#232936] bg-[var(--tech-card)] transition-all duration-300 hover:-translate-y-1.5 cursor-pointer group select-none shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+            onMouseEnter={() => setIsUnmasked(true)}
+            onMouseLeave={() => setIsUnmasked(false)}
+            onClick={() => setIsUnmasked(!isUnmasked)}
+          >
+            {/* Real Face Layer Underneath */}
+            <div className="absolute inset-0 w-full h-full">
+              <Image
+                src="/profile-2.png"
+                alt="Aman Jain Revealed"
+                fill
+                sizes="(max-width: 1024px) 100vw, 500px"
+                className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D12] via-transparent to-transparent opacity-80" />
+            </div>
+
+            {/* Spider-Man Mask Layer on Top (Peels / Fades on Hover) */}
+            <div
+              className={`absolute inset-0 w-full h-full z-10 transition-all duration-700 ease-out bg-[#0B0D12] ${
+                isUnmasked
+                  ? "opacity-0 -translate-y-8 scale-105 pointer-events-none"
+                  : "opacity-100 translate-y-0 scale-100"
+              }`}
+            >
+              <Image
+                src="/spiderman/mask.png"
+                alt="Spider-Man Mask"
+                fill
+                sizes="(max-width: 1024px) 100vw, 500px"
+                className="object-cover object-center"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D12] via-transparent to-transparent opacity-75" />
+            </div>
+
+            {/* Subtle Hover Cue Banner */}
+            <div className="absolute top-4 left-4 z-20 px-3.5 py-1 rounded-full bg-[#0B0D12]/80 backdrop-blur-md border border-[var(--spidey-red)]/50 text-[10px] font-mono tracking-widest text-white uppercase shadow-[0_0_10px_rgba(224,27,27,0.3)]">
+              {isUnmasked ? "● IDENTITY REVEALED" : "✦ HOVER TO UNMASK"}
+            </div>
+
+            {/* Red flash sweep effect on hover transition */}
+            <div
+              className={`absolute inset-0 z-15 bg-[var(--spidey-red)] mix-blend-screen pointer-events-none transition-opacity duration-300 ${
+                isUnmasked ? "opacity-25" : "opacity-0"
+              }`}
             />
           </div>
-          {/* Floating badge for Neo-Brutalist touch */}
-          <div className="absolute -bottom-10 -right-4 lg:-right-8 bg-black text-white px-10 py-8 rounded-full border-4 border-[var(--gold)] transform rotate-[-5deg] hover:rotate-[5deg] transition-transform z-20 shadow-[8px_8px_0px_var(--gold)] max-w-xs scale-[1.15]">
-            <span className="font-['BriceRSE'] text-3xl font-black block tracking-widest text-center">AGE 19</span>
-            <span className="text-base font-bold tracking-widest text-[var(--gold)] text-center block mt-1">UNDEFEATED</span>
+
+          {/* Floating badge with Spider-Man Red */}
+          <div className="absolute -bottom-6 -right-2 sm:-right-4 bg-[#0B0D12] text-white px-7 py-4 rounded-2xl border-2 border-[var(--spidey-red)] transform rotate-[-3deg] hover:rotate-[0deg] transition-transform z-20 shadow-[0_10px_30px_rgba(224,27,27,0.3)]">
+            <span className="font-display text-2xl font-bold block tracking-wider text-center">AGE 19</span>
+            <span className="text-xs font-mono font-bold tracking-widest text-[var(--spidey-red)] text-center block mt-0.5">
+              UNDEFEATED
+            </span>
           </div>
         </div>
 
-        {/* Right Side: Content Block (shorter, taking 40% remaining) */}
-        <div className="w-full lg:w-[40%] about-text-content reveal !static !max-w-none !p-8 lg:!p-10 !bg-white !rounded-[40px]" style={{ boxShadow: '16px 16px 0px var(--black)', border: '6px solid var(--black)' }}>
-          <div className="inline-flex items-center gap-3 px-5 py-2 border-[3px] border-black rounded-full mb-8 font-black text-sm tracking-[0.2em] uppercase bg-black text-white">
-            ✦ ABOUT ME
+        {/* Right Side: Content Block */}
+        <div className="w-full lg:w-1/2 p-8 sm:p-10 lg:p-12 bg-[var(--tech-card)] border border-[#232936] rounded-3xl text-white relative z-10 shadow-xl">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--tech-accent)]/30 bg-[var(--tech-bg)] text-[var(--tech-accent)] font-mono text-xs uppercase tracking-widest mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--tech-accent)]" />
+            <span>ABOUT AMAN JAIN</span>
           </div>
           
-          <h2 className="font-['BriceRSE'] font-black leading-[1.05] tracking-tight mb-8 text-black uppercase" style={{ fontSize: 'clamp(2rem, 3.5vw, 3.5rem)' }}>
+          <h2 className="font-display font-bold leading-[1.05] tracking-tight mb-6 text-white uppercase text-4xl sm:text-5xl">
             NOT JUST A<br />
-            <span className="text-black italic bg-[var(--gold)] px-3 block w-fit mt-3 border-4 border-black">FINANCE GUY</span>
+            <span className="text-[var(--spidey-red)]">FINANCE GUY</span>
           </h2>
           
-          <p className="text-base lg:text-lg leading-[1.7] text-gray-800 font-bold mb-6">
-            I&apos;m a <span className="text-black font-black bg-yellow-300 px-2 border-2 border-black">19-year-old boy</span> building muscle, money, and discipline — with occasional battles against procrastination <span className="underline decoration-wavy decoration-black decoration-2">(currently undefeated)</span>.
+          <p className="text-base sm:text-lg leading-relaxed text-[var(--tech-text)]/90 font-sans mb-5">
+            I&apos;m a BBA student studying <strong className="text-white font-semibold">Finance & Marketing Analytics</strong> at CHRIST University in Bengaluru. I explore the intersections between financial markets, algorithmic software, and public learning.
           </p>
           
-          <p className="text-base lg:text-lg leading-[1.7] text-gray-800 font-bold mb-8">
-            Cleared CFA Level 1, lifting consistently, and documenting the whole process so I can&apos;t quietly quit halfway. Not a guru, not perfect — <strong className="text-black font-black">just showing up and getting slightly better than yesterday.</strong>
+          <p className="text-sm sm:text-base leading-relaxed text-[var(--tech-text-muted)] font-sans mb-6">
+            Currently preparing as a <strong className="text-white font-semibold">CFA Level II candidate</strong>, building financial terminal tools in Python, and documenting my learning journey through video content so I can test and share ideas in public.
           </p>
           
-          <div className="bg-[var(--blue)] border-[4px] lg:border-l-[12px] lg:border-[4px] border-black p-5 mb-28 shadow-[8px_8px_0px_var(--black)] transition-transform hover:-translate-y-1 relative">
-            <p className="text-lg lg:text-xl font-bold text-white border-none m-0 shadow-none leading-relaxed italic z-10 relative">
-              &quot;I make content about finance, fitness, food, and everything that goes into building a life from scratch — at 19.&quot;
+          <div className="bg-[var(--tech-bg)] border-l-4 border-[var(--tech-accent)] p-5 mb-8 rounded-r-xl">
+            <p className="text-sm sm:text-base font-sans text-white/90 leading-relaxed italic">
+              &ldquo;I study finance. I build with technology. I create to make ideas useful.&rdquo;
             </p>
           </div>
           
-          {/* Explicitly padded distance so pills never overlap shadows */}
-          <div className="flex flex-wrap gap-3 mt-32 pt-12">
+          <div className="flex flex-wrap gap-2 pt-2">
             {[
-              { icon: "📊", text: "Finance" },
-              { icon: "🏋️", text: "Fitness" },
-              { icon: "🍜", text: "Food" },
+              { icon: "📊", text: "Financial Analytics" },
+              { icon: "💻", text: "Python & Next.js" },
+              { icon: "📈", text: "CFA Level II Candidate" },
               { icon: "🎬", text: "Creator" },
-              { icon: "📚", text: "Student" },
-              { icon: "🌱", text: "Building in public" }
+              { icon: "🏛️", text: "CHRIST University" },
+              { icon: "🚀", text: "Building in Public" }
             ].map((pillar) => (
-              <span key={pillar.text} className="flex items-center gap-2 px-5 py-2.5 bg-[var(--cream)] border-[3px] border-black rounded-full font-black text-black text-xs uppercase tracking-wider whitespace-nowrap hover:-translate-y-1 hover:shadow-[6px_6px_0px_var(--black)] hover:bg-white transition-all cursor-crosshair">
-                <span className="text-xl min-w-fit">{pillar.icon}</span> {pillar.text}
+              <span
+                key={pillar.text}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--tech-bg)] border border-[#232936] text-xs font-mono text-[var(--tech-text-muted)] hover:text-white hover:border-[var(--tech-accent)]/40 transition-colors select-none"
+              >
+                <span>{pillar.icon}</span>
+                <span>{pillar.text}</span>
               </span>
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );

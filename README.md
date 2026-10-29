@@ -1,82 +1,96 @@
-# Aman Malu — Personal Portfolio
+# Aman Jain — Personal Portfolio
 
-> Finance-minded builder exploring the intersection of markets, technology, products, and the process of building things from scratch.
+> **"Finance × Technology × Communication"**  
+> *"I study finance. I build with technology. I create to make ideas useful."*
 
-This repository contains my personal portfolio and the source for the site at the centre of my public work.
+This repository contains the source code for the personal portfolio website of **Aman Jain** ([amanmalu.me](https://amanmalu.me)), a BBA student studying Finance & Marketing Analytics at CHRIST (Deemed to be University) in Bengaluru.
 
-The positioning is intentional: **finance is the foundation; building is the second skill.** I use code and product experiments to turn ideas into working interfaces, tools, and small systems rather than treating technology as a separate identity.
-
-## What you'll find here
-
-- **About** — the story, interests, and principles behind the work.
-- **Projects** — selected software and product experiments.
-- **Skills** — the technical and creative tools used across projects.
-- **Credentials** — academic and professional milestones.
-- **Build in public** — the broader philosophy behind documenting the process.
-
-## Selected projects
-
-### AirMath AI
-A multimodal math workspace combining webcam hand tracking, browser OCR, WebSockets, FastAPI, and SymPy. The project explores how computer vision and deterministic computation can create a more natural educational interface.
-
-### Cricket Wordle
-A Flutter game that turns structured IPL player attributes into a deduction problem. The game separates data, domain logic, and presentation so the mechanics can evolve independently of the UI.
-
-### Fokus
-A cross-platform productivity application built with Flutter, Riverpod, dependency injection, local persistence, audio, notifications, analytics, and desktop integrations.
-
-### Trading-agent research
-Exploration of multi-agent financial research systems, with a focus on how specialised agents, structured outputs, memory, evaluation, and risk-oriented workflows can support financial analysis. Where external/open-source work is involved, the repository is treated as an engineering study rather than presented as original research.
-
-## Engineering philosophy
-
-I care less about collecting frameworks and more about understanding the system underneath them:
-
-```text
-Problem
-  ↓
-Product / interaction design
-  ↓
-Data + domain model
-  ↓
-System architecture
-  ↓
-Implementation
-  ↓
-Testing / iteration
-  ↓
-Something a real person can use
-```
-
-The goal is to become the kind of finance professional who can **understand a technical system, prototype an idea, reason about data, and communicate the result clearly** — without pretending to be a full-time software engineer.
-
-## Current stack
-
-**Languages:** Python, Dart, TypeScript, JavaScript
-
-**AI / data:** SymPy, OCR, computer vision, agentic workflows, structured data pipelines
-
-**Application:** Flutter, React, Next.js, FastAPI
-
-**Systems:** WebSockets, local persistence, dependency injection, state management, desktop integrations
-
-**Workflow:** Git, GitHub, iterative prototyping, product-focused development
-
-## Repository structure
-
-```text
-src/
-├── app/          # Next.js application shell
-├── components/   # Reusable UI and layout components
-└── lib/          # Shared utilities and application logic
-```
-
-## Why this portfolio exists
-
-A CV can say someone is interested in finance and technology. A working project gives that claim something concrete behind it.
-
-This site is therefore less of a résumé and more of a **proof-of-work hub**: what I am learning, what I am building, and how I think about problems.
+The site is built as a dark-tech personal platform connecting three core disciplines:
+1. **Finance:** Financial analysis, valuation, market intelligence, and portfolio risk.
+2. **Technology & AI:** FastAPI backends, Next.js applications, deterministic risk controls, and automated market data pipelines.
+3. **Content Creation:** Explaining financial and technical concepts in public via YouTube and Instagram.
 
 ---
 
-Built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and a slightly obsessive amount of iteration.
+## 🧭 Site Architecture & Pages
+
+- **`/` (Home):**
+  - **Hero:** Interactive Spider-Man visual, live suit HUD telemetry toggle, and brand positioning.
+  - **About:** Interactive mask hover reveal card (`profile-2.png` unmask), `AGE 19 / UNDEFEATED` badge, and academic background.
+  - **Three Pillars:** Visual modules breaking down *Finance*, *Build*, and *Create*.
+  - **Selected Work Preview:** Highlighting *Market Monitor*, *Agentic Finance Research Lab*, *Ideas to Execution*, and *Air Math AI*.
+  - **Creator Preview:** Content hub introducing public finance education, study systems, and tech experiments.
+  - **Recruiter Banner:** Direct executive bridge to the dedicated Recruiters dossier.
+  - **Contact Preview:** Fast direct inquiry mailto generator.
+
+- **`/work` (Case Studies Portfolio):**
+  - Interactive category filters: `All`, `Finance`, `AI & Technology`, `Product & Design`.
+  - Detailed case studies for all 4 verified engineering projects:
+    - **Market Monitor:** Indian equity intelligence terminal (FastAPI, PostgreSQL, Next.js).
+    - **Agentic Finance Research Lab:** AI research copilot with deterministic Portfolio Guardian. *(Attribution: Forks upstream TradingAgents framework by Tauric Research; original contributions in `agent_lab`).*
+    - **Ideas to Execution:** Independent venture capital storytelling & interactive 30-day founder journey. *(Disclaimer: Independent exploratory project inspired by 8i Ventures; not affiliated with or endorsed by 8i Ventures).*
+    - **Air Math AI:** Experimental webcam gesture mathematics tool with SymPy & FastAPI.
+
+- **`/recruiters` (Recruiter & Founder Dossier — First-Class Nav Item):**
+  - **Education:** CHRIST (Deemed to be University), Bengaluru — BBA in Finance & Marketing Analytics (2024–2027).
+  - **CFA Program:** Active candidate status — CFA Level II candidate.
+  - **Professional Experience:**
+    - *Nuvama Wealth:* Finance Intern (July 2026 – August 2026 · Bengaluru).
+    - *DAGAS:* Finance Intern (April 2026 – July 2026 · Bengaluru).
+  - **Categorized Skills:** Finance & Analytics, Business & Commercial, Technology & Software, Content & Communication.
+  - **Certifications & Courses:** SOIC stock analysis, Investment Banking Simulator, Financial Modeling & Excel, PE & VC, SEBI/NISM modules.
+  - **Opportunity Contact & Résumé Request.**
+
+- **`/creator` (Content Hub):**
+  - Channel links: [YouTube (@AmanJain-4)](https://www.youtube.com/@AmanJain-4) and [Instagram (@aman.ja1n)](https://www.instagram.com/aman.ja1n/).
+  - Content pillars: *Finance Education*, *Learning & Careers*, *Tools & Experiments*.
+  - Curated catalogue of episodes and posts with real outbound links (zero fabricated metrics).
+  - Partnership inquiry channel.
+
+- **`/resources` (Resource Vault):**
+  - Financial models, DCF templates, CFA study frameworks, and content playbooks with interactive request submission.
+
+- **`/contact` (Direct Inquiries):**
+  - Dynamic category selector (Professional Opportunities, Project Collaborations, Creator & Brand Partnerships) generating pre-filled mailto templates.
+  - 1-click clipboard email copy (`jain.aman3789@gmail.com`).
+  - Active channels: LinkedIn, GitHub, YouTube, Instagram.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 16 (App Router, Turbopack)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4, Custom CSS Variables
+- **Motion & Smooth Scroll:** GSAP (ScrollTrigger), Lenis
+- **Fonts:** `Bebas Neue` (Display) & `Space Grotesk` (Body) via `next/font`
+- **Hosting:** Vercel
+
+---
+
+## 🚀 Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Run production build
+npm run build
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the application.
+
+---
+
+## 📬 Contact & Identity
+
+- **Display Name:** Aman Jain
+- **Domain:** [amanmalu.me](https://amanmalu.me)
+- **Email:** [jain.aman3789@gmail.com](mailto:jain.aman3789@gmail.com)
+- **LinkedIn:** [linkedin.com/in/amanmalu](https://www.linkedin.com/in/amanmalu/)
+- **GitHub:** [github.com/aman482006-beep](https://github.com/aman482006-beep)
+- **YouTube:** [youtube.com/@AmanJain-4](https://www.youtube.com/@AmanJain-4)
+- **Instagram:** [instagram.com/aman.ja1n](https://www.instagram.com/aman.ja1n/)

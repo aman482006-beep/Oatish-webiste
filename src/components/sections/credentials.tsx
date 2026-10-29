@@ -1,7 +1,7 @@
 export function Credentials() {
   return (
     <section className="credentials" id="credentials">
-      <div className="section-label reveal">Background</div>
+      <div className="section-label reveal">✦ Background</div>
       <h2 className="cred-title reveal">Education &<br /><em>Certifications</em></h2>
 
       {/* Featured CFA card */}

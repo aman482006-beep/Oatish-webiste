@@ -1,56 +1,89 @@
-import { GlobeStickers } from "@/components/ui/globe-stickers";
+"use client";
+
+import Image from "next/image";
 
 export function Travel() {
-  return (
-    <section className="projects-section !p-6 md:!p-12 lg:!p-24" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'var(--ink)' }} id="travel">
-      {/* Brutalist grid background pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#fff 2px, transparent 2px)', backgroundSize: '40px 40px' }} />
+  const cities = [
+    { name: "Dubai", landmark: "Burj / Skyline", vector: "/china-vector.svg" }, // Dubai maps to china-vector.svg per project asset specification
+    { name: "New York", landmark: "Metropolis", vector: "/flag-vector.svg" },
+    { name: "Switzerland", landmark: "Alps & Lakes", vector: "/switzerland-vector.svg" },
+    { name: "Paris", landmark: "Capital of Art", vector: "/italy-vector.svg" },
+    { name: "Tokyo", landmark: "Neo Shibuya", vector: "/tokyo-tower-vector.svg" },
+  ];
 
-      <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-12 lg:gap-8 z-10 relative">
-        <div className="w-full lg:w-5/12 reveal flex flex-col justify-center">
-          <div className="inline-flex items-center gap-3 px-5 py-2 border-[3px] border-[var(--gold)] bg-[var(--gold)]/10 rounded-full mb-8 font-black text-sm tracking-[0.2em] text-[var(--gold)] uppercase w-fit">
+  return (
+    <section className="projects-section !p-6 md:!p-16 lg:!p-24" id="travel">
+      <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 z-10 relative">
+        
+        {/* Left Column: Information and City Chips */}
+        <div className="w-full lg:w-1/2 reveal flex flex-col justify-center">
+          <div className="section-label mb-6">
             ✦ WANDERLUST
           </div>
           
-          <h2 className="m-0 font-['BriceRSE'] font-black leading-[1] tracking-tight text-white uppercase" style={{ fontSize: 'clamp(3.5rem, 6vw, 6rem)' }}>
+          <h2 className="projects-headline !m-0 !mb-8">
             Cities I<br />
-            <span className="text-[var(--black)] bg-[var(--gold)] px-4 py-1 mt-3 inline-block border-[6px] border-white transform -rotate-2">
+            <span className="text-[var(--spidey-red)] drop-shadow-[0_0_25px_rgba(224,27,27,0.5)]">
               Will Conquer
             </span>
           </h2>
           
-          <div className="bg-white/10 backdrop-blur-xl border-4 border-white/20 p-8 rounded-[32px] mt-10 shadow-[12px_12px_0px_rgba(255,255,255,0.1)]">
-            <p className="m-0 text-xl leading-relaxed text-gray-200 font-bold">
+          <div className="spidey-card p-8 rounded-2xl mb-8">
+            <p className="m-0 text-lg leading-relaxed text-[var(--spidey-white)]/90 font-medium">
               Building the life and the business to afford the freedom to go anywhere. Here are the places on my bucket list to secure the bag, hit the gym, and film content.
             </p>
           </div>
           
-          <div className="flex flex-wrap gap-4 mt-10 pl-2">
-            {[
-              { icon: "🏙️", name: "Dubai", color: "bg-[#2C5AFF]" },
-              { icon: "🗽", name: "New York", color: "bg-[#7161EF]" },
-              { icon: "🗻", name: "Switzerland", color: "bg-[#FFA500]" },
-              { icon: "🗼", name: "Paris", color: "bg-[#FF3366]" },
-              { icon: "🗾", name: "Tokyo", color: "bg-[#00C9A7]" },
-            ].map((city, i) => (
-               <span 
-                 key={city.name} 
-                 className={`reveal inline-flex items-center gap-3 pl-8 pr-10 py-3 border-[3px] border-white rounded-full font-black text-white text-md uppercase tracking-wider whitespace-nowrap hover:scale-105 transition-transform ${city.color} shadow-[6px_6px_0px_var(--black)] cursor-pointer`}
-                 style={{ transitionDelay: `${i * 100}ms` }}
-               >
-                 <span className="text-2xl min-w-fit">{city.icon}</span> {city.name}
-               </span>
+          {/* City Chips */}
+          <div className="flex flex-wrap gap-3">
+            {cities.map((city) => (
+              <span
+                key={city.name}
+                className="spidey-pill cursor-pointer"
+              >
+                {city.name}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-6 font-mono text-[11px] text-[var(--spidey-muted)] flex items-center gap-2 opacity-60">
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--spidey-red)]" />
+            <span>Map Asset Note: Dubai routes to china-vector.svg</span>
+          </div>
+        </div>
+
+        {/* Right Column: Clean Landmark Vector Showcase Cards (Replacing the globe) */}
+        <div className="w-full lg:w-1/2 reveal">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {cities.map((city, idx) => (
+              <div
+                key={city.name}
+                className={`spidey-card p-6 rounded-2xl flex flex-col items-center text-center group ${
+                  idx === 0 ? "sm:col-span-2 flex-row justify-start gap-5 text-left" : ""
+                }`}
+              >
+                <div className="w-14 h-14 rounded-xl bg-[var(--spidey-carbon-light)] border border-[rgba(224,27,27,0.3)] flex items-center justify-center p-2.5 group-hover:border-[var(--spidey-red)] group-hover:shadow-[0_0_15px_rgba(224,27,27,0.4)] transition-all">
+                  <Image
+                    src={city.vector}
+                    alt={city.name}
+                    width={40}
+                    height={40}
+                    className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100"
+                  />
+                </div>
+                <div>
+                  <h4 className="font-display text-2xl text-white tracking-wider group-hover:text-[var(--spidey-red)] transition-colors mt-2">
+                    {city.name}
+                  </h4>
+                  <p className="font-mono text-xs text-[var(--spidey-muted)]">
+                    {city.landmark}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
-        
-        <div className="w-full lg:w-7/12 reveal relative mt-16 lg:mt-0 flex justify-center items-center pointer-events-auto">
-          {/* Decorative frame behind the globe */}
-          <div className="absolute inset-0 bg-[var(--blue)] rounded-full blur-[120px] opacity-20 pointer-events-none" />
-          <div className="relative w-full max-w-[800px] aspect-square flex justify-center items-center transform lg:translate-x-8">
-            <GlobeStickers className="w-full h-full transform scale-[1.2] lg:scale-[1.3] origin-center cursor-move" speed={0.004} />
-          </div>
-        </div>
+
       </div>
     </section>
   );

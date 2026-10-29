@@ -10,11 +10,9 @@ export function Socials() {
     setStatus("loading");
     
     const form = e.currentTarget;
-    // Google Apps Script usually expects form data as URL-encoded, not multipart
     const formData = new FormData(form);
     const urlEncodedData = new URLSearchParams();
     
-    // Explicitly iterate because some browsers don't support new URLSearchParams(formData)
     formData.forEach((value, key) => {
       urlEncodedData.append(key, value.toString());
     });
@@ -26,8 +24,6 @@ export function Socials() {
         mode: "no-cors",
       });
 
-      // With "no-cors", the response is opaque and response.ok is false.
-      // We assume success if the fetch promise doesn't reject (e.g., no network failure).
       setStatus("success");
       form.reset();
       setTimeout(() => setStatus("idle"), 5000);
@@ -40,7 +36,7 @@ export function Socials() {
   return (
     <section className="socials-section" id="socials">
       <div className="socials-inner">
-        <div className="section-label reveal" style={{ justifyContent: "center" }}>Find Me</div>
+        <div className="section-label reveal" style={{ justifyContent: "center" }}>✦ Find Me</div>
         <h2 className="socials-headline reveal">Let&apos;s connect<br />in the <em>real world</em></h2>
         <p className="socials-sub reveal">I share finance breakdowns, gym progress, food adventures, and real student life — follow along wherever you spend time.</p>
 
@@ -98,18 +94,24 @@ export function Socials() {
               required
               disabled={status === "loading"}
             ></textarea>
-            <button type="submit" className="contact-submit" disabled={status === "loading"}>
-              <span>{status === "loading" ? "⏳" : "✉"}</span> {status === "loading" ? "Sending..." : "Send Message"}
+            
+            <button 
+              type="submit" 
+              className="contact-submit spidey-btn"
+              disabled={status === "loading"}
+            >
+              {status === "loading" ? "Sending..." : "Send Message"}
             </button>
+            
             {status === "success" && (
-              <div style={{ color: "#10b981", marginTop: "1rem", fontSize: "0.875rem", textAlign: "center", fontWeight: 500 }}>
-                Message sent successfully!
-              </div>
+              <p style={{ color: "var(--spidey-red)", fontSize: "0.85rem", marginTop: "12px", textAlign: "center", fontWeight: "bold" }}>
+                ✓ Message sent successfully! I will get back to you soon.
+              </p>
             )}
             {status === "error" && (
-              <div style={{ color: "#ef4444", marginTop: "1rem", fontSize: "0.875rem", textAlign: "center", fontWeight: 500 }}>
-                Something went wrong. Please try again later.
-              </div>
+              <p style={{ color: "#ff4d4d", fontSize: "0.85rem", marginTop: "12px", textAlign: "center" }}>
+                Failed to send message. Please try again.
+              </p>
             )}
           </form>
         </div>

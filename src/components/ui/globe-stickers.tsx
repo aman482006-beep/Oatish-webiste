@@ -6,6 +6,7 @@ import createGlobe from "cobe"
 /* ───────────────────────────────────────────────
  * SVG icon markers — each pinned to its real-world
  * geographic coordinates on the globe surface.
+ * Flagged: Dubai uses china-vector.svg as configured.
  * ─────────────────────────────────────────────── */
 interface SvgIcon {
   id: string
@@ -14,10 +15,10 @@ interface SvgIcon {
   label: string
 }
 
-const svgIcons: SvgIcon[] = [
+export const svgIcons: SvgIcon[] = [
   { id: "switzerland", location: [46.81, 8.23],    icon: "/switzerland-vector.svg", label: "Switzerland" },
   { id: "italy",       location: [41.87, 12.57],   icon: "/italy-vector.svg",       label: "Italy" },
-  { id: "dubai",       location: [25.20, 55.27],   icon: "/china-vector.svg",       label: "Dubai" }, // Reusing china vector as placeholder
+  { id: "dubai",       location: [25.20, 55.27],   icon: "/china-vector.svg",       label: "Dubai" }, // Reusing china vector as placeholder per specification
   { id: "singapore",   location: [1.35, 103.82],   icon: "/singapore-vector.svg",   label: "Singapore" },
   { id: "beach",       location: [-8.34, 115.09],  icon: "/beach-vector.svg",       label: "Bali (Beach)" },
   { id: "tokyo",       location: [35.68, 139.65],  icon: "/tokyo-tower-vector.svg", label: "Tokyo" },
@@ -26,8 +27,7 @@ const svgIcons: SvgIcon[] = [
 ]
 
 /* ───────────────────────────────────────────────
- * Pink arc routes — only connecting the SVG icon
- * countries in a logical travel route.
+ * Red web-strand arc routes connecting countries
  * ─────────────────────────────────────────────── */
 const arcRoutes: { from: [number, number]; to: [number, number] }[] = [
   { from: [46.81, 8.23],    to: [41.87, 12.57] },    // Switzerland -> Italy
@@ -38,75 +38,47 @@ const arcRoutes: { from: [number, number]; to: [number, number] }[] = [
   { from: [35.68, 139.65],  to: [-40.90, 174.88] },  // Tokyo -> Zealand
 ]
 
-/* ───────────────────────────────────────────────
- * Projection helpers — exactly match cobe's internal
- * WebGL math so HTML overlays sit perfectly on top.
- *
- * Cobe source (index.esm.js) uses:
- *   U([lat,lng]) → 3D cartesian on unit sphere
- *   O(point)     → screen xy + visibility
- *
- * We replicate both here.
- * ─────────────────────────────────────────────── */
-
-/** Convert lat/lng to 3D unit-sphere cartesian — matches cobe's `U()` */
+/** Convert lat/lng to 3D unit-sphere cartesian */
 function latLngTo3D(lat: number, lng: number): [number, number, number] {
   const rLat = (lat * Math.PI) / 180
   const rLng = (lng * Math.PI) / 180 - Math.PI
   const cosLat = Math.cos(rLat)
   return [
-    -cosLat * Math.cos(rLng),   // x
-    Math.sin(rLat),              // y
-    cosLat * Math.sin(rLng),     // z
+    -cosLat * Math.cos(rLng),
+    Math.sin(rLat),
+    cosLat * Math.sin(rLng),
   ]
 }
 
-/**
- * Project a geographic point to screen-space, matching cobe's `O()`.
- *
- * @param radius  Globe visual radius in cobe's coordinate space.
- *                Cobe uses 0.8 (constant `ee`) + markerElevation.
- *                We use 0.82 to sit icons slightly above surface.
- * @returns screenX, screenY in 0–1 range, and z for depth/visibility.
- */
 function projectToScreen(
   lat: number,
   lng: number,
   phi: number,
   theta: number,
 ) {
-  // We use EXACTLY 0.8 as the radius. Cobe native dots sit on this exact sphere layer.
-  // Any radius mismatch (like 0.82) causes parallax "roaming" drift when rotating.
-  const radius = 0.8;
+  const radius = 0.8
   const [x0, y0, z0] = latLngTo3D(lat, lng)
 
-  // Scale to globe radius
   const rx = x0 * radius
   const ry = y0 * radius
   const rz = z0 * radius
 
-  // Rotation matrix — matches cobe's camera transform
   const cosPhi = Math.cos(phi)
   const sinPhi = Math.sin(phi)
   const cosTheta = Math.cos(theta)
   const sinTheta = Math.sin(theta)
 
-  // After rotation
   const x1 = cosPhi * rx + sinPhi * rz
   const y1 = sinPhi * sinTheta * rx + cosTheta * ry - cosPhi * sinTheta * rz
   const z1 = -sinPhi * cosTheta * rx + sinTheta * ry + cosPhi * cosTheta * rz
 
   return {
-    // Cobe projects with scale=1, offset=[0,0], aspect=1
     screenX: (x1 + 1) / 2,
     screenY: (1 - y1) / 2,
-    z: z1, // positive = facing camera
+    z: z1,
   }
 }
 
-/* ───────────────────────────────────────────────
- * Component
- * ─────────────────────────────────────────────── */
 interface GlobeStickersProps {
   className?: string
   speed?: number
@@ -125,7 +97,6 @@ export function GlobeStickers({
   const isPausedRef = useRef(false)
   const iconRefs = useRef<Map<string, HTMLDivElement>>(new Map())
 
-  /* ── Pointer / drag handlers ── */
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
     pointerInteracting.current = { x: e.clientX, y: e.clientY }
     if (canvasRef.current) canvasRef.current.style.cursor = "grabbing"
@@ -160,7 +131,6 @@ export function GlobeStickers({
     }
   }, [handlePointerUp])
 
-  /* ── Globe + animation loop ── */
   useEffect(() => {
     if (!canvasRef.current) return
     const canvas = canvasRef.current
@@ -168,7 +138,6 @@ export function GlobeStickers({
     let animationId: number
     let phi = 0
 
-    /** Position every SVG icon using exact % positioning */
     function updateIcons(currentPhi: number, currentTheta: number) {
       svgIcons.forEach((marker) => {
         const el = iconRefs.current.get(marker.id)
@@ -181,16 +150,11 @@ export function GlobeStickers({
           currentTheta,
         )
 
-        // Using percentages allows perfect sync regardless of CSS scale transforms on the parent!
         const px = proj.screenX * 100
         const py = proj.screenY * 100
 
-        // Z-index calculation for visual depth fading
-        // proj.z ranges roughly from -0.8 (rear) to 0.8 (front) due to radius 0.8
         if (proj.z > -0.1) {
-          // Front of globe — visible
-          // Swiftly fade in/out near edges smoothly
-          const opacity = Math.min(1, (proj.z + 0.1) * 4) 
+          const opacity = Math.min(1, (proj.z + 0.1) * 4)
           const scale = 0.85 + Math.min(Math.max(proj.z, 0), 0.8) * 0.4
 
           el.style.left = `${px}%`
@@ -199,7 +163,6 @@ export function GlobeStickers({
           el.style.transform = `translate(-50%, -50%) scale(${scale})`
           el.style.pointerEvents = opacity > 0.5 ? "auto" : "none"
         } else {
-          // Back of globe — hidden
           el.style.opacity = "0"
           el.style.pointerEvents = "none"
         }
@@ -210,34 +173,33 @@ export function GlobeStickers({
       const width = canvas.offsetWidth
       if (width === 0 || globe) return
 
+      // Strict Spider-Man color theme: Dark carbon sphere, suit-red dots, red arcs
       globe = createGlobe(canvas, {
         devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
         width,
         height: width,
         phi: 0,
         theta: 0.2,
-        dark: 0,
-        diffuse: 1.5,
+        dark: 1,
+        diffuse: 1.4,
         mapSamples: 16000,
-        mapBrightness: 8,
-        baseColor: [1, 1, 1],
-        markerColor: [0.9, 0.3, 0.5],
-        glowColor: [1, 1, 1],
+        mapBrightness: 4.5,
+        baseColor: [0.06, 0.06, 0.06], // Deep carbon
+        markerColor: [0.88, 0.11, 0.11], // Spidey suit red #E01B1B
+        glowColor: [0.4, 0.05, 0.05], // Atmospheric crimson glow
         markerElevation: 0.02,
 
-        // Small dots on the globe surface at each SVG icon location
         markers: svgIcons.map((m) => ({
           location: m.location,
-          size: 0.03,
+          size: 0.035,
         })),
 
-        // Pink arcs connecting only the SVG marker countries
         arcs: arcRoutes,
-        arcColor: [0.9, 0.4, 0.7],
-        arcWidth: 0.6,
-        arcHeight: 0.3,
+        arcColor: [0.88, 0.11, 0.11],
+        arcWidth: 0.7,
+        arcHeight: 0.35,
 
-        opacity: 0.9,
+        opacity: 0.95,
       })
 
       function animate() {
@@ -272,13 +234,11 @@ export function GlobeStickers({
     }
   }, [speed])
 
-  /* ── Render ── */
   return (
     <div
       ref={containerRef}
       className={`relative aspect-square select-none ${className}`}
     >
-      {/* WebGL globe canvas */}
       <canvas
         ref={canvasRef}
         onPointerDown={handlePointerDown}
@@ -293,7 +253,7 @@ export function GlobeStickers({
         }}
       />
 
-      {/* SVG icon overlays — positioned by the animation loop */}
+      {/* Spider-Man styled icon overlays */}
       {svgIcons.map((m) => (
         <div
           key={m.id}
@@ -313,11 +273,11 @@ export function GlobeStickers({
           <div
             className="
               w-7 h-7 md:w-8 md:h-8
-              bg-white/95 backdrop-blur-sm rounded-full
-              border-2 border-[var(--gold)]
+              bg-[var(--spidey-carbon)] rounded-full
+              border border-[var(--spidey-red)]
               p-[5px]
-              shadow-[0_0_8px_rgba(255,215,0,0.25)]
-              hover:scale-[1.25] hover:shadow-[0_0_18px_var(--gold)]
+              shadow-[0_0_10px_rgba(224,27,27,0.4)]
+              hover:scale-[1.25] hover:shadow-[0_0_20px_var(--spidey-red)]
               transition-all duration-200
               cursor-pointer
               flex items-center justify-center
@@ -328,7 +288,7 @@ export function GlobeStickers({
             <img
               src={m.icon}
               alt={m.label}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain filter invert brightness-125"
               draggable={false}
             />
           </div>

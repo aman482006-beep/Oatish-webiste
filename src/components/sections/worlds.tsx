@@ -2,7 +2,7 @@ export function Worlds() {
   return (
     <section className="worlds" id="worlds">
       <div className="worlds-header">
-        <div className="section-label reveal" style={{ justifyContent: "center" }}>What I Do</div>
+        <div className="section-label reveal" style={{ justifyContent: "center" }}>✦ What I Do</div>
         <h2 className="worlds-title reveal">Three worlds,<br /><em>one life</em></h2>
       </div>
       <div className="worlds-grid">

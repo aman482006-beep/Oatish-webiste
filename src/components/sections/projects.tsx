@@ -1,7 +1,7 @@
 export function Projects() {
   return (
     <section className="projects-section" id="projects">
-      <div className="section-label reveal">Work</div>
+      <div className="section-label reveal">✦ Work</div>
       <h2 className="projects-headline reveal">Things I&apos;ve <em>actually built</em></h2>
       <div className="proj-grid">
         <div className="proj-card tall reveal">
