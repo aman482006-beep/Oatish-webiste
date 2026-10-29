@@ -566,3 +566,10 @@ body.aj-menu-open { overflow: hidden; }
   .aj-case-feature-grid, .aj-case-screenshots { grid-template-columns: 1fr 1fr; }
   .aj-resume-cta-compact { flex-direction: column; align-items: flex-start; }
 }
+
+.aj-skip-link { position: fixed; z-index: 2000; top: 8px; left: 8px; padding: 10px 14px; transform: translateY(-160%); border: 1px solid var(--aj-line); border-radius: 10px; color: var(--aj-ink); background: #fff; font-size: 14px; font-weight: 800; text-decoration: none; transition: transform .18s var(--aj-ease); }
+.aj-skip-link:focus-visible { transform: translateY(0); }
+.aj-error-content { max-width: 820px; padding-top: 44px; }
+.aj-error-content h1 { max-width: 760px; margin: 0; font-family: var(--font-display); font-size: clamp(40px, 6vw, 64px); font-weight: 500; line-height: 1.02; letter-spacing: -.055em; }
+.aj-error-content > p:not(.aj-eyebrow) { max-width: 620px; margin: 16px 0 22px; color: var(--aj-muted); font-size: 16px; line-height: 1.6; }
+@media (max-width: 700px) { .aj-error-content { padding-top: 24px; } .aj-error-content > p:not(.aj-eyebrow) { font-size: 15px; } }
