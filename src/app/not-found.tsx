@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="aj-inner-page aj-error-page">
+    <main id="main" className="aj-inner-page aj-error-page">
       <div className="aj-container aj-error-content">
         <p className="aj-eyebrow aj-eyebrow-accent">404 · PAGE NOT FOUND</p>
         <h1>That page seems to have wandered off.</h1>
