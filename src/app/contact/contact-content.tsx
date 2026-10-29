@@ -58,7 +58,7 @@ export function ContactContent() {
   }
 
   return (
-    <main className="aj-inner-page aj-contact-page">
+    <main id="main" className="aj-inner-page aj-contact-page">
       <div className="aj-container">
         <header className="aj-inner-heading aj-contact-hero">
           <p className="aj-eyebrow aj-eyebrow-accent">CONTACT</p>
