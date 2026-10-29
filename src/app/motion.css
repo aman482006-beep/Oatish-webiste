@@ -135,3 +135,160 @@ html.aj-motion-enabled [data-reveal][data-revealed="true"] {
 
   .aj-back-to-top { transition: none; }
 }
+
+
+/* The repeated label strip stays compact and still communicates without JS. */
+.aj-marquee {
+  overflow: hidden;
+  border-block: 1px solid var(--aj-line);
+  background: rgba(255, 255, 255, .42);
+  color: var(--aj-muted);
+}
+.aj-marquee-track {
+  display: flex;
+  width: max-content;
+  min-height: 36px;
+  align-items: center;
+  gap: 28px;
+  padding-inline: 24px;
+  white-space: nowrap;
+}
+.aj-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+.aj-marquee-item i { color: var(--aj-orange); font-style: normal; }
+
+@keyframes aj-marquee-scroll {
+  to { translate: -50% 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html.aj-motion-enabled .aj-marquee-track {
+    animation: aj-marquee-scroll 38s linear infinite;
+  }
+}
+.aj-marquee:hover .aj-marquee-track { animation-play-state: paused; }
+
+@property --aj-icon-offset {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+.aj-pillar { position: relative; overflow: hidden; isolation: isolate; }
+.aj-pillar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    230px circle at var(--aj-pillar-x, 50%) var(--aj-pillar-y, 50%),
+    rgba(244, 92, 42, .10),
+    transparent 70%
+  );
+  transition: opacity 240ms ease;
+}
+.aj-pillar[data-pointer-active="true"]::after { opacity: 1; }
+.aj-pillar-icon, .aj-pillar-copy { position: relative; z-index: 1; }
+.aj-pillar-svg { display: block; width: 30px; height: 30px; overflow: visible; }
+html.aj-motion-enabled .aj-pillar-svg path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: var(--aj-icon-offset, 100);
+  --aj-icon-offset: 100;
+  transition: --aj-icon-offset 850ms var(--aj-ease);
+}
+html.aj-motion-enabled .aj-pillar[data-revealed="true"] .aj-pillar-svg path {
+  --aj-icon-offset: 0;
+}
+
+/* One coordinated, low-amplitude rhythm links the analytics bars and CTA. */
+@keyframes aj-bars-live {
+  0%, 80%, 100% { scale: 1 1; }
+  87% { scale: 1 .78; }
+  94% { scale: 1 1; }
+}
+@keyframes aj-phone-cta-pulse {
+  0%, 80%, 100% { scale: 1; }
+  87% { scale: 1.035; }
+  94% { scale: 1; }
+}
+@keyframes aj-task-check {
+  from { opacity: 0; scale: .2; }
+  to { opacity: 1; scale: 1; }
+}
+.aj-phone-task i { position: relative; }
+.aj-phone-task i::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 5px;
+  left: 2px;
+  top: 0;
+  border-right: 1px solid #8B5D48;
+  border-bottom: 1px solid #8B5D48;
+  rotate: 45deg;
+  scale: .2;
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .aj-focus-art[data-revealed="true"] .aj-chart-bars i {
+    animation-name: aj-bars-grow, aj-bars-live;
+    animation-duration: 600ms, 8s;
+    animation-timing-function: var(--aj-ease), ease-in-out;
+    animation-delay: 0ms, 900ms;
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: both, none;
+  }
+  .aj-focus-art[data-revealed="true"] .aj-phone-cta {
+    animation: aj-phone-cta-pulse 8s ease-in-out 900ms infinite;
+  }
+  .aj-focus-art[data-revealed="true"] .aj-phone-task i::after {
+    animation: aj-task-check 300ms var(--aj-ease) both;
+  }
+  .aj-focus-art[data-revealed="true"] .aj-phone-task:nth-of-type(3) i::after { animation-delay: 120ms; }
+  .aj-focus-art[data-revealed="true"] .aj-phone-task:nth-of-type(4) i::after { animation-delay: 190ms; }
+  .aj-focus-art[data-revealed="true"] .aj-phone-task:nth-of-type(5) i::after { animation-delay: 260ms; }
+}
+
+/* Native scroll-driven motion is an enhancement; the portrait remains visible without it. */
+@keyframes aj-hero-photo-scroll {
+  to { translate: 0 -40px; scale: .96; }
+}
+@keyframes aj-hero-note-fade {
+  to { opacity: .2; }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .aj-home .aj-photo-frame {
+      animation-name: aj-photo-float, aj-hero-photo-scroll;
+      animation-duration: 8s, 1s;
+      animation-timing-function: ease-in-out, linear;
+      animation-iteration-count: infinite, 1;
+      animation-direction: alternate, normal;
+      animation-fill-mode: none, both;
+      animation-timeline: auto, view();
+      animation-range: normal, exit 0% exit 100%;
+    }
+    .aj-home .aj-note-left, .aj-home .aj-note-right {
+      animation: aj-hero-note-fade 1s linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+  }
+}
+
+/* The motion layer never hides useful content for reduced-motion visitors. */
+@media (prefers-reduced-motion: reduce) {
+  .aj-marquee { display: none; }
+  .aj-pillar::after { display: none; }
+  .aj-pillar-svg path { stroke-dasharray: none; stroke-dashoffset: 0; }
+  .aj-focus-art .aj-chart-bars i,
+  .aj-focus-art .aj-phone-cta,
+  .aj-focus-art .aj-phone-task i::after { animation: none !important; }
+  .aj-focus-art .aj-phone-task i::after { opacity: 0; scale: 1; }
+}
