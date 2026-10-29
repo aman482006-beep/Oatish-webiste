@@ -64,6 +64,31 @@ export function MotionRoot({ children }: { children: ReactNode }) {
     }
 
     if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      const pillarCards = Array.from(document.querySelectorAll<HTMLElement>(".aj-pillar"));
+      for (const card of pillarCards) {
+        const onMove = (event: PointerEvent) => {
+          const rect = card.getBoundingClientRect();
+          if (!rect.width || !rect.height) return;
+          const x = ((event.clientX - rect.left) / rect.width) * 100;
+          const y = ((event.clientY - rect.top) / rect.height) * 100;
+          card.style.setProperty("--aj-pillar-x", x.toFixed(2) + "%");
+          card.style.setProperty("--aj-pillar-y", y.toFixed(2) + "%");
+          card.dataset.pointerActive = "true";
+        };
+        const onLeave = () => {
+          delete card.dataset.pointerActive;
+          card.style.removeProperty("--aj-pillar-x");
+          card.style.removeProperty("--aj-pillar-y");
+        };
+        card.addEventListener("pointermove", onMove, { passive: true });
+        card.addEventListener("pointerleave", onLeave, { passive: true });
+        cleanupHandlers.push(() => {
+          card.removeEventListener("pointermove", onMove);
+          card.removeEventListener("pointerleave", onLeave);
+          onLeave();
+        });
+      }
+
       const buttons = Array.from(document.querySelectorAll<HTMLElement>(".aj-button-primary"));
       for (const button of buttons) {
         const onMove = (event: PointerEvent) => {
