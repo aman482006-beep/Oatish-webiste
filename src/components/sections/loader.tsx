@@ -106,7 +106,7 @@ export function Loader() {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[var(--spidey-black)] select-none pointer-events-auto"
+      className="spidey-loader fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[var(--spidey-black)] select-none pointer-events-auto"
     >
       {/* Red ambient pulse behind the emblem */}
       <div
@@ -223,12 +223,16 @@ export function Loader() {
         </svg>
       </div>
 
+      <div className="relative z-10 mt-4 text-center text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.28em] text-white/55">
+        FRIENDLY NEIGHBORHOOD · FINANCE × TECH
+      </div>
+
       <button
         onClick={() => {
           sessionStorage.setItem("spidey_visited", "true");
           setVisible(false);
         }}
-        className="mt-8 text-xs font-mono tracking-widest text-[var(--spidey-red)] uppercase opacity-60 hover:opacity-100 transition-opacity"
+        className="relative z-10 mt-6 min-h-11 px-4 rounded-full border border-[rgba(224,27,27,0.42)] bg-black/70 text-xs font-mono tracking-widest text-[var(--spidey-red)] uppercase opacity-80 hover:opacity-100 transition-opacity"
       >
         [ SKIP INTRO ]
       </button>
