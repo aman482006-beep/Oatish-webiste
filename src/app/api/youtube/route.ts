@@ -95,7 +95,14 @@ export async function GET() {
       .filter((video) => video.durationSeconds > 180)
       .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
       .slice(0, 3)
-      .map(({ durationSeconds: _durationSeconds, ...video }) => video);
+      .map((video) => ({
+        id: video.id,
+        title: video.title,
+        publishedAt: video.publishedAt,
+        duration: video.duration,
+        thumbnail: video.thumbnail,
+        url: video.url,
+      }));
 
     return Response.json(
       { configured: true, videos },
