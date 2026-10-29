@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { LatestVideos } from "@/components/sections/latest-videos";
 import { FOKUS } from "@/data/fokus";
-import { financeWork } from "@/data/finance-work";
 import { currentlyOpenTo } from "@/data/profile";
 import { ResumeDownload } from "@/components/sections/resume-download";
 import { SocialIcon, type SocialIconName } from "@/components/layout/social-icon";
@@ -20,21 +19,27 @@ const pillars = [
     title: "Finance",
     icon: "finance",
     tone: "peach",
-    description: "Exploring financial analysis, markets, investment concepts, risk, and the business problems behind the numbers.",
+    description: "Markets, valuation, financial analysis and the business stories behind the numbers.",
+    href: "/work#selected-finance-work",
+    action: "Explore finance work",
   },
   {
     number: "02",
     title: "Build",
     icon: "build",
     tone: "blue",
-    description: "Experimenting with AI, financial-data tools, dashboards, software projects, and practical automation.",
+    description: "AI experiments, financial-data tools, dashboards and useful software.",
+    href: "/work",
+    action: "See what I build",
   },
   {
     number: "03",
     title: "Create",
     icon: "create",
     tone: "green",
-    description: "Sharing what I learn through finance education, explanatory videos, career resources, and digital content.",
+    description: "Finance explainers, educational videos and resources shared as I learn.",
+    href: "#creator",
+    action: "Watch my content",
   },
 ] as const;
 
@@ -71,8 +76,13 @@ export default function Home() {
             <p className="aj-eyebrow"><span /> FINANCE × TECHNOLOGY × COMMUNICATION</p>
             <h1>I study finance.<br /><em>I build</em> with technology.<br />I create to make ideas useful.</h1>
             <p className="aj-lede">
-              I&apos;m Aman Jain, a BBA student at CHRIST University exploring financial analysis, fintech, AI-powered tools and educational content. I like turning what I learn into projects I can test, improve and share.
+              I&apos;m Aman Jain, a BBA student exploring finance, useful technology and educational content. I turn what I learn into projects I can test, improve and share.
             </p>
+            <div className="aj-hero-meta" aria-label="A few quick facts">
+              <span>BBA · CHRIST University</span>
+              <span>CFA Level II candidate</span>
+              <span>Bengaluru, India</span>
+            </div>
             <div className="aj-hero-actions">
               <a className="aj-button aj-button-primary" href="#featured">Explore my work <span aria-hidden="true">→</span></a>
               <a className="aj-button aj-button-outline" href="#creator">Explore my content</a>
@@ -119,13 +129,14 @@ export default function Home() {
           </div>
           <div className="aj-pillar-grid">
             {pillars.map((pillar) => (
-              <article className={"aj-pillar aj-pillar-" + pillar.tone} key={pillar.title}>
+              <Link className={"aj-pillar aj-pillar-" + pillar.tone} href={pillar.href} key={pillar.title}>
                 <div className="aj-pillar-icon" aria-hidden="true"><PillarIcon name={pillar.icon} /></div>
                 <div className="aj-pillar-copy">
                   <div className="aj-pillar-head"><h2>{pillar.title}</h2><span>{pillar.number}</span></div>
                   <p>{pillar.description}</p>
                 </div>
-              </article>
+                <span className="aj-pillar-action">{pillar.action}<span aria-hidden="true">↗</span></span>
+              </Link>
             ))}
           </div>
         </div>
@@ -160,7 +171,7 @@ export default function Home() {
             <div className="aj-feature-content">
               <div className="aj-app-kicker">PRODUCTIVITY <span>•</span> FLUTTER <span>•</span> WINDOWS STORE</div>
               <h3>{FOKUS.name}</h3>
-              <p>A cross-platform Flutter productivity app built around focused work, ambient environments and lightweight personal systems. It combines focus sessions, ambient audio, reminders, analytics and local persistence.</p>
+              <p>A Flutter productivity app bringing focus sessions, ambient environments, reminders and progress tracking into one workspace.</p>
               <div className="aj-feature-actions">
                 <a href={FOKUS.storeUrl} target="_blank" rel="noopener noreferrer" className="aj-button aj-button-primary">Get Fokus <span aria-hidden="true">↗</span></a>
                 <a href={FOKUS.sourceUrl} target="_blank" rel="noopener noreferrer" className="aj-button aj-button-outline"><span aria-hidden="true">⌘</span> View on GitHub</a>
@@ -171,29 +182,15 @@ export default function Home() {
       </section>
 
 
-      <section className="aj-section aj-finance-work-section" id="finance-work">
+      <section className="aj-section aj-finance-bridge-section" id="finance-work">
         <div className="aj-container">
-          <div className="aj-section-heading aj-section-heading-inline">
-            <div>
-              <p className="aj-eyebrow aj-eyebrow-accent">SELECTED FINANCE WORK</p>
-              <h2>Proof behind the finance side.</h2>
-              <p className="aj-heading-subtitle">Models and analysis belong here when the underlying files are ready to share.</p>
+          <div className="aj-finance-bridge-card">
+            <div className="aj-finance-bridge-kicker">FINANCE · WORK IN PROGRESS</div>
+            <div className="aj-finance-bridge-copy">
+              <h2>Files first. Findings second.</h2>
+              <p>I’m preparing shareable models and analysis. I’ll publish each with its real file and verified takeaways—not a case study that only looks finished.</p>
             </div>
-            <Link className="aj-text-link" href="/work">View all work <span aria-hidden="true">→</span></Link>
-          </div>
-          <div className="aj-finance-work-grid">
-            {financeWork.map((item) => (
-              <article className="aj-finance-work-card" key={item.id}>
-                <div className="aj-finance-work-card-top">
-                  <span className="aj-finance-format">{item.format}</span>
-                  <span className="aj-finance-status">PLACEHOLDER</span>
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <p className="aj-finance-takeaway">{item.takeaway}</p>
-                <span className="aj-finance-work-pending">TODO(Aman): Add {item.format} file</span>
-              </article>
-            ))}
+            <Link className="aj-text-link" href="/work#selected-finance-work">Explore finance work <span aria-hidden="true">↗</span></Link>
           </div>
         </div>
       </section>
