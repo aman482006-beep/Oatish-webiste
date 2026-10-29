@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-tech-bg: #0B0D12;
-  --color-tech-bg-secondary: #121720;
-  --color-tech-card: #171B24;
-  --color-tech-card-hover: #1E2330;
+  --color-tech-bg: #000000;
+  --color-tech-bg-secondary: #000000;
+  --color-tech-card: #000000;
+  --color-tech-card-hover: #000000;
   --color-tech-text: #F5F7FA;
   --color-tech-text-muted: #A5ADBB;
   --color-tech-accent: #E01B1B;
   --color-tech-accent-hover: #ff2a2a;
-  --color-tech-border: #232936;
+  --color-tech-border: rgba(224, 27, 27, 0.28);
 
   --color-spidey-red: #E01B1B;
   --color-spidey-red-deep: #8F0D0D;
-  --color-spidey-black: #0B0D12;
-  --color-spidey-carbon: #171B24;
-  --color-spidey-carbon-light: #1E2330;
+  --color-spidey-black: #000000;
+  --color-spidey-carbon: #000000;
+  --color-spidey-carbon-light: #000000;
   --color-spidey-white: #F5F7FA;
   --color-spidey-muted: #A5ADBB;
 
@@ -33,24 +33,24 @@
 
 :root {
   /* Dark-Tech Design Tokens */
-  --tech-bg:             #0B0D12;
-  --tech-bg-secondary:   #121720;
-  --tech-card:           #171B24;
-  --tech-card-hover:     #1E2330;
+  --tech-bg:             #000000;
+  --tech-bg-secondary:   #000000;
+  --tech-card:           #000000;
+  --tech-card-hover:     #000000;
   --tech-text:           #F5F7FA;
   --tech-text-muted:     #A5ADBB;
   --tech-accent:         #E01B1B;
   --tech-accent-hover:   #ff2a2a;
-  --tech-border:         #232936;
+  --tech-border:         rgba(224, 27, 27, 0.28);
   --tech-border-accent:  rgba(224, 27, 27, 0.4);
 
   /* Spider-Man Palette Tokens */
   --spidey-red:          #E01B1B;
   --spidey-red-deep:     #8F0D0D;
   --spidey-red-glow:     rgba(224, 27, 27, 0.35);
-  --spidey-black:        #0B0D12;
-  --spidey-carbon:       #171B24;
-  --spidey-carbon-light: #1E2330;
+  --spidey-black:        #000000;
+  --spidey-carbon:       #000000;
+  --spidey-carbon-light: #000000;
   --spidey-white:        #F5F7FA;
   --spidey-muted:        #A5ADBB;
   --spidey-border:       rgba(224, 27, 27, 0.25);
@@ -166,7 +166,7 @@ body {
   padding: 0.5rem 1.25rem;
   border-radius: 9999px;
   border: 1px solid rgba(224, 27, 27, 0.4);
-  background: rgba(23, 27, 36, 0.85);
+  background: rgba(0, 0, 0, 0.92);
   color: var(--tech-text);
   font-size: 0.85rem;
   font-weight: 600;
@@ -246,11 +246,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B0D12;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #232936;
+  background: rgba(224, 27, 27, 0.28);
   border-radius: 4px;
 }
 
