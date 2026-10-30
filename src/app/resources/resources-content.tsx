@@ -4,22 +4,16 @@ import { useState, type FormEvent } from "react";
 
 const resourceAreas = [
   {
-    number: "01",
     title: "Finance toolkits",
     description: "Clear, practical ways to explore financial statements, valuation assumptions and portfolio risk.",
-    tags: ["Excel", "Analysis", "Valuation"],
   },
   {
-    number: "02",
     title: "CFA study systems",
     description: "Revision trackers, formula references and ways to organise a demanding study plan.",
-    tags: ["Revision", "Fixed income", "FSA"],
   },
   {
-    number: "03",
     title: "Creator workflows",
     description: "Frameworks for turning a finance topic into a concise, useful video or visual explanation.",
-    tags: ["Scripting", "Storytelling", "Video"],
   },
 ];
 
@@ -46,37 +40,33 @@ export function ResourcesContent() {
 
         <section className="aj-resource-grid" aria-label="Planned resource areas">
           {resourceAreas.map((area) => (
-            <article className="aj-resource-card" key={area.number}>
-              <div className="aj-resource-card-top">
-                <span className="aj-resource-format">PLANNED FOCUS</span>
-                <span className="aj-creator-pillar-number">{area.number}</span>
-              </div>
+            <article className="aj-resource-card" key={area.title}>
               <h2>{area.title}</h2>
               <p>{area.description}</p>
-              <div className="aj-resource-tags">
-                {area.tags.map((tag) => <span key={tag}>{tag}</span>)}
-              </div>
+              <a className="aj-resource-link" href="#resource-request">
+                Suggest an idea <span aria-hidden="true">↗</span>
+              </a>
             </article>
           ))}
         </section>
 
-        <section className="aj-resource-request" aria-labelledby="resource-request-heading">
-          <div>
-            <p className="aj-eyebrow aj-eyebrow-accent">SHAPE THE LIBRARY</p>
-            <h2 id="resource-request-heading">What would actually help you?</h2>
-            <p>Suggest a topic and I’ll use it to prioritise future resources. This opens a draft in your email app; it does not submit data to the website.</p>
+        <section id="resource-request" className="aj-resource-request" aria-labelledby="resource-request-heading">
+          <div className="aj-resource-request-copy">
+            <h2 id="resource-request-heading">What should I build next?</h2>
+            <p>Suggest a topic and I’ll use it to prioritise the next resources.</p>
           </div>
           <form onSubmit={handleRequest}>
-            <label htmlFor="resource-request">Resource topic</label>
-            <textarea
-              id="resource-request"
+            <label className="sr-only" htmlFor="resource-request-topic">Resource topic</label>
+            <input
+              id="resource-request-topic"
+              type="text"
               value={requestText}
               onChange={(event) => setRequestText(event.target.value)}
-              rows={3}
               placeholder="e.g. a portfolio analysis workbook"
               required
             />
-            <button type="submit" className="aj-button aj-button-primary">Draft email request <span aria-hidden="true">↗</span></button>
+            <button type="submit" className="aj-button aj-button-primary">Draft email <span aria-hidden="true">↗</span></button>
+            <small>Opens a draft in your email app; nothing is submitted on the website.</small>
           </form>
         </section>
       </div>
