@@ -51,7 +51,7 @@ One-time deployment setup:
 
 The key is read only on the server and is not sent to the browser. A sample environment file is included as \`.env.example\`. If no feed can be returned, the site presents a visitor-friendly link to the channel rather than exposing API setup details.
 
-**Short-form policy:** uploads longer than 180 seconds are included; videos at or below three minutes are excluded to keep short-form uploads out of the showcase.
+**Video policy:** the showcase includes the latest public uploads, including Shorts and other videos under three minutes.
 
 ## Content placeholders to complete
 
